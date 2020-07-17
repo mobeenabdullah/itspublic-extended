@@ -29,4 +29,16 @@
 	 * practising this, we should strive to set a better example in our own work.
 	 */
 
+	$(document).ready(function () {
+
+		$('.itspublic-members').slick({
+			appendArrows: '.custom-arrow-buttons',
+			prevArrow: '<span class="custom-prev-arrow>"><i class="fa fa-long-angle-left"></i></span>',
+			nextArrow: '<span class="custom-next-arrow>"><i class="fa fa-long-angle-right"></i></span>',
+			draggable: false
+		});
+
+	});
+
+
 })( jQuery );

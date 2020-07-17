@@ -6,23 +6,22 @@ function itspublic_show_members( ) {
         'posts_per_page' => -1,
         'post_type' => 'member',
         'post_status' => 'publish',
-    );
-    $my_query = null;
-    $my_query = new WP_Query($args);
+        );
+        $my_query = null;
+        $my_query = new WP_Query($args);
+        $countMember = 0;
+
     ?>
 
-    <?php if( $my_query->have_posts() ): $countMember = 0; ?>
+    <?php if( $my_query->have_posts() ): ?>
 
         <div class="itspublic-members">
 
+        <?php if (wp_count_posts('member')->publish > 8) { echo '<div>'; } ?>
+
         <?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
 
-            <?php
-                $countMember++;
-                if ($countMember%4 == 1) {
-                    echo "<div class='something'>";
-                }
-            ?>
+            <?php $countMember++; ?>
 
             <div class="itspubic-single-member">
 
@@ -68,26 +67,25 @@ function itspublic_show_members( ) {
 
             </div>
 
-            <?php
+        <?php
 
-                $countMember ++;
-                if ( $countMember%4 == 0 ) {
-                    echo "</div>";
-                }
+            if ($countMember%8 == 0) {
+                echo "</div><div>";
+            }
 
-	        ?>
+            if (wp_count_posts('member')->publish == $countMember) {
+                echo '</div>';
+            }
+
+        ?>
 
         <?php endwhile; ?>
 
-	        <?php
-
-	        if ( $countMember%4 != 1 ) {
-		        echo "</div>";
-	        }
-
-	        ?>
-
         </div>
+
+        <?php if (wp_count_posts('member')->publish > 8) : ?>
+            <div class="custom-arrow-buttons"></div>
+        <?php endif; ?>
 
     <?php endif;
     wp_reset_query();  ?>

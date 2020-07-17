@@ -73,6 +73,7 @@ class Itspublic_Extended_Public {
 		 * class.
 		 */
 
+		wp_enqueue_style( 'slick-css', plugin_dir_url( __FILE__ ) . 'css/slick.css', array(), $this->version, 'all' );
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/itspublic-extended-public.css', array(), $this->version, 'all' );
 
 	}
@@ -96,6 +97,7 @@ class Itspublic_Extended_Public {
 		 * class.
 		 */
 
+		wp_enqueue_script( 'slick-js', plugin_dir_url( __FILE__ ) . 'js/slick.min.js', array( 'jquery' ), $this->version, false );
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/itspublic-extended-public.js', array( 'jquery' ), $this->version, false );
 
 	}
