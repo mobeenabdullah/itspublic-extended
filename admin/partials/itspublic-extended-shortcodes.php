@@ -11,11 +11,18 @@ function itspublic_show_members( ) {
     $my_query = new WP_Query($args);
     ?>
 
-    <?php if( $my_query->have_posts() ): ?>
+    <?php if( $my_query->have_posts() ): $countMember = 0; ?>
 
         <div class="itspublic-members">
 
         <?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
+
+            <?php
+                $countMember++;
+                if ($countMember%4 == 1) {
+                    echo "<div class='something'>";
+                }
+            ?>
 
             <div class="itspubic-single-member">
 
@@ -61,7 +68,24 @@ function itspublic_show_members( ) {
 
             </div>
 
+            <?php
+
+                $countMember ++;
+                if ( $countMember%4 == 0 ) {
+                    echo "</div>";
+                }
+
+	        ?>
+
         <?php endwhile; ?>
+
+	        <?php
+
+	        if ( $countMember%4 != 1 ) {
+		        echo "</div>";
+	        }
+
+	        ?>
 
         </div>
 
