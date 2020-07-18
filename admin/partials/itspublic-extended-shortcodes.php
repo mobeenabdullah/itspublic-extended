@@ -1,5 +1,6 @@
 <?php
 
+// Members CPT Shortcode
 function itspublic_show_members( ) {
 
         $args = array(
@@ -93,3 +94,91 @@ function itspublic_show_members( ) {
 <?php }
 
 add_shortcode('itspublic_members', 'itspublic_show_members');
+
+// Project CPT Shortcode
+function itspublic_show_projects( ) {
+
+    echo '<div class="itspublic-projects">';
+
+		$project_terms = get_terms( array(
+			'taxonomy' => 'project_type',
+			'hide_empty' => true,
+		) );
+
+		foreach ($project_terms as $project_term) {
+			?>
+
+            <div>
+
+            <div class="<?php echo $project_term->slug; ?>">
+
+                <div class="projecten__cover">
+
+					<?php
+
+					$product_args = array(
+						'post_type'     => 'project',
+						'orderby'      => 'id',
+						'order'         => 'ASC',
+						'post_status'   => 'publish',
+						'tax_query' => array(
+							array(
+								'taxonomy'  => 'project_type',
+								'terms'     => array( $project_term->slug ),
+								'field'     => 'slug'
+							)
+						)
+					);
+
+					$product_list = new WP_Query ( $product_args );
+
+					?>
+
+					<?php while ( $product_list -> have_posts() ) : $product_list -> the_post(); ?>
+
+                        <div class="projecten__single">
+                            <figure class="projecten__single-img">
+                                <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
+                            </figure>
+
+                            <div class="projecten__single-content">
+                                <h4><?php the_title(); ?></h4>
+	                            <?php the_excerpt(); ?>
+                            </div>
+                        </div>
+
+					<?php endwhile; wp_reset_query(); ?>
+                </div>
+
+            </div>
+
+        </div>
+
+        <?php }
+
+    echo '</div>';
+
+	echo '<div class="projecten__arrows"></div>';
+}
+
+add_shortcode('itspublic_projects', 'itspublic_show_projects');
+
+// Project Type Term Shortcode
+function itspublic_show_project_types() {
+
+	$project_terms = get_terms( array(
+		'taxonomy' => 'project_type',
+		'hide_empty' => true,
+	) );
+
+	echo '<div class="project_types_list">';
+	foreach ($project_terms as $project_term) {
+	    echo '<div>';
+	    echo '<span class="project_type_btn '.$project_term->slug.'"><i class="fa ' . get_term_meta($project_term->term_id, 'type_icon', true) . '"></i> ' . $project_term->name . '</span>';
+		echo '</div>';
+	}
+	echo '</div>';
+
+}
+
+add_shortcode('itspublic_project_types', 'itspublic_show_project_types');

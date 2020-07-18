@@ -54,6 +54,7 @@ class Itspublic_Extended_Admin {
 
         require_once 'partials/itspublic-extended-register-cpts.php';
         require_once 'partials/itspublic-extended-register-fields.php';
+        require_once 'partials/itspublic-extended-register-taxonomies.php';
         require_once 'partials/itspublic-extended-shortcodes.php';
 
 	}
