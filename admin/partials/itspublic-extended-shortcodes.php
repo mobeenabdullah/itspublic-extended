@@ -3,18 +3,18 @@
 // Members CPT Shortcode
 function itspublic_show_members( ) {
 
-        $args = array(
+    ob_start();
+
+    $args = array(
         'posts_per_page' => -1,
         'post_type' => 'member',
         'post_status' => 'publish',
-        );
-        $my_query = null;
-        $my_query = new WP_Query($args);
-        $countMember = 0;
+    );
+    $my_query = null;
+    $my_query = new WP_Query($args);
+    $countMember = 0;
 
-    ?>
-
-    <?php if( $my_query->have_posts() ): ?>
+    if( $my_query->have_posts() ): ?>
 
         <div class="itspublic-members">
 
@@ -89,16 +89,21 @@ function itspublic_show_members( ) {
         <?php endif; ?>
 
     <?php endif;
-    wp_reset_query();  ?>
+    wp_reset_query();
 
-<?php }
+    $content = ob_get_clean();
+    return $content;
+
+}
 
 add_shortcode('itspublic_members', 'itspublic_show_members');
 
 // Project CPT Shortcode
 function itspublic_show_projects( ) {
 
-    echo '<div class="itspublic-projects">';
+    ob_start();
+
+	echo '<div class="itspublic-projects">';
 
 		$project_terms = get_terms( array(
 			'taxonomy' => 'project_type',
@@ -159,12 +164,18 @@ function itspublic_show_projects( ) {
     echo '</div>';
 
 	echo '<div class="projecten__arrows"></div>';
+
+	$content = ob_get_clean();
+	return $content;
+
 }
 
 add_shortcode('itspublic_projects', 'itspublic_show_projects');
 
 // Project Type Term Shortcode
 function itspublic_show_project_types() {
+
+    ob_start();
 
 	$project_terms = get_terms( array(
 		'taxonomy' => 'project_type',
@@ -178,6 +189,9 @@ function itspublic_show_project_types() {
 		echo '</div>';
 	}
 	echo '</div>';
+
+	$content = ob_get_clean();
+	return $content;
 
 }
 
