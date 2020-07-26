@@ -185,7 +185,7 @@ function itspublic_show_project_types() {
 	echo '<div class="project_types_list">';
 	foreach ($project_terms as $project_term) {
 	    echo '<div>';
-	    echo '<span class="project_type_btn '.$project_term->slug.'"><i class="fa ' . get_term_meta($project_term->term_id, 'type_icon', true) . '"></i> ' . $project_term->name . '</span>';
+	    echo '<span class="project_type_btn '.$project_term->slug.'"><i class="fa ' . get_term_meta($project_term->term_id, 'type_icon', true) . '"></i><span> ' . $project_term->name . '</span></span>';
 		echo '</div>';
 	}
 	echo '</div>';
