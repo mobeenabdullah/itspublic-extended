@@ -52,6 +52,9 @@ class Itspublic_Extended_Public {
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
 
+		require_once 'partials/itspublic-extended-popups.php';
+		require_once 'partials/itspublic-extended-extra.php';
+
 	}
 
 	/**
@@ -97,8 +100,8 @@ class Itspublic_Extended_Public {
 		 * class.
 		 */
 
-		wp_enqueue_script( 'slick-js', plugin_dir_url( __FILE__ ) . 'js/slick.min.js', array( 'jquery' ), $this->version, false );
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/itspublic-extended-public.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( 'slick-js', plugin_dir_url( __FILE__ ) . 'js/slick.min.js', array( 'jquery' ), $this->version, true );
+		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/itspublic-extended-public.js', array( 'jquery' ), $this->version, true );
 
 	}
 

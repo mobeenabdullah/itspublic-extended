@@ -1,33 +1,32 @@
+// Vanilla stuff
+
+// Show quick results on keyup event
+document.querySelector('#search_field').addEventListener('keyup', showQuickResults);
+
+function showQuickResults() {
+	const searchValue = document.querySelector('#search_field').value;
+	if (searchValue.length > 0) {
+		document.querySelector('#searchResult').className = 'showSearchbox';
+	} else {
+		document.querySelector('#searchResult').className = '';
+	}
+}
+
+// // Show Team Popup
+// document.querySelector('.itspubic-single-member').addEventListener('click', showTeamPopup);
+//
+// function showTeamPopup(e) {
+//
+// 	//document.querySelector('.itspubic-single-member').className = 'itspubic-single-member';
+//
+// 	//this.className = 'itspubic-single-member active-member';
+//
+// 	console.log(e.target);
+// }
+
+// jQuery stuff
 (function( $ ) {
 	'use strict';
-
-	/**
-	 * All of the code for your public-facing JavaScript source
-	 * should reside in this file.
-	 *
-	 * Note: It has been assumed you will write jQuery code here, so the
-	 * $ function reference has been prepared for usage within the scope
-	 * of this function.
-	 *
-	 * This enables you to define handlers, for when the DOM is ready:
-	 *
-	 * $(function() {
-	 *
-	 * });
-	 *
-	 * When the window is loaded:
-	 *
-	 * $( window ).load(function() {
-	 *
-	 * });
-	 *
-	 * ...and/or other possibilities.
-	 *
-	 * Ideally, it is not considered best practise to attach more than a
-	 * single DOM-ready or window-load handler for a particular page.
-	 * Although scripts in the WordPress core, Plugins and Themes may be
-	 * practising this, we should strive to set a better example in our own work.
-	 */
 
 	$(document).ready(function () {
 
@@ -50,6 +49,65 @@
 			slidesToScroll: 1,
 			asNavFor: '.itspublic-projects',
 			focusOnSelect: true
+		});
+
+		$('.item__single-img').on('click', showMaterialenPopup);
+		$('.item__single-title').on('click', showMaterialenPopup);
+
+		function showMaterialenPopup() {
+
+			const materialenModal = $('#materialenModal');
+			materialenModal.show();
+		}
+
+		$('.itspublic__cover-close').on('click', function () {
+			$('#materialenModal').hide();
+		});
+
+		$('.itspublic__cover-avatar a').hover(function () {
+			$('.popoverbox').show();
+		});
+
+		$('.itspublic__cover-img').mouseout(function () {
+			$('.popoverbox').hide();
+		});
+
+		$('.member-img').on('click', showTeamPopup);
+		$('.member-name').on('click', showTeamPopup);
+		$('.member-more-details a').on('click', showTeamPopup);
+
+		function showTeamPopup() {
+
+			$('.itspubic-single-member').removeClass('current-member');
+			$(this).closest('.itspubic-single-member').addClass('current-member');
+
+			const memberImageUrl = $('.current-member .member-img img').attr('src');
+			const memberName = $('.current-member .member-name').text();
+			const memberDesignation = $('.current-member .member-designation').text();
+			const memberInfoText = $('.current-member .member-info-full').html();
+			const memberEmail = $('.current-member .member-email a').attr('href');
+			const memberLinkedInURL = $('.current-member .member-linkedin a').attr('href');
+
+			const teamModal = $('#teamModal');
+			const teamModalImage = $('#teamModal .teampopup__cover-img img');
+			const teamModalName = $('#teamModal .teampop-member-name');
+			const teamModalDesignation = $('#teamModal .teampop-designation');
+			const teamModalText = $('#teamModal .teampop-detail');
+			const teamModalEmail = $('#teamModal .email-link');
+			const teamModalLinkedInURL = $('#teamModal .linkedin-link');
+
+			teamModalImage.attr('src', memberImageUrl);
+			teamModalName.text(memberName);
+			teamModalDesignation.text(memberDesignation);
+			teamModalText.html(memberInfoText);
+			teamModalEmail.attr('href', memberEmail);
+			teamModalLinkedInURL.attr('href', memberLinkedInURL);
+
+			teamModal.show();
+		}
+
+		$('.itspublic__cover-close').on('click', function () {
+			$('#teamModal').hide();
 		});
 
 	});

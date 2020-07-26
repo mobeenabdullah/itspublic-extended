@@ -101,7 +101,7 @@ class Itspublic_Extended_Admin {
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/itspublic-extended-admin.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/itspublic-extended-admin.js', array( 'jquery' ), $this->version, true );
 
 	}
 
