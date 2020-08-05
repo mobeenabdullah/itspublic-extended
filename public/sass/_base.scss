@@ -1,0 +1,25 @@
+$template-color: #e8b02e;
+$opendocs-color: #dd50c5;
+$projectinzichten-color: #f77b64;
+$training-color: #196dc1;
+$primary-color: #5cd79e;
+$secondary-color: #000000;
+
+$bp-largest: 75em; // 1200px
+$bp-large: 62.5em; // 1000px
+$bp-medium: 50em; // 800px
+$bp-small: 37.5em; //600px
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  position: relative;
+}
+.container {
+  width: 1280px;
+  margin: 0 auto;
+}
