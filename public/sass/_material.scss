@@ -28,11 +28,11 @@
 }
 
 
-.filter__box {
-    height: 108px;
+.filter__box {    
     display: flex;
     align-items: center;
     flex-flow: row wrap;
+    padding: 20px 0;
 
     &-category {
         width: 15%;
@@ -53,11 +53,11 @@
                
 
                 &::before {
+                    content: '\f107';
                     position: absolute;
                     display: block;
                     right: 0;
-                    top: 0;
-                    content: '\f107';
+                    top: 0;                    
                     font: 22px "FontAwesome";
                     color: #f6f6f6;
                     padding: 0 16px 0 24px;
@@ -102,7 +102,7 @@
             background-color: #6D6D6D;
             display: inline-block;
             text-align: center;
-            line-height: 31px;
+            line-height: 28px;
             color: #ffffff;
         }
     }
@@ -144,6 +144,7 @@
             font-size: 14px;
             cursor: pointer;
             outline: none;
+            padding: 0 !important;
 
             &:hover {
                 color: #5CD79E;
@@ -155,9 +156,9 @@
 }
 
 
-.itspublic__material-section {
-    padding: 40px 0;
-}
+// .itspublic__material-section {
+//     padding: 40px 0;
+// }
 
 // sidebar widget
 .itspublic__sidebar-widget {
@@ -165,13 +166,14 @@
 
     .itspublic__sidebar-title {  
         border-bottom: 1px solid #DEDEDE; 
-        margin-bottom: 20px;     
+        margin-bottom: 10px;     
             h4 {
                 font-size: 14px;
                 line-height: 24px;
-                text-transform: uppercase;
-                padding: 10px 0;
+                text-transform: uppercase;                
                 font-weight: 500;
+                margin: 0;
+                margin-bottom: 10px !important;
                 
             }
     }
@@ -192,7 +194,7 @@
     font-size: 10px;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 15px;
+    // margin-bottom: 15px;
 
     .inputbox {
         width: 10%;
@@ -201,13 +203,13 @@
 
     label {
         width: 70%;
-        float: left;
-
+        line-height: 21px; 
     }
     span {
         width: 15%;
         text-align: right;
         display: inline-block;
+        line-height: 21px; 
     }
     
 }
@@ -307,7 +309,7 @@
 
             img {
                 width: 100%;
-                @include grayscale_element(0%);
+                @include grayscale_element(100%);
                 transition: all 200ms ease-in-out;
                 
             }
@@ -320,8 +322,8 @@
                 padding: 5px 10px;
                 border-radius: 4px;
                 font-weight: 500;
-                padding-top: 0;
-                padding-bottom: 0;
+                line-height: 15px;
+               
             }            
         }
 
@@ -605,7 +607,7 @@
            }
            button {
                 width: 15%;
-                padding: 0 !important;
+                                
            }
        }
    }    

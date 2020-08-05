@@ -16,12 +16,12 @@
     background-color: #fefefe;
     margin: auto;
     width: 800px;
-    padding: 20px;
-    .close {
+      .close {
       color: #aaaaaa;
       float: right;
       font-size: 28px;
       font-weight: bold;
+      cursor: pointer;
     }
     &:hover,
     &:focus {
@@ -76,7 +76,7 @@
     background-color: rgba(#ffffff, 0.4);
     border-radius: 50%;
     text-align: center;
-    line-height: 32px;
+    line-height: 28px;
   }
 
   &-label {

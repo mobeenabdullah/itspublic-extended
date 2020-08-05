@@ -1,16 +1,7 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box; }
-
 body {
   font-family: "Poppins", sans-serif;
   position: relative;
   background-color: red; }
-
-.container {
-  width: 1280px;
-  margin: 0 auto; }
 
 .material__section {
   background-color: transparent; }
@@ -24,10 +15,10 @@ body {
     padding-left: 30px; }
 
 .filter__box {
-  height: 108px;
   display: flex;
   align-items: center;
-  flex-flow: row wrap; }
+  flex-flow: row wrap;
+  padding: 20px 0; }
   .filter__box-category {
     width: 15%; }
     .filter__box-category .custom__select {
@@ -41,11 +32,11 @@ body {
         display: inline-block;
         width: 100%; }
         .filter__box-category .custom__select .trigger-box::before {
+          content: '\f107';
           position: absolute;
           display: block;
           right: 0;
           top: 0;
-          content: '\f107';
           font: 22px "FontAwesome";
           color: #f6f6f6;
           padding: 0 16px 0 24px;
@@ -79,7 +70,7 @@ body {
       background-color: #6D6D6D;
       display: inline-block;
       text-align: center;
-      line-height: 31px;
+      line-height: 28px;
       color: #ffffff; }
   .filter__box-searchbox {
     width: 80%; }
@@ -108,24 +99,23 @@ body {
       background-color: transparent;
       font-size: 14px;
       cursor: pointer;
-      outline: none; }
+      outline: none;
+      padding: 0 !important; }
       .filter__search-cover form button:hover {
         color: #5CD79E; }
-
-.itspublic__material-section {
-  padding: 40px 0; }
 
 .itspublic__sidebar-widget {
   margin-bottom: 30px; }
   .itspublic__sidebar-widget .itspublic__sidebar-title {
     border-bottom: 1px solid #DEDEDE;
-    margin-bottom: 20px; }
+    margin-bottom: 10px; }
     .itspublic__sidebar-widget .itspublic__sidebar-title h4 {
       font-size: 14px;
       line-height: 24px;
       text-transform: uppercase;
-      padding: 10px 0;
-      font-weight: 500; }
+      font-weight: 500;
+      margin: 0;
+      margin-bottom: 10px !important; }
   .itspublic__sidebar-widget .itspublic__sidebar-content .loadmore-btn {
     color: #5CD79E !important;
     font-size: 12px; }
@@ -135,18 +125,18 @@ body {
 .filter__checkbox {
   font-size: 10px;
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 15px; }
+  justify-content: space-between; }
   .filter__checkbox .inputbox {
     width: 10%;
     text-align: left; }
   .filter__checkbox label {
     width: 70%;
-    float: left; }
+    line-height: 21px; }
   .filter__checkbox span {
     width: 15%;
     text-align: right;
-    display: inline-block; }
+    display: inline-block;
+    line-height: 21px; }
 
 .input-label {
   -webkit-user-select: none;
@@ -208,9 +198,9 @@ body {
       cursor: pointer; }
       .material__items .item__single-img img {
         width: 100%;
-        -webkit-filter: grayscale(0%);
-        -moz-filter: grayscale(0%);
-        filter: grayscale(0%);
+        -webkit-filter: grayscale(100%);
+        -moz-filter: grayscale(100%);
+        filter: grayscale(100%);
         transition: all 200ms ease-in-out; }
       .material__items .item__single-img .cat-label {
         position: absolute;
@@ -221,8 +211,7 @@ body {
         padding: 5px 10px;
         border-radius: 4px;
         font-weight: 500;
-        padding-top: 0;
-        padding-bottom: 0; }
+        line-height: 15px; }
     .material__items .item__single-title {
       font-size: 12px;
       line-height: 18px;
@@ -388,8 +377,7 @@ body {
   .filter__search-cover form input {
     width: 85%; }
   .filter__search-cover form button {
-    width: 15%;
-    padding: 0 !important; }
+    width: 15%; }
   .material__page {
     flex-flow: row wrap;
     padding: 15px; }
@@ -795,13 +783,13 @@ body {
   .modal .modal-content {
     background-color: #fefefe;
     margin: auto;
-    width: 800px;
-    padding: 20px; }
+    width: 800px; }
     .modal .modal-content .close {
       color: #aaaaaa;
       float: right;
       font-size: 28px;
-      font-weight: bold; }
+      font-weight: bold;
+      cursor: pointer; }
     .modal .modal-content:hover, .modal .modal-content:focus {
       color: #000;
       text-decoration: none; }
@@ -842,7 +830,7 @@ body {
     background-color: rgba(255, 255, 255, 0.4);
     border-radius: 50%;
     text-align: center;
-    line-height: 32px; }
+    line-height: 28px; }
   .itspublic__cover-label {
     position: absolute;
     bottom: 20px;

@@ -10,17 +10,21 @@ $bp-large: 62.5em; // 1000px
 $bp-medium: 50em; // 800px
 $bp-small: 37.5em; //600px
 
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
+
+
+
+
+// * {
+//   padding: 0;
+//   margin: 0;
+//   box-sizing: border-box;
+// }
 body {
   font-family: "Poppins", sans-serif;
   position: relative;
   background-color: red;
 }
-.container {
-  width: 1280px;
-  margin: 0 auto;
-}
+// .container {
+//   width: 1280px;
+//   margin: 0 auto;
+// }
