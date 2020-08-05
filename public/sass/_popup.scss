@@ -10,11 +10,13 @@
   overflow: auto;
   background-color: rgb(0, 0, 0);
   background-color: rgba(0, 0, 0, 0.4);
+  z-index: 100;
 
   .modal-content {
     background-color: #fefefe;
     margin: auto;
     width: 800px;
+    padding: 20px;
     .close {
       color: #aaaaaa;
       float: right;
@@ -35,6 +37,9 @@
   position: relative;
   height: 343px;
   &-img {
+    height: 250px !important;
+    margin: 0;
+    align-self: flex-start;
     img {
       width: 100%;
     }
@@ -98,6 +103,7 @@
     top: 60px;
     left: 10px;
     border-radius: 4px;
+    display: none;
 
     &__title {
       background-color: $primary-color;
@@ -200,3 +206,13 @@
     }
   }
 }
+
+
+#materialenModal {
+  margin-top: 0;
+}
+
+#teamModal {
+  margin-top: 100px;
+}
+

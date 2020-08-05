@@ -6,7 +6,7 @@
 
 
 .material__section {
-    background-color: #F5F5F5;  
+    background-color: transparent;
 
 
 }
@@ -201,6 +201,7 @@
 
     label {
         width: 70%;
+        float: left;
 
     }
     span {
@@ -237,8 +238,9 @@
         &:checked ~ .checkmark {
             background-color: #5CD79E;
           }
-        &:checked ~ .checkmark:after {
+        &:checked ~ .checkmark::after {
             display: block;
+            
         }
         
     }
@@ -267,6 +269,7 @@
             -ms-transform: rotate(45deg);
             transform: rotate(45deg);
             border-radius: 2px;
+            top: 3px;
         }
     }
 
@@ -300,11 +303,13 @@
             overflow: hidden;
             position: relative;
             border-radius: 4px;
+            cursor: pointer;
 
             img {
                 width: 100%;
-                @include grayscale_element(100%);
+                @include grayscale_element(0%);
                 transition: all 200ms ease-in-out;
+                
             }
             .cat-label {
                 position: absolute;
@@ -315,7 +320,8 @@
                 padding: 5px 10px;
                 border-radius: 4px;
                 font-weight: 500;
-
+                padding-top: 0;
+                padding-bottom: 0;
             }            
         }
 
@@ -330,6 +336,7 @@
             white-space: normal;
             height: 35px;
             overflow: hidden;
+            cursor: pointer;
         }
         
         &-desc  {
@@ -362,7 +369,7 @@
                     list-style-type: none;   
                     
                     a {
-                        width: 16px;
+                        width: 12px;
                         height: 20px;
                         display: inline-block;
                         margin-left: 2px;
@@ -483,6 +490,7 @@
 .pagination__cover {
     display: flex;
     justify-content: center;
+    display: none;
 
     &-content {
         display: flex;
@@ -597,6 +605,7 @@
            }
            button {
                 width: 15%;
+                padding: 0 !important;
            }
        }
    }    
@@ -717,6 +726,18 @@
     }
 
    
+}
+
+
+
+.itspubic-single-member {
+    .member-img {
+        cursor: pointer;
+    }
+    .member-name {
+        cursor: pointer;
+      }
+
 }
 
 
