@@ -776,7 +776,8 @@ body {
         padding-bottom: 60px; } }
 
 .slick-slide {
-  outline: none !important; }
+  outline: none !important;
+  margin-bottom: 10px !important; }
 
 .modal {
   display: none;
