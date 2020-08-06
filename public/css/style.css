@@ -1,3 +1,8 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
 body {
   font-family: "Poppins", sans-serif;
   position: relative;
@@ -13,6 +18,18 @@ body {
   .material__page-itemscover {
     width: 85%;
     padding-left: 30px; }
+  .material__page-btn {
+    text-align: center;
+    margin-top: 30px; }
+    .material__page-btn .material-btn {
+      background-color: transparent;
+      color: #000000;
+      border: 1px solid #000000;
+      padding: 6px 16px;
+      font-size: 14px;
+      display: inline-block; }
+      .material__page-btn .material-btn i {
+        margin-left: 10px; }
 
 .filter__box {
   display: flex;
@@ -32,7 +49,7 @@ body {
         display: inline-block;
         width: 100%; }
         .filter__box-category .custom__select .trigger-box::before {
-          content: '\f107';
+          content: '\f078';
           position: absolute;
           display: block;
           right: 0;
@@ -928,11 +945,8 @@ body {
 #materialenModal {
   margin-top: 0; }
 
-#teamModal {
-  margin-top: 100px; }
-
 .modal_team_content {
-  padding: 40px;
+  padding: 20px;
   position: relative;
   border-radius: 10px; }
   .modal_team_content .teampopup__cover {
@@ -940,14 +954,15 @@ body {
     align-items: center;
     justify-content: space-between; }
     .modal_team_content .teampopup__cover-img {
-      height: 359px !important;
+      height: 300px !important;
       max-width: 312px !important;
       overflow: hidden;
-      border-radius: 10px; }
+      border-radius: 6px; }
       .modal_team_content .teampopup__cover-img img {
         width: 100%;
         height: 100%;
-        object-fit: cover; }
+        object-fit: cover;
+        margin: 0 !important; }
     .modal_team_content .teampopup__cover-content {
       width: 100%;
       padding-left: 30px; }

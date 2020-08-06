@@ -25,7 +25,7 @@ function showQuickResults() {
 // }
 
 // jQuery stuff
-(function( $ ) {
+(function ($) {
 	'use strict';
 
 	$(document).ready(function () {
@@ -113,4 +113,21 @@ function showQuickResults() {
 	});
 
 
-})( jQuery );
+})(jQuery);
+
+
+// close on outside of modal
+//var modal = document.getElementById("teamModal");
+const modal = document.querySelector('#teamModal');
+const modalMaterial = document.querySelector('#materialenModal');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (e) {
+	if (e.target == modal) {
+		modal.style.display = "none";
+	}
+	if (e.target == modalMaterial) {
+		modalMaterial.style.display = "none";
+	}
+};
+

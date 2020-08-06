@@ -900,25 +900,12 @@ function itspublic_materialen_search_page() {
                         </div>
                     </div>
 
-                    <!-- Pagination -->
-                    <div class="pagination__cover">
-                        <div class="pagination__cover-content">
-                            <span class="pagination__cover-content--perivous prev_btn">
-                                <a href="#">Perivous</a>
-                            </span>
-                            <ul class="pagination__cover-content--numbers">
-                                <li><a href="#">1</a></li>
-                                <li class="active_number"><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5</a></li>
-                            </ul>
-                            <span class="pagination__cover-content--next next_btn">
-                                <a href="#">Next</a>
-                            </span>
-                        </div>
+                    <!-- Load More -->
+                    <div class="material__page-btn">
+                    <button type="button" class="material-btn">Load more <i class="fas fa-chevron-down"></i></button>
                     </div>
-                </div>
+                    
+                   
                 <!-- Material Items end -->
 
 
