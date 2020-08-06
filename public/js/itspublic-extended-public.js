@@ -111,6 +111,14 @@ function showQuickResults() {
 			$('#teamModal').hide();
 		});
 
+		$('.itspublic-projects').on('afterChange', function(event, slick, currentSlide){
+			console.log(currentSlide);
+
+			$('.project_types_list .slick-slide').removeClass('slick-current');
+			$('.project_types_list [data-slick-index=' + currentSlide + ']').addClass('slick-current');
+
+		});
+
 	});
 
 
