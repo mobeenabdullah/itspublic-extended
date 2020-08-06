@@ -864,12 +864,13 @@ body {
     font-weight: 300;
     line-height: 24px; }
   .itspublic__popcontent .taxonomies {
-    margin-bottom: 10px; }
+    margin-bottom: 5px; }
     .itspublic__popcontent .taxonomies ul li {
       list-style-type: none;
       display: inline-block;
       margin-right: 15px;
-      color: #000000; }
+      color: #000000;
+      font-size: 14px; }
       .itspublic__popcontent .taxonomies ul li i {
         margin-right: 10px; }
 
@@ -913,21 +914,13 @@ body {
     background-color: #000000;
     width: 70%;
     position: absolute;
-    top: -120px;
+    bottom: -70px;
     left: 10px;
     border-radius: 4px;
-    display: none;
+    display: block;
     z-index: 9999; }
-    .itspublic__footer .popoverbox__title {
-      background-color: #5cd79e;
-      padding: 5px 20px;
-      text-transform: uppercase;
-      color: #ffffff;
-      position: relative;
-      border-top-left-radius: 4px;
-      border-top-right-radius: 4px; }
     .itspublic__footer .popoverbox .persons__ul {
-      padding: 10px 20px 15px 20px;
+      padding: 10px 20px 10px 20px;
       display: flex; }
       .itspublic__footer .popoverbox .persons__ul li {
         list-style-type: none;
@@ -939,6 +932,9 @@ body {
           color: #ffffff;
           font-size: 15px;
           font-weight: 500; }
+          .itspublic__footer .popoverbox .persons__ul li a h5 {
+            color: #ffffff;
+            margin: 0 !important; }
           .itspublic__footer .popoverbox .persons__ul li a span {
             display: block;
             font-size: 15px;
@@ -956,7 +952,7 @@ body {
       height: 15px;
       border-radius: 3px;
       background-color: #000000;
-      bottom: -5px;
+      top: -5px;
       left: 15px;
       transform: rotate(45deg); }
 

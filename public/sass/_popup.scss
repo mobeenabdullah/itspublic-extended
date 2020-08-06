@@ -101,7 +101,7 @@
   }
 
   .taxonomies{
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     ul {
       
       li {
@@ -109,6 +109,7 @@
         display: inline-block;
         margin-right: 15px;
         color: $secondary-color;
+        font-size: 14px;
         i {
           margin-right: 10px;
         }
@@ -174,35 +175,30 @@
     background-color: $secondary-color;
     width: 70%;
     position: absolute;
-    top: -120px;
+    bottom: -70px;
     left: 10px;
     border-radius: 4px;
-    display: none;
+    display: block;
     z-index: 9999;
-
-    &__title {
-      background-color: $primary-color;
-      padding: 5px 20px;
-      text-transform: uppercase;
-      color: #ffffff;
-      position: relative;
-      border-top-left-radius: 4px;
-      border-top-right-radius: 4px;
-    }
+ 
     .persons__ul {
-      padding: 10px 20px 15px 20px;
+      padding: 10px 20px 10px 20px;
       display: flex;
       li {
         list-style-type: none;
         width: 33.33%;
         a {
+          
           display: block;
           outline: none;
           text-decoration: none;
           color: #ffffff;
           font-size: 15px;
           font-weight: 500;         
-
+          h5 {
+            color: #ffffff;
+            margin: 0 !important;
+          }
           span {
             display: block;
             font-size: 15px;
@@ -231,7 +227,7 @@
       height: 15px;
       border-radius: 3px;
       background-color: $secondary-color;
-      bottom: -5px;
+      top: -5px;
       left: 15px;
       transform: rotate(45deg);
     }

@@ -81,7 +81,7 @@ function itspublic_team_popup() {
                     <div class="taxonomies">
                         <ul>
                             <li><i class="far fa-calendar-alt"></i> January 2020</li>
-                            <li><i class="far fa-calendar-alt"></i> Projectinzichten</li>
+                            <li><i class="fas fa-folder-open"></i> Projectinzichten</li>
                         </ul>
                     </div>
                     <h3>Het optimale egeleidingsproces in de bijstand</h3>
@@ -119,26 +119,23 @@ function itspublic_team_popup() {
                     </div>
 
                     <!-- popover start -->
-                    <div class="popoverbox">
-                        <div class="popoverbox__title">
-                            Contact Persons
-                        </div>
+                    <div class="popoverbox">                        
                         <div class="persons__ul">
                             <li>
                                 <a href="#">
-                                    Hugo en Breejen
+                                    <h5>Hugo en Breejen</h5>
                                     <span class="person-email">hugo.denbreejen@itspublic.nl</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    Eva Nivard
+                                <h5>Eva Nivard</h5>
                                     <span class="person-email">eva.nivard@itspublic.nl</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    Kees van der Meeren
+                                    <h5>Kees van der Meeren</h5>
                                     <span class="person-email">kees@itspublic.nl</span>
                                 </a>
                             </li>
