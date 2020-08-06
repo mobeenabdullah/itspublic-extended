@@ -1052,4 +1052,6 @@ body {
     line-height: 28px; }
   .itspublic__popcontent p {
     font-size: 12px;
-    line-height: 20px; } }
+    line-height: 20px; }
+  .modal {
+    padding-top: 70px !important; } }
