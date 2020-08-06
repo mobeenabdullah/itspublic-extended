@@ -811,33 +811,21 @@ body {
       color: #000;
       text-decoration: none; }
 
+#materialenModal .modal-content {
+  width: 1000px; }
+
 .itspublic__cover {
   position: relative;
-  height: 343px; }
+  height: 250px;
+  overflow: hidden; }
   .itspublic__cover-img {
     height: 250px !important;
     margin: 0;
     align-self: flex-start; }
     .itspublic__cover-img img {
-      width: 100%; }
-  .itspublic__cover-avatar {
-    position: absolute;
-    top: 10px;
-    left: 30px; }
-    .itspublic__cover-avatar a {
-      display: inline-block;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      overflow: hidden;
-      margin-left: -15px; }
-      .itspublic__cover-avatar a:hover {
-        z-index: 5;
-        position: relative; }
-      .itspublic__cover-avatar a img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover; }
+      width: 100%;
+      height: 100%;
+      object-fit: cover; }
   .itspublic__cover-close {
     position: absolute;
     top: 20px;
@@ -860,76 +848,41 @@ body {
     cursor: pointer; }
     .itspublic__cover-label:hover {
       background-color: #f77b64; }
-  .itspublic__cover .popoverbox {
-    background-color: #ffffff;
-    max-width: 350px;
-    width: 100%;
-    position: absolute;
-    top: 60px;
-    left: 10px;
-    border-radius: 4px;
-    display: none; }
-    .itspublic__cover .popoverbox__title {
-      background-color: #5cd79e;
-      padding: 10px 20px;
-      text-transform: uppercase;
-      color: #ffffff;
-      position: relative;
-      border-top-left-radius: 4px;
-      border-top-right-radius: 4px; }
-    .itspublic__cover .popoverbox .persons__ul {
-      padding: 10px 20px; }
-      .itspublic__cover .popoverbox .persons__ul li {
-        list-style-type: none; }
-        .itspublic__cover .popoverbox .persons__ul li a {
-          display: block;
-          outline: none;
-          text-decoration: none;
-          color: #000000;
-          font-size: 15px;
-          font-weight: 500;
-          border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-          padding: 10px; }
-          .itspublic__cover .popoverbox .persons__ul li a span {
-            display: block;
-            font-size: 15px;
-            font-weight: 300; }
-          .itspublic__cover .popoverbox .persons__ul li a:hover {
-            color: #5cd79e; }
-          .itspublic__cover .popoverbox .persons__ul li a:hover span {
-            color: #000000; }
-        .itspublic__cover .popoverbox .persons__ul li:last-child a {
-          border-bottom: none; }
-    .itspublic__cover .popoverbox::after {
-      content: "";
-      position: absolute;
-      width: 15px;
-      height: 15px;
-      border-radius: 3px;
-      background-color: #5cd79e;
-      top: -5px;
-      left: 15px;
-      transform: rotate(45deg); }
 
 .itspublic__popcontent {
-  padding: 21px; }
+  padding: 15px 15px 0 15px; }
   .itspublic__popcontent h3 {
     margin-bottom: 15px;
-    font-size: 20px;
-    font-weight: 500; }
+    font-size: 18px !important;
+    line-height: 28px;
+    font-weight: 500;
+    margin: 0 !important;
+    margin-bottom: 10px !important; }
   .itspublic__popcontent p {
-    margin-bottom: 30px;
+    margin-bottom: 15px !important;
+    font-size: 14px;
     font-weight: 300;
-    line-height: 28px; }
+    line-height: 24px; }
+  .itspublic__popcontent .taxonomies {
+    margin-bottom: 10px; }
+    .itspublic__popcontent .taxonomies ul li {
+      list-style-type: none;
+      display: inline-block;
+      margin-right: 15px;
+      color: #000000; }
+      .itspublic__popcontent .taxonomies ul li i {
+        margin-right: 10px; }
 
 .itspublic__footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  background-color: #f5f5f5; }
+  padding: 10px;
+  background-color: #f5f5f5;
+  position: relative; }
   .itspublic__footer-date {
-    display: flex; }
+    display: flex;
+    position: relative; }
     .itspublic__footer-date span {
       margin-left: 10px;
       font-size: 11px;
@@ -941,6 +894,71 @@ body {
     .itspublic__footer-download a {
       display: inline-block;
       margin-left: 10px; }
+  .itspublic__footer-avatar {
+    height: 50px; }
+    .itspublic__footer-avatar a {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      overflow: hidden; }
+      .itspublic__footer-avatar a:hover {
+        z-index: 5;
+        position: relative; }
+      .itspublic__footer-avatar a img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; }
+  .itspublic__footer .popoverbox {
+    background-color: #000000;
+    width: 70%;
+    position: absolute;
+    top: -120px;
+    left: 10px;
+    border-radius: 4px;
+    display: none;
+    z-index: 9999; }
+    .itspublic__footer .popoverbox__title {
+      background-color: #5cd79e;
+      padding: 5px 20px;
+      text-transform: uppercase;
+      color: #ffffff;
+      position: relative;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px; }
+    .itspublic__footer .popoverbox .persons__ul {
+      padding: 10px 20px 15px 20px;
+      display: flex; }
+      .itspublic__footer .popoverbox .persons__ul li {
+        list-style-type: none;
+        width: 33.33%; }
+        .itspublic__footer .popoverbox .persons__ul li a {
+          display: block;
+          outline: none;
+          text-decoration: none;
+          color: #ffffff;
+          font-size: 15px;
+          font-weight: 500; }
+          .itspublic__footer .popoverbox .persons__ul li a span {
+            display: block;
+            font-size: 15px;
+            font-weight: 300; }
+          .itspublic__footer .popoverbox .persons__ul li a:hover {
+            color: #5cd79e; }
+          .itspublic__footer .popoverbox .persons__ul li a:hover span {
+            color: #ffffff; }
+        .itspublic__footer .popoverbox .persons__ul li:last-child a {
+          border-bottom: none; }
+    .itspublic__footer .popoverbox::after {
+      content: "";
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      border-radius: 3px;
+      background-color: #000000;
+      bottom: -5px;
+      left: 15px;
+      transform: rotate(45deg); }
 
 #materialenModal {
   margin-top: 0; }
@@ -1026,3 +1044,16 @@ body {
       background-color: #5887B7; }
       .social-icon-cover .icon-social-cover .linkedin-bg:hover {
         background-color: #426e9a !important; }
+
+@media screen and (max-width: 1366px) {
+  .itspublic__cover {
+    height: 200px; }
+    .itspublic__cover-img {
+      height: 200px !important; }
+  .itspublic__popcontent h3 {
+    margin-bottom: 10px;
+    font-size: 16px !important;
+    line-height: 28px; }
+  .itspublic__popcontent p {
+    font-size: 12px;
+    line-height: 20px; } }

@@ -33,40 +33,27 @@
 
 // itspublic popup design
 
+
+#materialenModal {
+  .modal-content {
+      width:1000px;
+  }
+}
 .itspublic__cover {
   position: relative;
-  height: 343px;
+  height: 250px;
+  overflow: hidden;
   &-img {
     height: 250px !important;
     margin: 0;
     align-self: flex-start;
     img {
       width: 100%;
+    height: 100%;
+    object-fit: cover;
     }
   }
-  &-avatar {
-    position: absolute;
-    top: 10px;
-    left: 30px;
-
-    a {
-      display: inline-block;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      overflow: hidden;
-      margin-left: -15px;
-      &:hover {
-        z-index: 5;
-        position: relative;
-      }
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-    }
-  }
+  
   &-close {
     position: absolute;
     top: 20px;
@@ -93,87 +80,40 @@
     &:hover {
       background-color: #f77b64;
     }
-  }
-
-  .popoverbox {
-    background-color: #ffffff;
-    max-width: 350px;
-    width: 100%;
-    position: absolute;
-    top: 60px;
-    left: 10px;
-    border-radius: 4px;
-    display: none;
-
-    &__title {
-      background-color: $primary-color;
-      padding: 10px 20px;
-      text-transform: uppercase;
-      color: #ffffff;
-      position: relative;
-      border-top-left-radius: 4px;
-      border-top-right-radius: 4px;
-    }
-    .persons__ul {
-      padding: 10px 20px;
-      li {
-        list-style-type: none;
-        a {
-          display: block;
-          outline: none;
-          text-decoration: none;
-          color: $secondary-color;
-          font-size: 15px;
-          font-weight: 500;
-          border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-          padding: 10px;
-
-          span {
-            display: block;
-            font-size: 15px;
-            font-weight: 300;
-          }
-
-          &:hover {
-            color: $primary-color;
-          }
-          &:hover span {
-            color: $secondary-color;
-          }
-        }
-        &:last-child {
-          a {
-            border-bottom: none;
-          }
-        }
-      }
-    }
-
-    &::after {
-      content: "";
-      position: absolute;
-      width: 15px;
-      height: 15px;
-      border-radius: 3px;
-      background-color: $primary-color;
-      top: -5px;
-      left: 15px;
-      transform: rotate(45deg);
-    }
-  }
+  }  
 }
 
 .itspublic__popcontent {
-  padding: 21px;
+  padding: 15px 15px 0 15px;
   h3 {
     margin-bottom: 15px;
-    font-size: 20px;
+    font-size: 18px !important;
+    line-height: 28px;
     font-weight: 500;
+    margin: 0 !important;
+    margin-bottom: 10px !important;
   }
   p {
-    margin-bottom: 30px;
+    margin-bottom: 15px !important;
+    font-size: 14px;
     font-weight: 300;
-    line-height: 28px;
+    line-height: 24px;
+  }
+
+  .taxonomies{
+    margin-bottom: 10px;
+    ul {
+      
+      li {
+        list-style-type: none;
+        display: inline-block;
+        margin-right: 15px;
+        color: $secondary-color;
+        i {
+          margin-right: 10px;
+        }
+      }
+    }
   }
 }
 
@@ -181,11 +121,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 10px;
   background-color: #f5f5f5;
+  position: relative;
 
   &-date {
     display: flex;
+    position: relative;
 
     span {
       margin-left: 10px;
@@ -205,6 +147,98 @@
       margin-left: 10px;
     }
   }
+
+
+  &-avatar {
+    height: 50px;
+    a {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      overflow: hidden;
+      &:hover {
+        z-index: 5;
+        position: relative;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  // popoverbox
+  .popoverbox {
+    background-color: $secondary-color;
+    width: 70%;
+    position: absolute;
+    top: -120px;
+    left: 10px;
+    border-radius: 4px;
+    display: none;
+    z-index: 9999;
+
+    &__title {
+      background-color: $primary-color;
+      padding: 5px 20px;
+      text-transform: uppercase;
+      color: #ffffff;
+      position: relative;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+    }
+    .persons__ul {
+      padding: 10px 20px 15px 20px;
+      display: flex;
+      li {
+        list-style-type: none;
+        width: 33.33%;
+        a {
+          display: block;
+          outline: none;
+          text-decoration: none;
+          color: #ffffff;
+          font-size: 15px;
+          font-weight: 500;         
+
+          span {
+            display: block;
+            font-size: 15px;
+            font-weight: 300;
+          }
+
+          &:hover {
+            color: $primary-color;
+          }
+          &:hover span {
+            color: #ffffff;
+          }
+        }
+        &:last-child {
+          a {
+            border-bottom: none;
+          }
+        }
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      border-radius: 3px;
+      background-color: $secondary-color;
+      bottom: -5px;
+      left: 15px;
+      transform: rotate(45deg);
+    }
+
+    
+  }
+
 }
 
 

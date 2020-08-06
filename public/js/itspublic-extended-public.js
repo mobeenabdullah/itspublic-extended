@@ -64,13 +64,14 @@ function showQuickResults() {
 			$('#materialenModal').hide();
 		});
 
-		$('.itspublic__cover-avatar a').hover(function () {
+		$('.itspublic__footer-avatar a').hover(function () {
 			$('.popoverbox').show();
 		});
 
-		$('.itspublic__cover-img').mouseout(function () {
+		$('.itspublic__footer-avatar').mouseout(function () {
 			$('.popoverbox').hide();
 		});
+
 
 		$('.member-img').on('click', showTeamPopup);
 		$('.member-name').on('click', showTeamPopup);

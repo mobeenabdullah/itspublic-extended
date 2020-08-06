@@ -70,8 +70,43 @@ function itspublic_team_popup() {
                     <figure class="itspublic__cover-img">
                         <img src="<?php echo plugin_dir_url(__FILE__); ?>../images/popup.jpg" alt="" />
                     </figure>
-                    <!-- Avatar -->
-                    <div class="itspublic__cover-avatar">
+                    
+                    <!-- Close btn -->
+                    <span class="close itspublic__cover-close">
+                      <img src="<?php echo plugin_dir_url(__FILE__); ?>../images/close.svg" alt="" />
+                    </span>                    
+                </div>
+                <!-- Itspublic Popup Content -->
+                <div class="itspublic__popcontent">
+                    <div class="taxonomies">
+                        <ul>
+                            <li><i class="far fa-calendar-alt"></i> January 2020</li>
+                            <li><i class="far fa-calendar-alt"></i> Projectinzichten</li>
+                        </ul>
+                    </div>
+                    <h3>Het optimale egeleidingsproces in de bijstand</h3>
+                    <p>
+                        Nunc scelerisque tincidunt elit. Vestibulum non mi ipsum. Cras
+                        pretium suscipit tellus sit amet aliquet. Vestibulum maximus lacinia
+                        massa non porttitor. Pellentesque vehicula est a lorem gravida
+                        bibendum. Proin tristique diam ut urna pharetra, ac rhoncus elit
+                        elementum. Proin vitae purus ultrices, dignissim turpis ut, mattis
+                        eros. Maecenas ornare molestie urna, hendrerit venenatis sem.
+                    </p>
+                    <p>
+                        Nunc scelerisque tincidunt elit. Vestibulum non mi ipsum. Cras
+                        pretium suscipit tellus sit amet aliquet. Vestibulum maximus lacinia
+                        massa non porttitor. Pellentesque vehicula est a lorem gravida
+                        bibendum. Proin tristique diam ut urna pharetra, ac rhoncus elit
+                        elementum. Proin vitae purus ultrices, dignissim turpis ut, mattis
+                        eros. Maecenas ornare molestie urna, hendrerit venenatis sem.
+                    </p>
+                </div>
+                <!-- Itspublic Popup Footer -->
+                <div class="itspublic__footer">
+
+                    <div class="itspublic__footer-avatar">
+                        <!-- Avatar -->                    
                         <a href="#" class="profile_img popoverbtn">
                             <img src="<?php echo plugin_dir_url(__FILE__); ?>../images/avatar-1.jpg" alt="" />
                         </a>
@@ -80,16 +115,10 @@ function itspublic_team_popup() {
                         </a>
                         <a href="#">
                             <img src="<?php echo plugin_dir_url(__FILE__); ?>../images/avatar-3.jpg" alt="" />
-                        </a>
+                        </a>    
                     </div>
-                    <!-- Close btn -->
-                    <span class="close itspublic__cover-close">
-                      <img src="<?php echo plugin_dir_url(__FILE__); ?>../images/close.svg" alt="" />
-                    </span>
 
-                    <!-- Material Label -->
-                    <div class="itspublic__cover-label">Projectinzichten</div>
-
+                    <!-- popover start -->
                     <div class="popoverbox">
                         <div class="popoverbox__title">
                             Contact Persons
@@ -115,33 +144,12 @@ function itspublic_team_popup() {
                             </li>
                         </div>
                     </div>
-                </div>
-                <!-- Itspublic Popup Content -->
-                <div class="itspublic__popcontent">
-                    <h3>Het optimale egeleidingsproces in de bijstand</h3>
-                    <p>
-                        Nunc scelerisque tincidunt elit. Vestibulum non mi ipsum. Cras
-                        pretium suscipit tellus sit amet aliquet. Vestibulum maximus lacinia
-                        massa non porttitor. Pellentesque vehicula est a lorem gravida
-                        bibendum. Proin tristique diam ut urna pharetra, ac rhoncus elit
-                        elementum. Proin vitae purus ultrices, dignissim turpis ut, mattis
-                        eros. Maecenas ornare molestie urna, hendrerit venenatis sem.
-                    </p>
-                    <p>
-                        Nunc scelerisque tincidunt elit. Vestibulum non mi ipsum. Cras
-                        pretium suscipit tellus sit amet aliquet. Vestibulum maximus lacinia
-                        massa non porttitor. Pellentesque vehicula est a lorem gravida
-                        bibendum. Proin tristique diam ut urna pharetra, ac rhoncus elit
-                        elementum. Proin vitae purus ultrices, dignissim turpis ut, mattis
-                        eros. Maecenas ornare molestie urna, hendrerit venenatis sem.
-                    </p>
-                </div>
-                <!-- Itspublic Popup Footer -->
-                <div class="itspublic__footer">
-                    <div class="itspublic__footer-date">
-                        <img src="images/calendar.svg" alt="" />
-                        <span>June, 2020</span>
-                    </div>
+                    <!-- popover end -->
+
+
+
+
+
                     <div class="itspublic__footer-download">
                         <span>Download</span>
                         <a href="#"><img src="<?php echo plugin_dir_url(__FILE__); ?>../images/pop-pdf.svg" alt="" /></a>
