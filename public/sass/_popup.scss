@@ -16,6 +16,7 @@
     background-color: #fefefe;
     margin: auto;
     width: 800px;
+    position: relative;
       .close {
       color: #aaaaaa;
       float: right;
@@ -178,7 +179,7 @@
     bottom: -70px;
     left: 10px;
     border-radius: 4px;
-    display: block;
+    display: none;
     z-index: 9999;
  
     .persons__ul {
@@ -246,3 +247,54 @@
 //   margin-top: 100px;
 // }
 
+.showpopover {
+  display: block !important;
+}
+
+
+// information box
+
+.information__box-icon {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  color: #ffffff;
+  cursor: pointer;
+  z-index: 3333;
+}
+.information__box-content {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: #ffffff;
+  cursor: pointer;
+  background-color: rgba(0,0,0,0.6);
+  padding: 20px;
+  display: none;
+
+  p {
+    margin-bottom: 0 !important;
+  }
+  button {
+    padding: 6px 10px !important;
+    background-color: #ffffff !important;
+    color: $secondary-color !important;
+    border: none;
+    margin-top: 20px;
+    font-size: 12px !important;
+    line-height: 20px !important;
+    &:hover {
+      background-color: $primary-color !important;
+      color: #ffffff !important;
+    }
+  }
+  .info-title {
+    a {
+      color: #ffffff !important;
+      &:hover {
+        color: $primary-color !important;
+      }
+    }
+  }
+
+}

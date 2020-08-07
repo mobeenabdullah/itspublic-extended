@@ -65,12 +65,26 @@ function showQuickResults() {
 		});
 
 		$('.itspublic__footer-avatar a').hover(function () {
-			$('.popoverbox').show();
+			$('.popoverbox').addClass('showpopover');
 		});
 
-		$('.itspublic__footer-avatar').mouseout(function () {
-			$('.popoverbox').hide();
+		$('.itspublic__footer').mouseleave(function () {
+			$('.popoverbox').removeClass('showpopover');
 		});
+
+		$('.information__box-icon').hover(function () {
+			$('.information__box-content').addClass('showpopover');
+		});
+
+		$('.information__box-content').mouseleave(function () {
+			$('.information__box-content').removeClass('showpopover');
+		});
+
+
+
+
+
+
 
 
 		$('.member-img').on('click', showTeamPopup);
@@ -111,7 +125,7 @@ function showQuickResults() {
 			$('#teamModal').hide();
 		});
 
-		$('.itspublic-projects').on('afterChange', function(event, slick, currentSlide){
+		$('.itspublic-projects').on('afterChange', function (event, slick, currentSlide) {
 			$('.project_types_list .slick-slide').removeClass('slick-current');
 			$('.project_types_list [data-slick-index=' + currentSlide + ']').addClass('slick-current');
 		});

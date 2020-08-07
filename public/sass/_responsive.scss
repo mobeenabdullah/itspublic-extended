@@ -87,6 +87,23 @@ $break-laptop: 1366px;
      
     }
 
+    .itspublic__cover {
+
+        
+  &-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(#ffffff, 0.4);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 24px;
+  }
+
+    }
+
 }
 
 

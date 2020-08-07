@@ -800,7 +800,8 @@ body {
   .modal .modal-content {
     background-color: #fefefe;
     margin: auto;
-    width: 800px; }
+    width: 800px;
+    position: relative; }
     .modal .modal-content .close {
       color: #aaaaaa;
       float: right;
@@ -917,7 +918,7 @@ body {
     bottom: -70px;
     left: 10px;
     border-radius: 4px;
-    display: block;
+    display: none;
     z-index: 9999; }
     .itspublic__footer .popoverbox .persons__ul {
       padding: 10px 20px 10px 20px;
@@ -958,6 +959,44 @@ body {
 
 #materialenModal {
   margin-top: 0; }
+
+.showpopover {
+  display: block !important; }
+
+.information__box-icon {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  color: #ffffff;
+  cursor: pointer;
+  z-index: 3333; }
+
+.information__box-content {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: #ffffff;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  display: none; }
+  .information__box-content p {
+    margin-bottom: 0 !important; }
+  .information__box-content button {
+    padding: 6px 10px !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: none;
+    margin-top: 20px;
+    font-size: 12px !important;
+    line-height: 20px !important; }
+    .information__box-content button:hover {
+      background-color: #5cd79e !important;
+      color: #ffffff !important; }
+  .information__box-content .info-title a {
+    color: #ffffff !important; }
+    .information__box-content .info-title a:hover {
+      color: #5cd79e !important; }
 
 .modal_team_content {
   padding: 20px;
@@ -1054,4 +1093,14 @@ body {
     font-size: 12px;
     line-height: 20px; }
   .modal {
-    padding-top: 70px !important; } }
+    padding-top: 70px !important; }
+  .itspublic__cover-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 24px; } }

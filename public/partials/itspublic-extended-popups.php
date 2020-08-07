@@ -69,12 +69,28 @@ function itspublic_team_popup() {
                     <!-- Image cover -->
                     <figure class="itspublic__cover-img">
                         <img src="<?php echo plugin_dir_url(__FILE__); ?>../images/popup.jpg" alt="" />
+
+                        <!-- Information mark -->
+                    <div class="information__box-icon"><i class="fas fa-info-circle"></i></div>
+
+<!-- Information box content -->
+<div class="information__box-content">
+<p class="info-title">Maker: Kennisland</p>
+
+<p class="info-title">Rechten: <a href="#"><i class="fab fa-creative-commons-by"></i></a></p>
+
+<button class="info-btn">Download</button>
+
+</div>
                     </figure>
                     
                     <!-- Close btn -->
                     <span class="close itspublic__cover-close">
                       <img src="<?php echo plugin_dir_url(__FILE__); ?>../images/close.svg" alt="" />
-                    </span>                    
+                    </span>   
+                    
+                    
+
                 </div>
                 <!-- Itspublic Popup Content -->
                 <div class="itspublic__popcontent">
