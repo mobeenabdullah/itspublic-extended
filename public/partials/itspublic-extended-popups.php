@@ -73,15 +73,21 @@ function itspublic_team_popup() {
                         <!-- Information mark -->
                     <div class="information__box-icon"><i class="fas fa-info-circle"></i></div>
 
-<!-- Information box content -->
-<div class="information__box-content">
-<p class="info-title">Maker: Kennisland</p>
+                    <!-- Information box content -->
+                    <div class="information__box-content">
+                        <div class="information__box-cover">
+                        <div class="content-text">
+                            <p class="info-title">Maker: Kennisland</p>
+                            <p class="info-title">Rechten: <a href="#"><i class="fab fa-creative-commons-by"></i></a></p>
+                        </div>
+                        <div class="content-btn">
+                            <button class="info-btn">Download</button>
+                        </div>
+                        </div>
+                                                
+                        
+                    </div>
 
-<p class="info-title">Rechten: <a href="#"><i class="fab fa-creative-commons-by"></i></a></p>
-
-<button class="info-btn">Download</button>
-
-</div>
                     </figure>
                     
                     <!-- Close btn -->

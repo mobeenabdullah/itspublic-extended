@@ -17,6 +17,9 @@
     margin: auto;
     width: 800px;
     position: relative;
+    p {
+      color: $secondary-color !important;
+    }
       .close {
       color: #aaaaaa;
       float: right;
@@ -99,6 +102,8 @@
     font-size: 14px;
     font-weight: 300;
     line-height: 24px;
+    color: $secondary-color !important;
+  
   }
 
   .taxonomies{
@@ -269,32 +274,49 @@
   color: #ffffff;
   cursor: pointer;
   background-color: rgba(0,0,0,0.6);
-  padding: 20px;
+  padding: 15px 60px 15px 15px;
+  max-width: 30%;
+  width: 100%;
   display: none;
-
-  p {
-    margin-bottom: 0 !important;
+  .information__box-cover {
+    display: flex;
+    align-items: flex-end;
   }
+
+  .content-text {
+    width: 75%;
+    p.info-title {
+      margin-bottom: 0 !important;
+      color: #ffffff !important;
+      font-size: 12px;
+
+      a {
+        color: #ffffff !important;
+        &:hover {
+          color: $primary-color !important;
+        }
+      }
+    }
+  }
+ .content-btn {
+   width: 25%;
   button {
-    padding: 6px 10px !important;
+    padding: 4px 6px !important;
     background-color: #ffffff !important;
     color: $secondary-color !important;
     border: none;
     margin-top: 20px;
     font-size: 12px !important;
-    line-height: 20px !important;
+    line-height: 18px !important;
+    outline: none !important;
+    border-radius: 4px !important;
     &:hover {
       background-color: $primary-color !important;
       color: #ffffff !important;
     }
   }
-  .info-title {
-    a {
-      color: #ffffff !important;
-      &:hover {
-        color: $primary-color !important;
-      }
-    }
-  }
+ }
+  
+
 
 }
