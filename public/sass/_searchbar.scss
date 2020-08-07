@@ -139,6 +139,17 @@
   opacity: 1 !important;
   transform: translateY(0) !important;
 }
+.search__items {
+  .item__single {
+    &-img {
+      img {
+        @include grayscale_element(0%);
+      transition: all 200ms ease-in-out;
+      }
+      
+    }
+  }
+}
 
 // search filter bar
 

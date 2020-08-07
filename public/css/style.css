@@ -675,6 +675,12 @@ body {
   opacity: 1 !important;
   transform: translateY(0) !important; }
 
+.search__items .item__single-img img {
+  -webkit-filter: grayscale(0%);
+  -moz-filter: grayscale(0%);
+  filter: grayscale(0%);
+  transition: all 200ms ease-in-out; }
+
 .search__filters {
   display: flex;
   align-items: center;
