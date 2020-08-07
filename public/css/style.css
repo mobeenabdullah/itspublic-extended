@@ -1086,12 +1086,14 @@ body {
     .itspublic__cover-img {
       height: 200px !important; }
   .itspublic__popcontent h3 {
-    margin-bottom: 10px;
+    margin-bottom: 0 !important;
     font-size: 16px !important;
     line-height: 28px; }
   .itspublic__popcontent p {
     font-size: 12px;
     line-height: 20px; }
+  .itspublic__popcontent .taxonomies {
+    margin-bottom: 0 !important; }
   .modal {
     padding-top: 70px !important; }
   .itspublic__cover-close {
