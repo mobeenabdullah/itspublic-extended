@@ -115,3 +115,61 @@ function create_project_cpt() {
 
 }
 add_action( 'init', 'create_project_cpt', 0 );
+
+// Register Custom Post Type Materiaal
+function create_materiaal_cpt() {
+
+	$labels = array(
+		'name' => _x( 'Materialen', 'Post Type General Name', 'itspublic' ),
+		'singular_name' => _x( 'Materiaal', 'Post Type Singular Name', 'itspublic' ),
+		'menu_name' => _x( 'Materialen', 'Admin Menu text', 'itspublic' ),
+		'name_admin_bar' => _x( 'Materiaal', 'Add New on Toolbar', 'itspublic' ),
+		'archives' => __( 'Materiaal Archives', 'itspublic' ),
+		'attributes' => __( 'Materiaal Attributes', 'itspublic' ),
+		'parent_item_colon' => __( 'Parent Materiaal:', 'itspublic' ),
+		'all_items' => __( 'All Materialen', 'itspublic' ),
+		'add_new_item' => __( 'Add New Materiaal', 'itspublic' ),
+		'add_new' => __( 'Add New', 'itspublic' ),
+		'new_item' => __( 'New Materiaal', 'itspublic' ),
+		'edit_item' => __( 'Edit Materiaal', 'itspublic' ),
+		'update_item' => __( 'Update Materiaal', 'itspublic' ),
+		'view_item' => __( 'View Materiaal', 'itspublic' ),
+		'view_items' => __( 'View Materialen', 'itspublic' ),
+		'search_items' => __( 'Search Materiaal', 'itspublic' ),
+		'not_found' => __( 'Not found', 'itspublic' ),
+		'not_found_in_trash' => __( 'Not found in Trash', 'itspublic' ),
+		'featured_image' => __( 'Featured Image', 'itspublic' ),
+		'set_featured_image' => __( 'Set featured image', 'itspublic' ),
+		'remove_featured_image' => __( 'Remove featured image', 'itspublic' ),
+		'use_featured_image' => __( 'Use as featured image', 'itspublic' ),
+		'insert_into_item' => __( 'Insert into Materiaal', 'itspublic' ),
+		'uploaded_to_this_item' => __( 'Uploaded to this Materiaal', 'itspublic' ),
+		'items_list' => __( 'Materialen list', 'itspublic' ),
+		'items_list_navigation' => __( 'Materialen list navigation', 'itspublic' ),
+		'filter_items_list' => __( 'Filter Materialen list', 'itspublic' ),
+	);
+	$args = array(
+		'label' => __( 'Materiaal', 'itspublic' ),
+		'description' => __( 'Custom post type for Materials', 'itspublic' ),
+		'labels' => $labels,
+		'menu_icon' => 'dashicons-media-default',
+		'supports' => array('title', 'editor', 'thumbnail'),
+		'taxonomies' => array(),
+		'public' => true,
+		'show_ui' => true,
+		'show_in_menu' => true,
+		'menu_position' => 25,
+		'show_in_admin_bar' => true,
+		'show_in_nav_menus' => false,
+		'can_export' => true,
+		'has_archive' => true,
+		'hierarchical' => false,
+		'exclude_from_search' => false,
+		'show_in_rest' => true,
+		'publicly_queryable' => true,
+		'capability_type' => 'post',
+	);
+	register_post_type( 'materiaal', $args );
+
+}
+add_action( 'init', 'create_materiaal_cpt', 0 );
