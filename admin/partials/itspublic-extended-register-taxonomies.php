@@ -70,25 +70,25 @@ function create_onderwerp_tax() {
 }
 add_action( 'init', 'create_onderwerp_tax' );
 
-// Register Taxonomy Category
-function create_category_tax() {
+// Register Taxonomy Categorie
+function create_categorie_tax() {
 
 	$labels = array(
-		'name'              => _x( 'Categories', 'taxonomy general name', 'itspublic' ),
-		'singular_name'     => _x( 'Category', 'taxonomy singular name', 'itspublic' ),
-		'search_items'      => __( 'Search Categories', 'itspublic' ),
-		'all_items'         => __( 'All Categories', 'itspublic' ),
-		'parent_item'       => __( 'Parent Category', 'itspublic' ),
-		'parent_item_colon' => __( 'Parent Category:', 'itspublic' ),
-		'edit_item'         => __( 'Edit Category', 'itspublic' ),
-		'update_item'       => __( 'Update Category', 'itspublic' ),
-		'add_new_item'      => __( 'Add New Category', 'itspublic' ),
-		'new_item_name'     => __( 'New Category Name', 'itspublic' ),
-		'menu_name'         => __( 'Category', 'itspublic' ),
+		'name'              => _x( ' Categorieen', 'taxonomy general name', 'itspublic' ),
+		'singular_name'     => _x( 'Categorie', 'taxonomy singular name', 'itspublic' ),
+		'search_items'      => __( 'Search  Categorieen', 'itspublic' ),
+		'all_items'         => __( 'All  Categorieen', 'itspublic' ),
+		'parent_item'       => __( 'Parent Categorie', 'itspublic' ),
+		'parent_item_colon' => __( 'Parent Categorie:', 'itspublic' ),
+		'edit_item'         => __( 'Edit Categorie', 'itspublic' ),
+		'update_item'       => __( 'Update Categorie', 'itspublic' ),
+		'add_new_item'      => __( 'Add New Categorie', 'itspublic' ),
+		'new_item_name'     => __( 'New Categorie Name', 'itspublic' ),
+		'menu_name'         => __( 'Categorie', 'itspublic' ),
 	);
 	$args = array(
 		'labels' => $labels,
-		'description' => __( 'Custom categories taxonomy for Materiaal CPT', 'itspublic' ),
+		'description' => __( 'Custom categorie taxonomy for Materiaal CPT', 'itspublic' ),
 		'hierarchical' => true,
 		'public' => true,
 		'publicly_queryable' => true,
@@ -100,10 +100,10 @@ function create_category_tax() {
 		'show_admin_column' => false,
 		'show_in_rest' => true,
 	);
-	register_taxonomy( 'category', array('materiaal'), $args );
+	register_taxonomy( 'categorie', array('materiaal'), $args );
 
 }
-add_action( 'init', 'create_category_tax' );
+add_action( 'init', 'create_categorie_tax' );
 
 // Register Taxonomy Filetype
 function create_filetype_tax() {
