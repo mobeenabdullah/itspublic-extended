@@ -54,6 +54,7 @@ class Itspublic_Extended_Public {
 
 		require_once 'partials/itspublic-extended-popups.php';
 		require_once 'partials/itspublic-extended-extra.php';
+		require_once 'partials/itspublic-extended-materialen-search.php';
 
 	}
 

@@ -396,287 +396,67 @@ function itspublic_materialen_search_page() {
                 <!-- Material Sidebar Start -->
                 <div class="material__page-sidebar">
 
-                    <!-- Single widget Onderwerp -->
-                    <div class="itspublic__sidebar-widget">
+	                <?php
+                        $object = 'materiaal';
+                        $output = 'objects';
+                        $taxonomies = get_object_taxonomies( $object, $output );
+                        $exclude = array( 'post_tag', 'post_format' );
 
-                        <!-- Widget Title -->
-                        <div class="itspublic__sidebar-title">
-                            <h4>Onderwerp</h4>
-                        </div>
+                        if ( $taxonomies ) {
 
-                        <!-- Widget Content -->
-                        <div class="itspublic__sidebar-content">
-                            <!-- row -->
-                            <div class="filter__checkbox">
-                                <div class="inputbox">
-                                    <label class="input-label">
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                </div>
-                                <label for="vehicle1">Algemeen</label>
-                                <span>(20)</span>
-                            </div>
+                            foreach ( $taxonomies  as $taxonomy ) {
 
-                            <!-- row -->
-                            <div class="filter__checkbox">
-                                <div class="inputbox">
-                                    <label class="input-label">
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                </div>
-                                <label for="vehicle1">Beleid</label>
-                                <span>(20)</span>
-                            </div>
+                                if( in_array( $taxonomy->name, $exclude ) ) {
+                                    continue;
+                                }
 
-                            <!-- row -->
-                            <div class="filter__checkbox">
-                                <div class="inputbox">
-                                    <label class="input-label">
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                </div>
-                                <label for="vehicle1">COVID-19</label>
-                                <span>(20)</span>
-                            </div>
+                                $terms = get_terms( array(
+                                    'taxonomy' => $taxonomy->name,
+                                    'hide_empty' => true,
+                                ) );
 
-                            <!-- row -->
-                            <div class="filter__checkbox">
-                                <div class="inputbox">
-                                    <label class="input-label">
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                </div>
-                                <label for="vehicle1"> Financieën</label>
-                                <span>(20)</span>
-                            </div>
+                                if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) { ?>
 
-                            <!-- row -->
-                            <div class="filter__checkbox">
-                                <div class="inputbox">
-                                    <label class="input-label">
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                </div>
-                                <label for="vehicle1">Gemeentefinanciën</label>
-                                <span>(205)</span>
-                            </div>
+                                    <!-- <?php echo $taxonomy->label; ?> Filter -->
+                                    <div class="itspublic__sidebar-widget">
 
-                            <!-- row -->
-                            <div class="filter__checkbox">
-                                <div class="inputbox">
-                                    <label class="input-label">
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                </div>
-                                <label for="vehicle1">Klimaat & Milieu</label>
-                                <span>(20)</span>
-                            </div>
+                                        <!-- Filter Title -->
+                                        <div class="itspublic__sidebar-title">
+                                            <h4><?php echo $taxonomy->label; ?></h4>
+                                        </div>
 
-                            <!-- row -->
-                            <div class="filter__checkbox">
-                                <div class="inputbox">
-                                    <label class="input-label">
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                </div>
-                                <label for="vehicle1">Onderwijs</label>
-                                <span>(20)</span>
-                            </div>
+                                        <!-- Filter List -->
+                                        <div class="itspublic__sidebar-content" id="<?php echo strtolower($taxonomy->label); ?>">
 
-                            <!-- row -->
-                            <div class="filter__checkbox">
-                                <div class="inputbox">
-                                    <label class="input-label">
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                </div>
-                                <label for="vehicle1">Procesinrichting</label>
-                                <span>(20)</span>
-                            </div>
+                                            <?php
 
-                            <!-- row -->
-                            <div class="filter__checkbox">
-                                <div class="inputbox">
-                                    <label class="input-label">
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                </div>
-                                <label for="vehicle1">Werk & inkomen</label>
-                                <span>(20)</span>
-                            </div>
+                                                foreach ( $terms as $term ) { ?>
 
-                            <!-- row -->
-                            <div class="filter__checkbox">
-                                <div class="inputbox">
-                                    <label class="input-label">
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                </div>
-                                <label for="vehicle1">Gemeentefinanciën</label>
-                                <span>(20)</span>
-                            </div>
+                                                    <div class="filter__checkbox">
+                                                        <div class="inputbox">
+                                                            <label class="input-label">
+                                                                <input type="checkbox" id="<?php echo $term->slug; ?>" class="filter_checkbox_field" value="<?php echo $term->slug; ?>">
+                                                                <span class="checkmark"></span>
+                                                            </label>
+                                                        </div>
+                                                        <label for="#<?php echo $term->slug; ?>"><?php echo $term->name; ?></label>
+                                                        <span>(20)</span>
+                                                    </div>
 
-                            <div class="loadmore">
-                                <a href="#" class="loadmore-btn">more...</a>
-                            </div>
-                        </div>
-                    </div>
+                                                <?php }
 
-                    <!-- Single widget Categories -->
-                    <div class="itspublic__sidebar-widget">
+                                            ?>
 
-                        <!-- Widget Title -->
-                        <div class="itspublic__sidebar-title">
-                            <h4>Categories</h4>
-                        </div>
+                                        </div>
 
-                        <!-- Widget Content -->
-                        <div class="itspublic__sidebar-content">
-                            <!-- row -->
-                            <div class="filter__checkbox">
-                                <div class="inputbox">
-                                    <label class="input-label">
-                                        <input type="checkbox" checked="checked">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                </div>
-                                <label for="vehicle1">Methodieken</label>
-                                <span>(20)</span>
-                            </div>
+                                    </div>
 
-                            <!-- row -->
-                            <div class="filter__checkbox">
-                                <div class="inputbox">
-                                    <label class="input-label">
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                </div>
-                                <label for="vehicle1">Open decks</label>
-                                <span>(20)</span>
-                            </div>
+                                <?php }
 
-                            <!-- row -->
-                            <div class="filter__checkbox">
-                                <div class="inputbox">
-                                    <label class="input-label">
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                </div>
-                                <label for="vehicle1">Over it's public</label>
-                                <span>(20)</span>
-                            </div>
+                            }
 
-                            <!-- row -->
-                            <div class="filter__checkbox">
-                                <div class="inputbox">
-                                    <label class="input-label">
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                </div>
-                                <label for="vehicle1">Projectinzichten</label>
-                                <span>(20)</span>
-                            </div>
-
-                            <!-- row -->
-                            <div class="filter__checkbox">
-                                <div class="inputbox">
-                                    <label class="input-label">
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                </div>
-                                <label for="vehicle1">Templates</label>
-                                <span>(205)</span>
-                            </div>
-
-                            <!-- row -->
-                            <div class="filter__checkbox">
-                                <div class="inputbox">
-                                    <label class="input-label">
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                </div>
-                                <label for="vehicle1">Training</label>
-                                <span>(20)</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single widget Filetype -->
-                    <div class="itspublic__sidebar-widget">
-
-                        <!-- Widget Title -->
-                        <div class="itspublic__sidebar-title">
-                            <h4>Filetype</h4>
-                        </div>
-
-                        <!-- Widget Content -->
-                        <div class="itspublic__sidebar-content">
-                            <!-- row -->
-                            <div class="filter__checkbox">
-                                <div class="inputbox">
-                                    <label class="input-label">
-                                        <input type="checkbox" checked="checked">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                </div>
-                                <label for="vehicle1">Excel</label>
-                                <span>(20)</span>
-                            </div>
-
-                            <!-- row -->
-                            <div class="filter__checkbox">
-                                <div class="inputbox">
-                                    <label class="input-label">
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                </div>
-                                <label for="vehicle1">Google Sheets</label>
-                                <span>(20)</span>
-                            </div>
-
-                            <!-- row -->
-                            <div class="filter__checkbox">
-                                <div class="inputbox">
-                                    <label class="input-label">
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                </div>
-                                <label for="vehicle1">PowerPoints</label>
-                                <span>(20)</span>
-                            </div>
-
-                            <!-- row -->
-                            <div class="filter__checkbox">
-                                <div class="inputbox">
-                                    <label class="input-label">
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                </div>
-                                <label for="vehicle1">MS Word</label>
-                                <span>(20)</span>
-                            </div>
-
-
-                        </div>
-                    </div>
+                        }
+	                ?>
 
                 </div>
                 <!-- Material Sidebar End -->
