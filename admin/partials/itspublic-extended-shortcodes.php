@@ -375,8 +375,8 @@ function itspublic_materialen_search_page() {
                 </div>
                 <div class="filter__box-searchbox">
                     <div class="filter__search-cover">
-                        <form action="#">
-                            <input type="text" id="search_field" placeholder="Type your keyword here for search....">
+                        <form action="#" id="searchForm" action="<?php echo esc_url( home_url('/') ); ?>" autocomplete="off">
+                            <input type="text" name="s" id="materialenPageSearchInput" placeholder="Type your keyword here for search....">
                             <button type="button">
                                 <i class="fa fa-search" aria-hidden="true"></i>
                             </button>
@@ -418,7 +418,7 @@ function itspublic_materialen_search_page() {
                                 if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) { ?>
 
                                     <!-- <?php echo $taxonomy->label; ?> Filter -->
-                                    <div class="itspublic__sidebar-widget">
+                                    <div class="itspublic__sidebar-widget <?php echo strtolower($taxonomy->label); ?>">
 
                                         <!-- Filter Title -->
                                         <div class="itspublic__sidebar-title">
@@ -426,7 +426,7 @@ function itspublic_materialen_search_page() {
                                         </div>
 
                                         <!-- Filter List -->
-                                        <div class="itspublic__sidebar-content" id="<?php echo strtolower($taxonomy->label); ?>">
+                                        <div class="itspublic__sidebar-content">
 
                                             <?php
 
@@ -466,224 +466,14 @@ function itspublic_materialen_search_page() {
                 <div class="material__page-itemscover">
                     <div class="material__items">
 
-                        <!-- Single Item -->
-                        <div class="item__single">
-                            <figure class="item__single-img template-item hover-item">
-                                <img src="<?php echo plugin_dir_url(__FILE__); ?>../images/project-1.jpg" alt="">
-                                <div class="cat-label">Templates</div>
-                            </figure>
-                            <h4 class="item__single-title">Portfoliomanagement in de Publieke sector</h4>
-                            <p class="item__single-desc">
-                                Ons word template inclusief een andige werkinstructie en een voorbeeld tabellenboek.
-                            </p>
-                            <div class="item__single-footer">
-                                <span class="date">June, 2020</span>
-                                <ul>
-                                    <li>
-                                        <a href="#" class="icon-box"><img src="<?php echo plugin_dir_url(__FILE__); ?>../images/glob.svg" alt=""></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
 
-                        <!-- Single Item -->
-                        <div class="item__single">
-                            <figure class="item__single-img opendocs-item hover-item">
-                                <img src="<?php echo plugin_dir_url(__FILE__); ?>../images/project-1.jpg" alt="">
-                                <div class="cat-label">Open decks</div>
-                            </figure>
-                            <h4 class="item__single-title">Portfoliomanagement in de Publieke sector</h4>
-                            <p class="item__single-desc">
-                                Ons word template inclusief een andige werkinstructie en een voorbeeld tabellenboek.
-                            </p>
-                            <div class="item__single-footer">
-                                <span class="date">June, 2020</span>
-                                <ul>
-                                    <li>
-                                        <a href="#" class="icon-box"><img src="<?php echo plugin_dir_url(__FILE__); ?>../images/glob.svg" alt="Visit website"></a>
-                                        <a href="#" class="icon-box pdf-icon"><img src="<?php echo plugin_dir_url(__FILE__); ?>../images/pdf.svg"
-                                                                                   alt="Download PDF File"></a>
-                                        <a href="#" class="icon-box"><img src="<?php echo plugin_dir_url(__FILE__); ?>../images/ppt.svg"
-                                                                          alt="Download PPT File"></a>
-                                        <a href="#" class="icon-box"><img src="<?php echo plugin_dir_url(__FILE__); ?>../images/excel.svg"
-                                                                          alt="Download Excel File"></a>
-                                        <a href="#" class="icon-box"><img src="<?php echo plugin_dir_url(__FILE__); ?>../images/word.svg"
-                                                                          alt="Download Word File"></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
 
-                        <!-- Single Item -->
-                        <div class="item__single">
-                            <figure class="item__single-img projectinzichten-item hover-item">
-                                <img src="<?php echo plugin_dir_url(__FILE__); ?>../images/project-1.jpg" alt="">
-                                <div class="cat-label">Projectinzichten</div>
-                            </figure>
-                            <h4 class="item__single-title">Portfoliomanagement in de Publieke sector</h4>
-                            <p class="item__single-desc">
-                                Ons word template inclusief een andige werkinstructie en een voorbeeld tabellenboek.
-                            </p>
-                            <div class="item__single-footer">
-                                <span class="date">June, 2020</span>
-                                <ul>
-                                    <li>
-                                        <a href="#" class="icon-box"><img src="<?php echo plugin_dir_url(__FILE__); ?>../images/glob.svg" alt=""></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Single Item -->
-                        <div class="item__single">
-                            <figure class="item__single-img training-item hover-item">
-                                <img src="<?php echo plugin_dir_url(__FILE__); ?>../images/project-1.jpg" alt="">
-                                <div class="cat-label">Training</div>
-                            </figure>
-                            <h4 class="item__single-title">Portfoliomanagement in de Publieke sector</h4>
-                            <p class="item__single-desc">
-                                Ons word template inclusief een andige werkinstructie en een voorbeeld tabellenboek.
-                            </p>
-                            <div class="item__single-footer">
-                                <span class="date">June, 2020</span>
-                                <ul>
-                                    <li>
-                                        <a href="#" class="icon-box"><img src="<?php echo plugin_dir_url(__FILE__); ?>../images/glob.svg" alt=""></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Single Item -->
-                        <div class="item__single">
-                            <figure class="item__single-img opendocs-item hover-item">
-                                <img src="<?php echo plugin_dir_url(__FILE__); ?>../images/project-1.jpg" alt="">
-                                <div class="cat-label">Open decks</div>
-                            </figure>
-                            <h4 class="item__single-title">Portfoliomanagement in de Publieke sector</h4>
-                            <p class="item__single-desc">
-                                Ons word template inclusief een andige werkinstructie en een voorbeeld tabellenboek.
-                            </p>
-                            <div class="item__single-footer">
-                                <span class="date">June, 2020</span>
-                                <ul>
-                                    <li>
-                                        <a href="#" class="icon-box"><img src="<?php echo plugin_dir_url(__FILE__); ?>../images/glob.svg" alt=""></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Single Item -->
-                        <div class="item__single">
-                            <figure class="item__single-img opendocs-item hover-item">
-                                <img src="<?php echo plugin_dir_url(__FILE__); ?>../images/project-1.jpg" alt="">
-                                <div class="cat-label">Open decks</div>
-                            </figure>
-                            <h4 class="item__single-title">Portfoliomanagement in de Publieke sector</h4>
-                            <p class="item__single-desc">
-                                Ons word template inclusief een andige werkinstructie en een voorbeeld tabellenboek.
-                            </p>
-                            <div class="item__single-footer">
-                                <span class="date">June, 2020</span>
-                                <ul>
-                                    <li>
-                                        <a href="#" class="icon-box"><img src="<?php echo plugin_dir_url(__FILE__); ?>../images/glob.svg" alt=""></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Single Item -->
-                        <div class="item__single">
-                            <figure class="item__single-img training-item hover-item">
-                                <img src="<?php echo plugin_dir_url(__FILE__); ?>../images/project-1.jpg" alt="">
-                                <div class="cat-label">Training</div>
-                            </figure>
-                            <h4 class="item__single-title">Portfoliomanagement in de Publieke sector</h4>
-                            <p class="item__single-desc">
-                                Ons word template inclusief een andige werkinstructie en een voorbeeld tabellenboek.
-                            </p>
-                            <div class="item__single-footer">
-                                <span class="date">June, 2020</span>
-                                <ul>
-                                    <li>
-                                        <a href="#" class="icon-box"><img src="<?php echo plugin_dir_url(__FILE__); ?>../images/glob.svg" alt=""></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Single Item -->
-                        <div class="item__single">
-                            <figure class="item__single-img training-item hover-item">
-                                <img src="<?php echo plugin_dir_url(__FILE__); ?>../images/project-1.jpg" alt="">
-                                <div class="cat-label">Training</div>
-                            </figure>
-                            <h4 class="item__single-title">Portfoliomanagement in de Publieke sector</h4>
-                            <p class="item__single-desc">
-                                Ons word template inclusief een andige werkinstructie en een voorbeeld tabellenboek
-                                voorbeeld tabellenboek lfjsad
-                            </p>
-                            <div class="item__single-footer">
-                                <span class="date">June, 2020</span>
-                                <ul>
-                                    <li>
-                                        <a href="#" class="icon-box"><img src="<?php echo plugin_dir_url(__FILE__); ?>../images/glob.svg" alt=""></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Single Item -->
-                        <div class="item__single">
-                            <figure class="item__single-img opendocs-item hover-item">
-                                <img src="<?php echo plugin_dir_url(__FILE__); ?>../images/project-1.jpg" alt="">
-                                <div class="cat-label">Open decks</div>
-                            </figure>
-                            <h4 class="item__single-title">Portfoliomanagement in de Publieke sector</h4>
-                            <p class="item__single-desc">
-                                Ons word template inclusief een andige werkinstructie en een voorbeeld tabellenboek.
-                            </p>
-                            <div class="item__single-footer">
-                                <span class="date">June, 2020</span>
-                                <ul>
-                                    <li>
-                                        <a href="#" class="icon-box"><img src="<?php echo plugin_dir_url(__FILE__); ?>../images/glob.svg" alt=""></a>
-                                        <a href="#" class="icon-box"><img src="<?php echo plugin_dir_url(__FILE__); ?>../images/pdf.svg" alt=""></a>
-                                        <a href="#" class="icon-box"><img src="<?php echo plugin_dir_url(__FILE__); ?>../images/ppt.svg" alt=""></a>
-                                        <a href="#" class="icon-box"><img src="<?php echo plugin_dir_url(__FILE__); ?>../images/excel.svg" alt=""></a>
-                                        <a href="#" class="icon-box"><img src="<?php echo plugin_dir_url(__FILE__); ?>../images/word.svg" alt=""></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Single Item -->
-                        <div class="item__single">
-                            <figure class="item__single-img template-item hover-item">
-                                <img src="<?php echo plugin_dir_url(__FILE__); ?>../images/project-1.jpg" alt="">
-                                <div class="cat-label">Templates</div>
-                            </figure>
-                            <h4 class="item__single-title">Portfoliomanagement in de Publieke sector</h4>
-                            <p class="item__single-desc">
-                                Ons word template inclusief een andige werkinstructie en een voorbeeld tabellenboek.
-                            </p>
-                            <div class="item__single-footer">
-                                <span class="date">June, 2020</span>
-                                <ul>
-                                    <li>
-                                        <a href="#" class="icon-box"><img src="<?php echo plugin_dir_url(__FILE__); ?>../images/glob.svg" alt=""></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
                     </div>
 
                     <!-- Load More -->
-                    <div class="material__page-btn">
+                    <!-- <div class="material__page-btn">
                     <button type="button" class="material-btn">Load more <i class="fas fa-chevron-down"></i></button>
-                    </div>
+                    </div> -->
                     
                    
                 <!-- Material Items end -->

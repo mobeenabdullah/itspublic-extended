@@ -5,34 +5,71 @@ add_action('wp_ajax_data_fetch' , 'data_fetch');
 add_action('wp_ajax_nopriv_data_fetch','data_fetch');
 function data_fetch(){
 
+    if (isset($_POST['getOnderwerpenSelected'])) {
+	    $getOnderwerpen = $_POST['getOnderwerpenSelected'];
+    } else {
+	    $getOnderwerpen = $_POST['getOnderwerpen'];
+    }
+
+	if (isset($_POST['getCategorieenSelected'])) {
+		$getCategorieen = $_POST['getCategorieenSelected'];
+	} else {
+		$getCategorieen = $_POST['getCategorieen'];
+	}
+
+	if (isset($_POST['getFiletypesSelected'])) {
+		$getFiletypes = $_POST['getFiletypesSelected'];
+	} else {
+		$getFiletypes = $_POST['getFiletypes'];
+	}
+
 	$the_query = new WP_Query(
 		array(
-			'posts_per_page' => 5,
+			'posts_per_page' => -1,
 			's' => esc_attr( $_POST['keyword'] ),
 			'post_type' => 'materiaal',
 			'tax_query' => array(
 				array(
-					'taxonomy' => 'categorie',
-					'field' => 'slug',
-					'terms' => array('methodieken', 'open-decks', 'over-its-public', 'projectinzichten', 'templates', 'training')
-				),
-				array(
 					'taxonomy' => 'onderwerp',
 					'field' => 'slug',
-					'terms' => array('algemeen', 'beleid', 'covid-19', 'financieen', 'gemeentefinancien', 'klimaat-milieu', 'onderwijs', 'procesinrichting', 'werk-inkomen')
+					'terms' => $getOnderwerpen
+				),
+				array(
+					'taxonomy' => 'categorie',
+					'field' => 'slug',
+					'terms' => $getCategorieen
 				),
 				array(
 					'taxonomy' => 'filetype',
 					'field' => 'slug',
-					'terms' => array('excel', 'google-sheets', 'ms-word', 'pdf', 'powerpoints')
+					'terms' => $getFiletypes
 				)
 			)
 		)
 	);
+
 	if( $the_query->have_posts() ) :
 		while( $the_query->have_posts() ): $the_query->the_post(); ?>
 
-			<h4><?php the_title();?></h4>
+            <!-- Single Item -->
+            <div class="item__single">
+                <figure class="item__single-img template-item hover-item">
+                    <img src="http://itspublic.local/wp-content/plugins/itspublic-extended/admin/partials/../images/project-1.jpg" alt="">
+                    <div class="cat-label">Templates</div>
+                </figure>
+                <h4 class="item__single-title"><?php the_title();?></h4>
+                <div class="item__single-desc">
+                    <?php the_excerpt(); ?>
+                </div>
+                <div class="item__single-footer">
+                    <span class="date">June, 2020</span>
+                    <ul>
+                        <li>
+                            <a href="#" class="icon-box"><img src="http://itspublic.local/wp-content/plugins/itspublic-extended/admin/partials/../images/glob.svg" alt=""></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
 		<?php endwhile;
 		wp_reset_postdata();
@@ -43,63 +80,93 @@ function data_fetch(){
 	die();
 }
 
-// add the ajax fetch js
-add_action( 'wp_footer', 'ajax_fetch' );
-function ajax_fetch() {
-	?>
+add_action('wp_ajax_data_fetch_all' , 'data_fetch_all');
+add_action('wp_ajax_nopriv_data_fetch_all','data_fetch_all');
+function data_fetch_all(){
 
-	<form method="get" id="searchForm" action="<?php echo esc_url( home_url('/') ); ?>" autocomplete="off">
-		<input type="text" name="s" placeholder="Search" onkeyup="fetchResults()" id="searchInput">
-		<select name="categorie" id="categorie">
-			<option value="methodieken">Methodieken</option>
-			<option value="open-decks">Open decks</option>
-			<option value="over-its-public">Over it's public</option>
-			<option value="projectinzichten">Projectinzichten</option>
-			<option value="templates">Templates</option>
-			<option value="training">Training</option>
-		</select>
-		<select name="onderwerp" id="onderwerp">
-			<option value="algemeen">Algemeen</option>
-			<option value="beleid">Beleid</option>
-			<option value="covid-19">COVID-19</option>
-			<option value="financieen">Financieën</option>
-			<option value="gemeentefinancien">Gemeentefinanciën</option>
-			<option value="algemeen">Algemeen</option>
-			<option value="algemeen">Algemeen</option>
-			<option value="algemeen">Algemeen</option>
-			<option value="algemeen">Algemeen</option>
-		</select>
-	</form>
+	if (isset($_POST['getOnderwerpenSelected'])) {
+		$getOnderwerpen = $_POST['getOnderwerpenSelected'];
+	} else {
+		$getOnderwerpen = $_POST['getOnderwerpen'];
+	}
 
-	<div id="datafetch"></div>
+	if (isset($_POST['getCategorieenSelected'])) {
+		$getCategorieen = $_POST['getCategorieenSelected'];
+	} else {
+		$getCategorieen = $_POST['getCategorieen'];
+	}
 
-	<script type="text/javascript">
+	if (isset($_POST['getFiletypesSelected'])) {
+		$getFiletypes = $_POST['getFiletypesSelected'];
+	} else {
+		$getFiletypes = $_POST['getFiletypes'];
+	}
 
-        function fetchResults(){
+	$the_query = new WP_Query(
+		array(
+			'posts_per_page' => -1,
+			'post_type' => 'materiaal',
+			'tax_query' => array(
+				array(
+					'taxonomy' => 'onderwerp',
+					'field' => 'slug',
+					'terms' => $getOnderwerpen
+				),
+				array(
+					'taxonomy' => 'categorie',
+					'field' => 'slug',
+					'terms' => $getCategorieen
+				),
+				array(
+					'taxonomy' => 'filetype',
+					'field' => 'slug',
+					'terms' => $getFiletypes
+				)
+			)
+		)
+	);
 
-            var keyword = jQuery('#searchInput').val();
+	if( $the_query->have_posts() ) :
+		while( $the_query->have_posts() ): $the_query->the_post(); ?>
 
-            console.log(keyword);
+			<?php
 
-            if(keyword == ""){
-                jQuery('#datafetch').html("");
-            } else {
-                jQuery.ajax({
-                    url: '<?php echo admin_url('admin-ajax.php'); ?>',
-                    type: 'post',
-                    data: { action: 'data_fetch', keyword: keyword  },
-                    success: function(data) {
+                //print_r(get_the_terms(get_the_ID(), array( 'categorie')));
 
-                        console.log(data);
+			    $categorie_terms = wp_get_post_terms(get_the_ID(), 'categorie', array( 'fields' => 'all' ));
+			    $first_categorie = array_values($categorie_terms)[0];
+			    $categorie_id = $first_categorie->term_id;
+			    $categorie_name = $first_categorie->name;
 
-                        jQuery('#datafetch').html( data );
-                    }
-                });
-            }
+			    $categorie_color = get_term_meta($categorie_id, 'categorie_color', true);
 
+            ?>
 
-        }
-	</script>
+            <!-- Single Item -->
+            <div class="item__single">
+                <figure class="item__single-img template-item hover-item">
+                    <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title();?>">
+                    <div class="cat-label" style="background-color: <?php echo $categorie_color; ?> !important;"><?php echo $categorie_name; ?></div>
+                </figure>
+                <h4 class="item__single-title"><?php the_title();?></h4>
+                <div class="item__single-desc">
+					<?php the_excerpt(); ?>
+                </div>
+                <div class="item__single-footer">
+                    <span class="date">June, 2020</span>
+                    <ul>
+                        <li>
+                            <a href="#" class="icon-box"><img src="http://itspublic.local/wp-content/plugins/itspublic-extended/admin/partials/../images/glob.svg" alt=""></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
-	<?php
+		<?php endwhile;
+		wp_reset_postdata();
+	else:
+		echo '<h3>No Results Found</h3>';
+	endif;
+
+	die();
 }

@@ -1,7 +1,7 @@
 // Vanilla stuff
 
 // Show quick results on keyup event
-document.querySelector('#search_field').addEventListener('keyup', showQuickResults);
+//document.querySelector('#search_field').addEventListener('keyup', showQuickResults);
 
 function showQuickResults() {
 	const searchValue = document.querySelector('#search_field').value;
@@ -51,8 +51,8 @@ function showQuickResults() {
 			focusOnSelect: true
 		});
 
-		$('.item__single-img').on('click', showMaterialenPopup);
-		$('.item__single-title').on('click', showMaterialenPopup);
+		$('.material__items').on('click', '.item__single-img', showMaterialenPopup);
+		$('.material__items').on('click', '.item__single-title', showMaterialenPopup);
 
 		function showMaterialenPopup() {
 
@@ -79,13 +79,6 @@ function showQuickResults() {
 		$('.information__box-content').mouseleave(function () {
 			$('.information__box-content').removeClass('showpopover');
 		});
-
-
-
-
-
-
-
 
 		$('.member-img').on('click', showTeamPopup);
 		$('.member-name').on('click', showTeamPopup);
@@ -129,6 +122,86 @@ function showQuickResults() {
 			$('.project_types_list .slick-slide').removeClass('slick-current');
 			$('.project_types_list [data-slick-index=' + currentSlide + ']').addClass('slick-current');
 		});
+
+		fetchResults();
+		$('#materialenPageSearchInput').on('keyup', fetchResults);
+		$('.itspublic__sidebar-widget input[type="checkbox"]').on('change', fetchResults);
+
+		function fetchResults(){
+
+			var keyword = jQuery('#materialenPageSearchInput').val();
+
+			let getOnderwerpen = (function() {
+				let onderwerpen = [];
+				$(".onderwerpen .filter_checkbox_field").each(function() {
+					onderwerpen.push(this.value);
+				});
+				return onderwerpen;
+			})();
+
+			let getCategorieen = (function() {
+				let categorieen = [];
+				$(".categorieen .filter_checkbox_field").each(function() {
+					categorieen.push(this.value);
+				});
+				return categorieen;
+			})();
+
+			let getFiletypes = (function() {
+				let filetypes = [];
+				$(".filetypes .filter_checkbox_field").each(function() {
+					filetypes.push(this.value);
+				});
+				return filetypes;
+			})();
+
+			let getOnderwerpenSelected = (function() {
+				let onderwerpenSelected = [];
+				$(".onderwerpen .filter_checkbox_field:checked").each(function() {
+					onderwerpenSelected.push(this.value);
+				});
+				return onderwerpenSelected;
+			})();
+
+			let getCategorieenSelected = (function() {
+				let categorieenSelected = [];
+				$(".categorieen .filter_checkbox_field:checked").each(function() {
+					categorieenSelected.push(this.value);
+				});
+				return categorieenSelected;
+			})();
+
+			let getFiletypesSelected = (function() {
+				let filetypesSelected = [];
+				$(".filetypes .filter_checkbox_field:checked").each(function() {
+					filetypesSelected.push(this.value);
+				});
+				return filetypesSelected;
+			})();
+
+			if(keyword == ""){
+				$.ajax({
+					url: ajax_object.ajax_url,
+					type: 'post',
+					data: { action: 'data_fetch_all', getOnderwerpen, getCategorieen, getFiletypes, getOnderwerpenSelected, getCategorieenSelected, getFiletypesSelected},
+					success: function(data) {
+						$('.material__items').html( data );
+					}
+				});
+			} else {
+				$.ajax({
+					url: ajax_object.ajax_url,
+					type: 'post',
+					data: { action: 'data_fetch', keyword: keyword, getOnderwerpen, getCategorieen, getFiletypes, getOnderwerpenSelected, getCategorieenSelected, getFiletypesSelected  },
+					success: function(data) {
+
+						$('.material__items').html( data );
+					}
+				});
+			}
+
+
+		}
 
 	});
 
