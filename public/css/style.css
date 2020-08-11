@@ -200,11 +200,11 @@ body {
 
 .material__items {
   display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between; }
+  flex-flow: row wrap; }
   .material__items .item__single {
     width: 19%;
     margin-bottom: 15px;
+    margin-right: 10px;
     transition: all .2s; }
     .material__items .item__single-img {
       width: 100%;
@@ -273,6 +273,9 @@ body {
             -moz-filter: grayscale(100%);
             filter: grayscale(100%);
             transition: all 200ms ease-in-out; }
+  .material__items .materiaal-no-results {
+    width: 100%;
+    text-align: center; }
 
 .template-item, .opendocs-item, .projectinzichten-item, .training-item {
   position: relative; }
@@ -834,7 +837,8 @@ body {
     .itspublic__cover-img img {
       width: 100%;
       height: 100%;
-      object-fit: cover; }
+      object-fit: cover;
+      object-position: center; }
   .itspublic__cover-close {
     position: absolute;
     top: 20px;

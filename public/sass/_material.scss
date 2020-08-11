@@ -309,11 +309,11 @@
 
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
 
     .item__single {
         width: 19%;
         margin-bottom: 15px;
+        margin-right: 10px;
         transition: all .2s;
     
 
@@ -411,8 +411,12 @@
 
       
     }
-}
 
+    .materiaal-no-results {
+        width: 100%;
+        text-align: center;
+    }
+}
 
 // Skins for items
 

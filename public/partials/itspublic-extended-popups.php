@@ -102,27 +102,29 @@ function itspublic_team_popup() {
                 <div class="itspublic__popcontent">
                     <div class="taxonomies">
                         <ul>
-                            <li><i class="far fa-calendar-alt"></i> January 2020</li>
-                            <li><i class="fas fa-folder-open"></i> Projectinzichten</li>
+                            <li class="materiaal-popup-date"><i class="far fa-calendar-alt"></i> <span>January 2020</span></li>
+                            <li class="materiaal-popup-categorie"><i class="fas fa-folder-open"></i> <span>Projectinzichten</span></li>
                         </ul>
                     </div>
                     <h3>Het optimale egeleidingsproces in de bijstand</h3>
-                    <p>
-                        Nunc scelerisque tincidunt elit. Vestibulum non mi ipsum. Cras
-                        pretium suscipit tellus sit amet aliquet. Vestibulum maximus lacinia
-                        massa non porttitor. Pellentesque vehicula est a lorem gravida
-                        bibendum. Proin tristique diam ut urna pharetra, ac rhoncus elit
-                        elementum. Proin vitae purus ultrices, dignissim turpis ut, mattis
-                        eros. Maecenas ornare molestie urna, hendrerit venenatis sem.
-                    </p>
-                    <p>
-                        Nunc scelerisque tincidunt elit. Vestibulum non mi ipsum. Cras
-                        pretium suscipit tellus sit amet aliquet. Vestibulum maximus lacinia
-                        massa non porttitor. Pellentesque vehicula est a lorem gravida
-                        bibendum. Proin tristique diam ut urna pharetra, ac rhoncus elit
-                        elementum. Proin vitae purus ultrices, dignissim turpis ut, mattis
-                        eros. Maecenas ornare molestie urna, hendrerit venenatis sem.
-                    </p>
+                    <div class="popup_materiaal_content">
+                        <p>
+                            Nunc scelerisque tincidunt elit. Vestibulum non mi ipsum. Cras
+                            pretium suscipit tellus sit amet aliquet. Vestibulum maximus lacinia
+                            massa non porttitor. Pellentesque vehicula est a lorem gravida
+                            bibendum. Proin tristique diam ut urna pharetra, ac rhoncus elit
+                            elementum. Proin vitae purus ultrices, dignissim turpis ut, mattis
+                            eros. Maecenas ornare molestie urna, hendrerit venenatis sem.
+                        </p>
+                        <p>
+                            Nunc scelerisque tincidunt elit. Vestibulum non mi ipsum. Cras
+                            pretium suscipit tellus sit amet aliquet. Vestibulum maximus lacinia
+                            massa non porttitor. Pellentesque vehicula est a lorem gravida
+                            bibendum. Proin tristique diam ut urna pharetra, ac rhoncus elit
+                            elementum. Proin vitae purus ultrices, dignissim turpis ut, mattis
+                            eros. Maecenas ornare molestie urna, hendrerit venenatis sem.
+                        </p>
+                    </div>
                 </div>
                 <!-- Itspublic Popup Footer -->
                 <div class="itspublic__footer">
@@ -171,10 +173,21 @@ function itspublic_team_popup() {
 
                     <div class="itspublic__footer-download">
                         <span>Download</span>
-                        <a href="#"><img src="<?php echo plugin_dir_url(__FILE__); ?>../images/pop-pdf.svg" alt="" /></a>
-                        <a href="#"><img src="<?php echo plugin_dir_url(__FILE__); ?>../images/pop-doc.svg" alt="" /></a>
-                        <a href="#"><img src="<?php echo plugin_dir_url(__FILE__); ?>../images/pop-xls.svg" alt="" /></a>
-                        <a href="#"><img src="<?php echo plugin_dir_url(__FILE__); ?>../images/pop-ppt.svg" alt="" /></a>
+                        <a href="#" class="popup-weblink" target="_blank">
+                            <img src="<?php echo plugin_dir_url(__FILE__); ?>../images/glob.svg" alt="Web Link" />
+                        </a>
+                        <a href="#" class="popup-pdf" target="_blank">
+                            <img src="<?php echo plugin_dir_url(__FILE__); ?>../images/pop-pdf.svg" alt="Download PDF" />
+                        </a>
+                        <a href="#" class="popup-ppt" target="_blank">
+                            <img src="<?php echo plugin_dir_url(__FILE__); ?>../images/pop-ppt.svg" alt="Download PPT" />
+                        </a>
+                        <a href="#" class="popup-excel" target="_blank">
+                            <img src="<?php echo plugin_dir_url(__FILE__); ?>../images/pop-xls.svg" alt="Download Excel" />
+                        </a>
+                        <a href="#" class="popup-word" target="_blank">
+                            <img src="<?php echo plugin_dir_url(__FILE__); ?>../images/pop-doc.svg" alt="Download Word" />
+                        </a>
                     </div>
                 </div>
             </div>

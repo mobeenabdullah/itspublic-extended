@@ -361,11 +361,23 @@ function itspublic_materialen_search_page() {
                 <div class="filter__box-category">
                     <div class="custom__select">
                         <div class="trigger-box">
-                            <select class="custom__select-list">
-                                <option disabled="disabled" selected="selected">select Categories</option>
-                                <option value="saab">Saab</option>
-                                <option value="vw">VW</option>
-                                <option value="audi" selected>Audi</option>
+                            <?php
+
+                                $args = array(
+                                    'hide_empty' => false
+                                );
+                                $dropdownCategories = get_terms( 'categorie', $args );
+
+                            ?>
+                            <select class="custom__select-list" id="categories_dropdown_filter">
+                                <option disabled="disabled" selected="selected">Select Categories</option>
+                                <?php
+
+                                foreach ($dropdownCategories as $dropdownCategorie) { ?>
+                                    <option value="<?php echo $dropdownCategorie->slug; ?>"><?php echo $dropdownCategorie->name; ?></option>
+                                <?php }
+
+                                ?>
                             </select>
                         </div>
                     </div>
@@ -440,7 +452,7 @@ function itspublic_materialen_search_page() {
                                                             </label>
                                                         </div>
                                                         <label for="#<?php echo $term->slug; ?>"><?php echo $term->name; ?></label>
-                                                        <span>(20)</span>
+                                                        <span>(<?php echo $term->count; ?>)</span>
                                                     </div>
 
                                                 <?php }

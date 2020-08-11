@@ -1,17 +1,5 @@
 // Vanilla stuff
 
-// Show quick results on keyup event
-//document.querySelector('#search_field').addEventListener('keyup', showQuickResults);
-
-function showQuickResults() {
-	const searchValue = document.querySelector('#search_field').value;
-	if (searchValue.length > 0) {
-		document.querySelector('#searchResult').className = 'showSearchbox';
-	} else {
-		document.querySelector('#searchResult').className = '';
-	}
-}
-
 // // Show Team Popup
 // document.querySelector('.itspubic-single-member').addEventListener('click', showTeamPopup);
 //
@@ -56,7 +44,80 @@ function showQuickResults() {
 
 		function showMaterialenPopup() {
 
+			$('.item__single').removeClass('active-item');
+			$(this).closest('.item__single').addClass('active-item');
+
 			const materialenModal = $('#materialenModal');
+			const getImageURL = $('.active-item .materialen-hidden-fields .img-url').text();
+			const getMateriaalTitle = $('.active-item .materialen-hidden-fields .materiaal-title').text();
+			const getCategorieName = $('.active-item .materialen-hidden-fields .category-name').text();
+			const getMateriaalContent = $('.active-item .materialen-hidden-fields .materiaal-content').html();
+			const getMateriaalDate = $('.active-item .materialen-hidden-fields .materiaal-date').text();
+			const getWebLink = $('.active-item .materialen-hidden-fields .materiaal-weblink').text();
+			const getPDF = $('.active-item .materialen-hidden-fields .materiaal-pdf').text();
+			const getPPT = $('.active-item .materialen-hidden-fields .materiaal-ppt').text();
+			const getExcel = $('.active-item .materialen-hidden-fields .materiaal-excel').text();
+			const getWord = $('.active-item .materialen-hidden-fields .materiaal-word').text();
+
+			const materiaalPopupImage = $('#materialenModal .itspublic__cover-img img');
+			const materiaalPopupTitle = $('#materialenModal .itspublic__popcontent h3');
+			const materiaalPopupCategorieName = $('#materialenModal .taxonomies .materiaal-popup-categorie span');
+			const materiaalPopupContent = $('#materialenModal .popup_materiaal_content');
+			const materiaalPopupDate = $('#materialenModal .taxonomies .materiaal-popup-date span');
+			const materiaalPopupWebLink = $('#materialenModal .itspublic__footer-download .popup-weblink');
+			const materiaalPopupPDF = $('#materialenModal .itspublic__footer-download .popup-pdf');
+			const materiaalPopupPPT = $('#materialenModal .itspublic__footer-download .popup-ppt');
+			const materiaalPopupExcel = $('#materialenModal .itspublic__footer-download .popup-excel');
+			const materiaalPopupWord = $('#materialenModal .itspublic__footer-download .popup-word');
+
+			materiaalPopupImage.attr('src', getImageURL);
+			materiaalPopupTitle.text(getMateriaalTitle);
+			materiaalPopupCategorieName.text(getCategorieName);
+			materiaalPopupContent.html(getMateriaalContent);
+			materiaalPopupDate.text(getMateriaalDate);
+
+			console.log(getWebLink);
+
+			if (getWebLink) {
+				materiaalPopupWebLink.attr('href', getWebLink);
+				materiaalPopupWebLink.show();
+			} else {
+				materiaalPopupWebLink.attr('href', '');
+				materiaalPopupWebLink.hide();
+			}
+
+			if (getPDF) {
+				materiaalPopupPDF.attr('href', getPDF);
+				materiaalPopupPDF.show();
+			} else {
+				materiaalPopupPDF.attr('href', '');
+				materiaalPopupPDF.hide();
+			}
+
+			if (getPPT) {
+				materiaalPopupPPT.attr('href', getPPT);
+				materiaalPopupPPT.show();
+			} else {
+				materiaalPopupPPT.attr('href', '');
+				materiaalPopupPPT.hide();
+			}
+
+			if (getExcel) {
+				materiaalPopupExcel.attr('href', getExcel);
+				materiaalPopupExcel.show();
+			} else {
+				materiaalPopupExcel.attr('href', '');
+				materiaalPopupExcel.hide();
+			}
+
+			if (getWord) {
+				materiaalPopupWord.attr('href', getWord);
+				materiaalPopupWord.show();
+			} else {
+				materiaalPopupWord.attr('href', '');
+				materiaalPopupWord.hide();
+			}
+
 			materialenModal.show();
 		}
 
@@ -79,6 +140,37 @@ function showQuickResults() {
 		$('.information__box-content').mouseleave(function () {
 			$('.information__box-content').removeClass('showpopover');
 		});
+
+		// Show quick results on keyup event
+		$('#search_field').on('keyup', showQuickResults);
+
+		function showQuickResults() {
+			const searchValue = document.querySelector('#search_field').value;
+
+			if (searchValue.length > 0) {
+				document.querySelector('#searchResult').className = 'showSearchbox';
+			} else {
+				document.querySelector('#searchResult').className = '';
+			}
+
+			$.ajax({
+				url: ajax_object.ajax_url,
+				type: 'post',
+				data: { action: 'data_fetch_hero', keyword: searchValue},
+				success: function(data) {
+					$('#searchResult').html( data );
+				}
+			});
+		}
+
+		$('#categories_dropdown_filter').on('change', changeCategorieFilter);
+
+		function changeCategorieFilter() {
+			const getSelectedCategorie = $('#categories_dropdown_filter option:selected').attr('value');
+			console.log(getSelectedCategorie);
+
+			$('.categorieen #' +  getSelectedCategorie).prop('checked', true).change();
+		}
 
 		$('.member-img').on('click', showTeamPopup);
 		$('.member-name').on('click', showTeamPopup);
