@@ -62,6 +62,7 @@
 			const getPPT = $('.active-item .materialen-hidden-fields .materiaal-ppt').text();
 			const getExcel = $('.active-item .materialen-hidden-fields .materiaal-excel').text();
 			const getWord = $('.active-item .materialen-hidden-fields .materiaal-word').text();
+			const getFolder = $('.active-item .materialen-hidden-fields .materiaal-folder').text();
 
 			const materiaalPopupImage = $('#materialenModal .itspublic__cover-img img');
 			const materiaalPopupTitle = $('#materialenModal .itspublic__popcontent h3');
@@ -73,6 +74,7 @@
 			const materiaalPopupPPT = $('#materialenModal .itspublic__footer-download .popup-ppt');
 			const materiaalPopupExcel = $('#materialenModal .itspublic__footer-download .popup-excel');
 			const materiaalPopupWord = $('#materialenModal .itspublic__footer-download .popup-word');
+			const materiaalPopupFolder = $('#materialenModal .itspublic__footer-download .popup-folder');
 
 			materiaalPopupImage.attr('src', getImageURL);
 			materiaalPopupTitle.text(getMateriaalTitle);
@@ -120,6 +122,13 @@
 			} else {
 				materiaalPopupWord.attr('href', '');
 				materiaalPopupWord.hide();
+			}
+			if (getFolder) {
+				materiaalPopupFolder.attr('href', getFolder);
+				materiaalPopupFolder.show();
+			} else {
+				materiaalPopupFolder.attr('href', '');
+				materiaalPopupFolder.hide();
 			}
 
 			materialenModal.show();

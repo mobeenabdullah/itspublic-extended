@@ -81,33 +81,39 @@ function data_fetch(){
 			            <?php $getWebLink = get_field('web_link');
 			            if( $getWebLink ): ?>
                             <li>
-                                <a href="<?php echo $getWebLink; ?>" class="icon-box" target="_blank"><img src="https://wordpress-434521-1361392.cloudwaysapps.com/wp-content/plugins/itspublic-extended/admin/partials/../images/glob.svg" alt="Web Link"></a>
+                                <a href="<?php echo $getWebLink; ?>" class="icon-box" target="_blank"><img src="<?php echo plugin_dir_url(__FILE__); ?>../images/glob.svg" alt="Web Link"></a>
                             </li>
 			            <?php endif; ?>
 			            <?php $getPDF = get_field('pdf');
 			            if( $getPDF ): ?>
                             <li>
-                                <a href="<?php echo $getPDF['url']; ?>" class="icon-box" target="_blank"><img src="https://wordpress-434521-1361392.cloudwaysapps.com/wp-content/plugins/itspublic-extended/admin/partials/../images/pdf.svg" alt="Download PDF"></a>
+                                <a href="<?php echo $getPDF['url']; ?>" class="icon-box" target="_blank"><img src="<?php echo plugin_dir_url(__FILE__); ?>../images/pdf.svg" alt="Download PDF"></a>
                             </li>
 			            <?php endif; ?>
 			            <?php $getPPT = get_field('ppt');
 			            if( $getPPT ): ?>
                             <li>
-                                <a href="<?php echo $getPPT['url']; ?>" class="icon-box" target="_blank"><img src="https://wordpress-434521-1361392.cloudwaysapps.com/wp-content/plugins/itspublic-extended/admin/partials/../images/ppt.svg" alt="Download PPT"></a>
+                                <a href="<?php echo $getPPT['url']; ?>" class="icon-box" target="_blank"><img src="<?php echo plugin_dir_url(__FILE__); ?>../images/ppt.svg" alt="Download PPT"></a>
                             </li>
 			            <?php endif; ?>
 			            <?php $getExcel = get_field('excel');
 			            if( $getExcel ): ?>
                             <li>
-                                <a href="<?php echo $getExcel['url']; ?>" class="icon-box" target="_blank"><img src="https://wordpress-434521-1361392.cloudwaysapps.com/wp-content/plugins/itspublic-extended/admin/partials/../images/excel.svg" alt="Download Excel"></a>
+                                <a href="<?php echo $getExcel['url']; ?>" class="icon-box" target="_blank"><img src="<?php echo plugin_dir_url(__FILE__); ?>../images/excel.svg" alt="Download Excel"></a>
                             </li>
 			            <?php endif; ?>
 			            <?php $getWord = get_field('word');
 			            if( $getWord ): ?>
                             <li>
-                                <a href="<?php echo $getWord['url']; ?>" class="icon-box" target="_blank"><img src="https://wordpress-434521-1361392.cloudwaysapps.com/wp-content/plugins/itspublic-extended/admin/partials/../images/word.svg" alt="Download Doc"></a>
+                                <a href="<?php echo $getWord['url']; ?>" class="icon-box" target="_blank"><img src="<?php echo plugin_dir_url(__FILE__); ?>../images/word.svg" alt="Download Doc"></a>
                             </li>
 			            <?php endif; ?>
+	                    <?php $getFolder = get_field('folder');
+	                    if( $getFolder ): ?>
+                            <li>
+                                <a href="<?php echo $getFolder; ?>" class="icon-box" target="_blank"><img src="<?php echo plugin_dir_url(__FILE__); ?>../images/folder.svg" alt="Download Doc"></a>
+                            </li>
+	                    <?php endif; ?>
                     </ul>
                 </div>
                 <div class="materialen-hidden-fields" style="display: none;">
@@ -121,6 +127,7 @@ function data_fetch(){
                     <div class="materiaal-ppt"><?php echo $getPPT['url']; ?></div>
                     <div class="materiaal-excel"><?php echo $getExcel['url']; ?></div>
                     <div class="materiaal-word"><?php echo $getWord['url']; ?></div>
+                    <div class="materiaal-folder"><?php echo $getFolder; ?></div>
                 </div>
             </div>
 
@@ -212,31 +219,37 @@ function data_fetch_all(){
 	                    <?php $getWebLink = get_field('web_link');
 	                    if( $getWebLink ): ?>
                             <li>
-                                <a href="<?php echo $getWebLink; ?>" class="icon-box" target="_blank"><img src="https://wordpress-434521-1361392.cloudwaysapps.com/wp-content/plugins/itspublic-extended/admin/partials/../images/glob.svg" alt="Web Link"></a>
+                                <a href="<?php echo $getWebLink; ?>" class="icon-box" target="_blank"><img src="<?php echo plugin_dir_url(__FILE__); ?>../images/glob.svg" alt="Web Link"></a>
                             </li>
 	                    <?php endif; ?>
 	                    <?php $getPDF = get_field('pdf');
 	                    if( $getPDF ): ?>
                             <li>
-                                <a href="<?php echo $getPDF['url']; ?>" class="icon-box" target="_blank"><img src="https://wordpress-434521-1361392.cloudwaysapps.com/wp-content/plugins/itspublic-extended/admin/partials/../images/pdf.svg" alt="Download PDF"></a>
+                                <a href="<?php echo $getPDF['url']; ?>" class="icon-box" target="_blank"><img src="<?php echo plugin_dir_url(__FILE__); ?>../images/pdf.svg" alt="Download PDF"></a>
                             </li>
 	                    <?php endif; ?>
 	                    <?php $getPPT = get_field('ppt');
 	                    if( $getPPT ): ?>
                             <li>
-                                <a href="<?php echo $getPPT['url']; ?>" class="icon-box" target="_blank"><img src="https://wordpress-434521-1361392.cloudwaysapps.com/wp-content/plugins/itspublic-extended/admin/partials/../images/ppt.svg" alt="Download PPT"></a>
+                                <a href="<?php echo $getPPT['url']; ?>" class="icon-box" target="_blank"><img src="<?php echo plugin_dir_url(__FILE__); ?>../images/ppt.svg" alt="Download PPT"></a>
                             </li>
 	                    <?php endif; ?>
 	                    <?php $getExcel = get_field('excel');
 	                    if( $getExcel ): ?>
                             <li>
-                                <a href="<?php echo $getExcel['url']; ?>" class="icon-box" target="_blank"><img src="https://wordpress-434521-1361392.cloudwaysapps.com/wp-content/plugins/itspublic-extended/admin/partials/../images/excel.svg" alt="Download Excel"></a>
+                                <a href="<?php echo $getExcel['url']; ?>" class="icon-box" target="_blank"><img src="<?php echo plugin_dir_url(__FILE__); ?>../images/excel.svg" alt="Download Excel"></a>
                             </li>
 	                    <?php endif; ?>
 	                    <?php $getWord = get_field('word');
 	                    if( $getWord ): ?>
                             <li>
-                                <a href="<?php echo $getWord['url']; ?>" class="icon-box" target="_blank"><img src="https://wordpress-434521-1361392.cloudwaysapps.com/wp-content/plugins/itspublic-extended/admin/partials/../images/word.svg" alt="Download Doc"></a>
+                                <a href="<?php echo $getWord['url']; ?>" class="icon-box" target="_blank"><img src="<?php echo plugin_dir_url(__FILE__); ?>../images/word.svg" alt="Download Doc"></a>
+                            </li>
+	                    <?php endif; ?>
+	                    <?php $getFolder = get_field('folder');
+	                    if( $getFolder ): ?>
+                            <li>
+                                <a href="<?php echo $getFolder; ?>" class="icon-box" target="_blank"><img src="<?php echo plugin_dir_url(__FILE__); ?>../images/folder.svg" alt="Download Doc"></a>
                             </li>
 	                    <?php endif; ?>
                     </ul>
@@ -252,6 +265,7 @@ function data_fetch_all(){
                     <div class="materiaal-ppt"><?php echo $getPPT['url']; ?></div>
                     <div class="materiaal-excel"><?php echo $getExcel['url']; ?></div>
                     <div class="materiaal-word"><?php echo $getWord['url']; ?></div>
+                    <div class="materiaal-folder"><?php echo $getFolder; ?></div>
                 </div>
             </div>
 
@@ -314,6 +328,7 @@ function data_fetch_hero(){
                     <div class="materiaal-ppt"><?php echo get_field('ppt'); ?></div>
                     <div class="materiaal-excel"><?php echo get_field('excel'); ?></div>
                     <div class="materiaal-word"><?php echo get_field('word'); ?></div>
+                    <div class="materiaal-folder"><?php echo get_field('folder'); ?></div>
                 </div>
 
             </div>

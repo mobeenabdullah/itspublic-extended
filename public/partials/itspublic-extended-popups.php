@@ -184,6 +184,9 @@ function itspublic_team_popup() {
                         <a href="#" class="popup-word" target="_blank">
                             <img src="<?php echo plugin_dir_url(__FILE__); ?>../images/pop-doc.svg" alt="Download Word" />
                         </a>
+                        <a href="#" class="popup-folder" target="_blank">
+                            <img src="<?php echo plugin_dir_url(__FILE__); ?>../images/folder.svg" alt="Folder" style="height: 27px" />
+                        </a>
                     </div>
                 </div>
             </div>
