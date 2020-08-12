@@ -41,6 +41,10 @@
 
 		$('.material__items').on('click', '.item__single-img', showMaterialenPopup);
 		$('.material__items').on('click', '.item__single-title', showMaterialenPopup);
+		$('.material__items').on('click', '.item__single-desc', showMaterialenPopup);
+		$('#searchResult').on('click', '.item__single-img', showMaterialenPopup);
+		$('#searchResult').on('click', '.item__single-title', showMaterialenPopup);
+		$('#searchResult').on('click', '.item__single-desc', showMaterialenPopup);
 
 		function showMaterialenPopup() {
 
@@ -153,19 +157,75 @@
 				document.querySelector('#searchResult').className = '';
 			}
 
+			var searrchAllLink = document.location + 'materialen/' + '?ms=' +searchValue;
+
 			$.ajax({
 				url: ajax_object.ajax_url,
 				type: 'post',
 				data: { action: 'data_fetch_hero', keyword: searchValue},
 				success: function(data) {
 					$('#searchResult').html( data );
+
+					let quick_search_filter = `
+						<!-- Search filter and view all result button -->
+						<div class="search__filters">
+							<div class="search__filters-radiobuttons">
+								<label class="custom-radio"
+								>Materialen
+									<input type="radio" checked="checked" name="radio" />
+									<span class="checkmark"></span>
+								</label>
+								<label class="custom-radio"
+								>Slidesearch
+									<input type="radio" name="radio" />
+									<span class="checkmark"></span>
+								</label>
+							</div>
+							<div class="search__filters-viewallresult">
+								<a href="#" class="search-btn">
+									View all result
+									<span class="viewbtn-arrow">
+								<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="13.23"
+										height="9.104"
+										viewBox="0 0 13.23 9.104"
+								>
+								  <path
+										  id="Path_1165"
+										  data-name="Path 1165"
+										  d="M13.05,46.033,9.113,42.1a.615.615,0,0,0-.87.87l2.887,2.887H.615a.615.615,0,1,0,0,1.23H11.129L8.243,49.97a.615.615,0,0,0,.87.87L13.05,46.9A.615.615,0,0,0,13.05,46.033Z"
+										  transform="translate(0 -41.916)"
+										  fill="#fff"
+								  />
+								</svg>
+							  </span>
+								</a>
+							</div>
+						</div>
+					`;
+
+					$('#searchResult').append(quick_search_filter);
+
+					$('.search__filters-viewallresult .search-btn').attr('href', searrchAllLink);
 				}
 			});
 		}
 
-		$('#categories_dropdown_filter').on('change', changeCategorieFilter);
+		$('.categorieen .filter_checkbox_field').on('change', changeCategorieFilter);
 
 		function changeCategorieFilter() {
+
+			$('.categorieen .filter_checkbox_field').not(this).prop('checked', false);
+
+		}
+
+		$('#categories_dropdown_filter').on('change', changeCategorieFilterFromDropDown);
+
+		function changeCategorieFilterFromDropDown() {
+
+			$('.categorieen .filter_checkbox_field').prop('checked', false);
+
 			const getSelectedCategorie = $('#categories_dropdown_filter option:selected').attr('value');
 			console.log(getSelectedCategorie);
 
@@ -216,6 +276,7 @@
 		});
 
 		fetchResults();
+
 		$('#materialenPageSearchInput').on('keyup', fetchResults);
 		$('.itspublic__sidebar-widget input[type="checkbox"]').on('change', fetchResults);
 

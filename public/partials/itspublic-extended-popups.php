@@ -58,7 +58,7 @@ function itspublic_team_popup() {
 
 	<?php }
 
-	if (is_page('materialen')) { ?>
+	if (is_page('materialen') || is_front_page()) { ?>
 
         <!-- Materialen Modal -->
         <div id="materialenModal" class="modal">
@@ -166,10 +166,6 @@ function itspublic_team_popup() {
                         </div>
                     </div>
                     <!-- popover end -->
-
-
-
-
 
                     <div class="itspublic__footer-download">
                         <span>Download</span>

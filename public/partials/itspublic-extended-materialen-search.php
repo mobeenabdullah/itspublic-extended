@@ -281,19 +281,41 @@ function data_fetch_hero(){
 	if( $the_query->have_posts() ) :
 		while( $the_query->have_posts() ): $the_query->the_post(); ?>
 
+			<?php
+
+			$categorie_terms = wp_get_post_terms(get_the_ID(), 'categorie', array( 'fields' => 'all' ));
+			$first_categorie = array_values($categorie_terms)[0];
+			$categorie_name = $first_categorie->name;
+
+			?>
+
             <!-- Single Item -->
             <div class="item__single">
                 <figure class="item__single-img">
-                    <a href="#">
-                        <img src="http://itspublic.local/wp-content/plugins/itspublic-extended/admin/partials/../images/project-1.jpg" alt="">
+                    <a href="#!">
+                        <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
                     </a>
                 </figure>
                 <h4 class="item__single-title">
-                    <a href="#"><?php the_title(); ?></a>
+                    <a href="#!"><?php the_title(); ?></a>
                 </h4>
-                <p class="item__single-desc">
-                    Ons word template inclusief een andige werkinstructie en
-                </p>
+                <div class="item__single-desc">
+                    <?php the_excerpt(); ?>
+                </div>
+
+                <div class="materialen-hidden-fields" style="display: none;">
+                    <div class="img-url"><?php echo get_the_post_thumbnail_url(); ?></div>
+                    <div class="materiaal-title"><?php the_title(); ?></div>
+                    <div class="category-name"><?php echo $categorie_name; ?></div>
+                    <div class="materiaal-content"><?php the_content(); ?></div>
+                    <div class="materiaal-date"><?php echo get_field('date'); ?></div>
+                    <div class="materiaal-weblink"><?php echo get_field('web_link'); ?></div>
+                    <div class="materiaal-pdf"><?php echo get_field('pdf'); ?></div>
+                    <div class="materiaal-ppt"><?php echo get_field('ppt'); ?></div>
+                    <div class="materiaal-excel"><?php echo get_field('excel'); ?></div>
+                    <div class="materiaal-word"><?php echo get_field('word'); ?></div>
+                </div>
+
             </div>
 
 		<?php endwhile;
@@ -305,4 +327,21 @@ function data_fetch_hero(){
 	echo '</div>';
 
 	die();
+}
+
+// Search based on Parameters in URL
+function materialen_param_search() {
+	if (isset($_GET['ms'])) { ?>
+        <script>
+            jQuery('#materialenPageSearchInput').val('<?php echo $_GET['ms']; ?>');
+        </script>
+	<?php }
+}
+add_action('wp_footer', 'materialen_param_search');
+
+// Setting default value of Date field in ACF
+add_filter('acf/load_field/name=date', 'my_acf_default_date');
+function my_acf_default_date($field) {
+	$field['default_value'] = date('Ymd');
+	return $field;
 }

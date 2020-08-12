@@ -273,6 +273,8 @@ body {
             -moz-filter: grayscale(100%);
             filter: grayscale(100%);
             transition: all 200ms ease-in-out; }
+    .material__items .item__single:last-child {
+      margin-right: 0; }
   .material__items .materiaal-no-results {
     width: 100%;
     text-align: center; }

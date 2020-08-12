@@ -218,125 +218,7 @@ function itspublic_hero_search_form() {
 
         <!-- Result box -->
         <div id="searchResult">
-            <div class="material__items search__items">
-                <!-- Single Item -->
-                <div class="item__single">
-                    <figure class="item__single-img">
-                        <a href="#">
-                            <img src="<?php echo plugin_dir_url(__FILE__); ?>../images/project-1.jpg" alt="" />
-                        </a>
-                    </figure>
-                    <h4 class="item__single-title">
-                        <a href="#">Het optimale Bekostiging </a>
-                    </h4>
-                    <p class="item__single-desc">
-                        Ons word template inclusief een andige werkinstructie en
-                    </p>
-                </div>
-
-                <!-- Single Item -->
-                <div class="item__single">
-                    <figure class="item__single-img">
-                        <a href="#">
-                            <img src="<?php echo plugin_dir_url(__FILE__); ?>../images/project-2.jpg" alt="" />
-                        </a>
-                    </figure>
-                    <h4 class="item__single-title">
-                        <a href="#">Het optimale Bekostiging van</a>
-                    </h4>
-                    <p class="item__single-desc">
-                        Ons word template inclusief een andige werkinstructie en een
-                        voor
-                    </p>
-                </div>
-
-                <!-- Single Item -->
-                <div class="item__single">
-                    <figure class="item__single-img">
-                        <a href="#">
-                            <img src="<?php echo plugin_dir_url(__FILE__); ?>../images/project-3.jpg" alt="" />
-                        </a>
-                    </figure>
-                    <h4 class="item__single-title">
-                        <a href="#"
-                        >Het optimale Bekostiging van het primair onderwijs</a
-                        >
-                    </h4>
-                    <p class="item__single-desc">
-                        Ons word template inclusief een andige werkinstructie en een
-                        voorbeeld
-                    </p>
-                </div>
-
-                <!-- Single Item -->
-                <div class="item__single">
-                    <figure class="item__single-img">
-                        <a href="#">
-                            <img src="<?php echo plugin_dir_url(__FILE__); ?>../images/project-1.jpg" alt="" />
-                        </a>
-                    </figure>
-                    <h4 class="item__single-title">
-                        <a href="#">Het optimale Bekostiging van het</a>
-                    </h4>
-                    <p class="item__single-desc">
-                        Ons word template inclusief een andige werkinstructie en een
-                    </p>
-                </div>
-
-                <!-- Single Item -->
-                <div class="item__single">
-                    <figure class="item__single-img">
-                        <a href="#">
-                            <img src="<?php echo plugin_dir_url(__FILE__); ?>../images/project-2.jpg" alt="" />
-                        </a>
-                    </figure>
-                    <h4 class="item__single-title">
-                        <a href="#">Het optimale Bekostiging van het primair</a>
-                    </h4>
-                    <p class="item__single-desc">
-                        Ons word template inclusief een andige werkinstructie en een
-                        voorbeeld tabellenboek.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Search filter and view all result button -->
-
-            <div class="search__filters">
-                <div class="search__filters-radiobuttons">
-                    <label class="custom-radio"
-                    >Materialen
-                        <input type="radio" checked="checked" name="radio" />
-                        <span class="checkmark"></span>
-                    </label>
-                    <label class="custom-radio"
-                    >Slidesearch
-                        <input type="radio" name="radio" />
-                        <span class="checkmark"></span>
-                    </label>
-                </div>
-                <div class="search__filters-viewallresult">
-                    <a href="#" class="search-btn">
-                        View all result
-                        <span class="viewbtn-arrow">
-                    <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="13.23"
-                            height="9.104"
-                            viewBox="0 0 13.23 9.104"
-                    >
-                      <path
-                              id="Path_1165"
-                              data-name="Path 1165"
-                              d="M13.05,46.033,9.113,42.1a.615.615,0,0,0-.87.87l2.887,2.887H.615a.615.615,0,1,0,0,1.23H11.129L8.243,49.97a.615.615,0,0,0,.87.87L13.05,46.9A.615.615,0,0,0,13.05,46.033Z"
-                              transform="translate(0 -41.916)"
-                              fill="#fff"
-                      />
-                    </svg>
-                  </span>
-                    </a>
-                </div>
-            </div>
+            <div class="material__items search__items"></div>
         </div>
     </div>
 
@@ -422,9 +304,10 @@ function itspublic_materialen_search_page() {
                                     continue;
                                 }
 
-                                $terms = get_terms( array(
-                                    'taxonomy' => $taxonomy->name,
+                                $terms = get_terms($taxonomy->name, array(
                                     'hide_empty' => true,
+                                    'orderby' => 'count',
+                                    'order' => 'DESC'
                                 ) );
 
                                 if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) { ?>
