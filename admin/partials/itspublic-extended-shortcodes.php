@@ -207,11 +207,11 @@ function itspublic_hero_search_form() {
 	ob_start(); ?>
 
     <div class="searchbox__cover">
-        <form action="" class="searchbox__cover-form">
+        <form action="http://itspublic.local/materialen/?ms=a" class="searchbox__cover-form" method="get">
             <div class="searchbox__cover-form--input">
                 <input type="text" value="" class="search-input" id="search_field" placeholder="het primair" />
-                <button type="button" class="search-btn" onclick="myFunction()">
-                    Search
+                <button type="submit" class="search-btn">
+                    <i class="fa fa-search"></i>
                 </button>
             </div>
         </form>
@@ -260,6 +260,7 @@ function itspublic_materialen_search_page() {
                                 <?php }
 
                                 ?>
+                                <option value="showall">Show All</option>
                             </select>
                         </div>
                     </div>

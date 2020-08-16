@@ -148,25 +148,25 @@
         height: 100%;
 
         input {
-            width: 94%;
+            width: 100%;
             border: none;
             background-color: transparent;
-            padding:  20px;
+            padding:  20px 20px 20px 50px;
             outline: none;
         }
 
         button {
-            width: 6%;
+            //width: 6%;
             border: none;
-            background-color: transparent; 
             font-size: 14px;
             cursor: pointer;
             outline: none;
             padding: 0 !important;
-
-            &:hover {
-                color: #5CD79E;
-            }
+            background: transparent !important;
+            color: #999 !important;
+            position: absolute;
+            margin-top: 10px;
+            margin-left: 20px;
 
         }
     }
@@ -204,6 +204,10 @@
                 color: #000000;
             }
         }
+    }
+
+    &.categorieen {
+        display: none;
     }
 }
 
@@ -370,6 +374,7 @@
             white-space: normal;
             height: 50px;
             overflow: hidden;
+            cursor: pointer;
         }
         
         &-footer {

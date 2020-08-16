@@ -217,6 +217,8 @@
 					$('#searchResult').append(quick_search_filter);
 
 					$('.search__filters-viewallresult .search-btn').attr('href', searrchAllLink);
+
+					$('.searchbox__cover-form').attr('action', searrchAllLink);
 				}
 			});
 		}
@@ -239,6 +241,11 @@
 			console.log(getSelectedCategorie);
 
 			$('.categorieen #' +  getSelectedCategorie).prop('checked', true).change();
+
+			if ($('#categories_dropdown_filter').val() === 'showall') {
+				$('.categorieen .filter_checkbox_field').prop('checked', false).change();
+			}
+
 		}
 
 		$('.member-img').on('click', showTeamPopup);
@@ -365,6 +372,19 @@
 
 		}
 
+		$('#searchForm').submit(function (e){
+			e.preventDefault();
+		});
+
+		$('.searchbox__cover-form').submit(function (e){
+			e.preventDefault();
+			$(".search__filters-viewallresult a")[0].click();
+		});
+
+		$('.searchbox__cover-form .search-btn').on('click', function (){
+			$(".search__filters-viewallresult a")[0].click();
+		});
+
 	});
 
 
@@ -386,3 +406,16 @@ window.onclick = function (e) {
 	}
 };
 
+document.onkeydown = function(evt) {
+	evt = evt || window.event;
+	var isEscape = false;
+	if ("key" in evt) {
+		isEscape = (evt.key === "Escape" || evt.key === "Esc");
+	} else {
+		isEscape = (evt.keyCode === 27);
+	}
+	if (isEscape) {
+		document.querySelector('#teamModal').style.display = "none";
+		document.querySelector('#materialenModal').style.display = "none";
+	}
+};
