@@ -318,7 +318,7 @@ function itspublic_materialen_search_page() {
 
                                         <!-- Filter Title -->
                                         <div class="itspublic__sidebar-title">
-                                            <h4><?php echo $taxonomy->label; ?></h4>
+                                            <h4><?php echo $taxonomy->label; ?> <span class="filter-collapse-btn"><i class="fa fa-minus-square"></i></span></h4>
                                         </div>
 
                                         <!-- Filter List -->

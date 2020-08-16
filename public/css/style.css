@@ -134,11 +134,20 @@ body {
       font-weight: 500;
       margin: 0;
       margin-bottom: 10px !important; }
+      .itspublic__sidebar-widget .itspublic__sidebar-title h4 .filter-collapse-btn {
+        float: right;
+        cursor: pointer; }
+        .itspublic__sidebar-widget .itspublic__sidebar-title h4 .filter-collapse-btn i.fa {
+          color: #666666; }
+          .itspublic__sidebar-widget .itspublic__sidebar-title h4 .filter-collapse-btn i.fa:hover {
+            color: #000000; }
   .itspublic__sidebar-widget .itspublic__sidebar-content .loadmore-btn {
     color: #5CD79E !important;
     font-size: 12px; }
     .itspublic__sidebar-widget .itspublic__sidebar-content .loadmore-btn:hover {
       color: #000000; }
+  .itspublic__sidebar-widget .itspublic__sidebar-content.display-hide {
+    display: none; }
   .itspublic__sidebar-widget.categorieen {
     display: none; }
 

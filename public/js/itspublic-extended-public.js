@@ -385,6 +385,12 @@
 			$(".search__filters-viewallresult a")[0].click();
 		});
 
+		$('.filter-collapse-btn i.fa').on('click', function() {
+			$(this).toggleClass('fa-plus-square')
+
+			$(this).closest('.itspublic__sidebar-title').siblings().toggleClass('display-hide');
+		});
+
 	});
 
 
