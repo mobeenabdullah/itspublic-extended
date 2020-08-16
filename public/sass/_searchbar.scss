@@ -138,6 +138,10 @@
 .showSearchbox {
   opacity: 1 !important;
   transform: translateY(0) !important;
+
+  .item__single-desc {
+    margin-bottom: 0;
+  }
 }
 .search__items {
   .item__single {
@@ -160,7 +164,8 @@
 
   &-radiobuttons {
     width: 50%;
-    display: flex;
+    //display: flex;
+    display: none;
     align-items: center;
 
     .custom-radio {
@@ -169,7 +174,8 @@
   }
 
   &-viewallresult {
-    width: 50%;
+    //width: 50%;
+    width: 100%;
     text-align: right;
 
     a {

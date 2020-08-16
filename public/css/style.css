@@ -694,6 +694,8 @@ body {
 .showSearchbox {
   opacity: 1 !important;
   transform: translateY(0) !important; }
+  .showSearchbox .item__single-desc {
+    margin-bottom: 0; }
 
 .search__items .item__single-img img {
   -webkit-filter: grayscale(0%);
@@ -707,12 +709,12 @@ body {
   height: 60px; }
   .search__filters-radiobuttons {
     width: 50%;
-    display: flex;
+    display: none;
     align-items: center; }
     .search__filters-radiobuttons .custom-radio {
       margin-right: 20px; }
   .search__filters-viewallresult {
-    width: 50%;
+    width: 100%;
     text-align: right; }
     .search__filters-viewallresult a {
       text-decoration: none;
