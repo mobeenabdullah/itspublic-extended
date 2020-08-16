@@ -52,6 +52,7 @@ class Itspublic_Extended_Admin {
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
 
+		require_once 'partials/itspublic-extended-admin-extra.php';
         require_once 'partials/itspublic-extended-register-cpts.php';
         require_once 'partials/itspublic-extended-register-fields.php';
         require_once 'partials/itspublic-extended-register-taxonomies.php';

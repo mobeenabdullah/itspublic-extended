@@ -65,7 +65,7 @@ function data_fetch(){
             <!-- Single Item -->
             <div class="item__single">
                 <figure class="item__single-img template-item hover-item">
-                    <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title();?>">
+                    <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'materialen-card'); ?>" alt="<?php the_title();?>">
                     <div class="cat-label" style="background-color: <?php echo $categorie_color; ?> !important;"><?php echo $categorie_name; ?></div>
                 </figure>
                 <h4 class="item__single-title"><?php the_title();?></h4>
@@ -117,7 +117,7 @@ function data_fetch(){
                     </ul>
                 </div>
                 <div class="materialen-hidden-fields" style="display: none;">
-                    <div class="img-url"><?php echo get_the_post_thumbnail_url(); ?></div>
+                    <div class="img-url"><?php echo get_the_post_thumbnail_url(get_the_ID(), 'materialen-popup'); ?></div>
                     <div class="materiaal-title"><?php the_title(); ?></div>
                     <div class="category-name"><?php echo $categorie_name; ?></div>
                     <div class="materiaal-content"><?php the_content(); ?></div>
@@ -203,7 +203,7 @@ function data_fetch_all(){
             <!-- Single Item -->
             <div class="item__single">
                 <figure class="item__single-img template-item hover-item">
-                    <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title();?>">
+                    <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'materialen-card'); ?>" alt="<?php the_title();?>">
                     <div class="cat-label" style="background-color: <?php echo $categorie_color; ?> !important;"><?php echo $categorie_name; ?></div>
                 </figure>
                 <h4 class="item__single-title"><?php the_title();?></h4>
@@ -255,7 +255,7 @@ function data_fetch_all(){
                     </ul>
                 </div>
                 <div class="materialen-hidden-fields" style="display: none;">
-                    <div class="img-url"><?php echo get_the_post_thumbnail_url(); ?></div>
+                    <div class="img-url"><?php echo get_the_post_thumbnail_url(get_the_ID(), 'materialen-popup'); ?></div>
                     <div class="materiaal-title"><?php the_title(); ?></div>
                     <div class="category-name"><?php echo $categorie_name; ?></div>
                     <div class="materiaal-content"><?php the_content(); ?></div>
@@ -307,8 +307,8 @@ function data_fetch_hero(){
             <div class="item__single">
                 <figure class="item__single-img">
                     <a href="#!">
-                        <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
                     </a>
+                        <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'materialen-hero'); ?>" alt="<?php the_title(); ?>">
                 </figure>
                 <h4 class="item__single-title">
                     <a href="#!"><?php the_title(); ?></a>
@@ -318,7 +318,7 @@ function data_fetch_hero(){
                 </div>
 
                 <div class="materialen-hidden-fields" style="display: none;">
-                    <div class="img-url"><?php echo get_the_post_thumbnail_url(); ?></div>
+                    <div class="img-url"><?php echo get_the_post_thumbnail_url(get_the_ID(), 'materialen-popup'); ?></div>
                     <div class="materiaal-title"><?php the_title(); ?></div>
                     <div class="category-name"><?php echo $categorie_name; ?></div>
                     <div class="materiaal-content"><?php the_content(); ?></div>
