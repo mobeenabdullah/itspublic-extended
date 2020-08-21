@@ -155,6 +155,23 @@
   }
 }
 
+.quickSearchPreloader {
+  display: none;
+  position: absolute;
+  top: 20px;
+  right: 100px;
+
+  &.showPreloader {
+    display: inline-block;
+  }
+}
+
+.materialenSearchPreloader {
+  @extend .quickSearchPreloader;
+  top: 30px;
+  right: 20px;
+}
+
 // search filter bar
 
 .search__filters {

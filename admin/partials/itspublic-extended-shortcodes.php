@@ -213,6 +213,7 @@ function itspublic_hero_search_form() {
                 <button type="submit" class="search-btn">
                     <i class="fa fa-search"></i>
                 </button>
+                <img src="<?php echo plugin_dir_url( __FILE__ ) . '../../public/images/ajax-loader.gif'; ?>" class="quickSearchPreloader" alt="Loading">
             </div>
         </form>
 
@@ -275,6 +276,7 @@ function itspublic_materialen_search_page() {
                             <button type="button">
                                 <i class="fa fa-search" aria-hidden="true"></i>
                             </button>
+                            <img src="<?php echo plugin_dir_url( __FILE__ ) . '../../public/images/ajax-loader.gif'; ?>" class="materialenSearchPreloader" alt="Loading">
                         </form>
                     </div>
 

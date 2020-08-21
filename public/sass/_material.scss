@@ -441,6 +441,20 @@
         width: 100%;
         text-align: center;
     }
+
+    &.material__items-overlay {
+        position: relative;
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255,255,255,.7);
+        }
+    }
 }
 
 // Skins for items

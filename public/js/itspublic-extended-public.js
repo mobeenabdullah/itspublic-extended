@@ -155,7 +155,18 @@
 		});
 
 		// Show quick results on keyup event
-		$('#search_field').on('keyup', showQuickResults);
+		var edQuickResults = null;
+		$('#search_field').on('keyup', function() {
+
+			$('.quickSearchPreloader').addClass('showPreloader');
+
+			if(edQuickResults) clearTimeout(edQuickResults);
+
+			edQuickResults = setTimeout(function(){
+				showQuickResults();
+			}, 500);
+
+		});
 
 		function showQuickResults() {
 			const searchValue = document.querySelector('#search_field').value;
@@ -221,6 +232,8 @@
 					$('.searchbox__cover-form').attr('action', searrchAllLink);
 				}
 			});
+
+			$('.quickSearchPreloader').removeClass('showPreloader');
 		}
 
 		$('.categorieen .filter_checkbox_field').on('change', changeCategorieFilter);
@@ -293,7 +306,18 @@
 
 		fetchResults();
 
-		$('#materialenPageSearchInput').on('keyup', fetchResults);
+		var edFetchResults = null;
+		$('#materialenPageSearchInput').on('keyup', function (){
+			$('.materialenSearchPreloader').addClass('showPreloader');
+			$('.material__items').addClass('material__items-overlay');
+
+			if(edFetchResults) clearTimeout(edFetchResults);
+
+			edFetchResults = setTimeout(function(){
+				fetchResults();
+			}, 500);
+		});
+
 		$('.itspublic__sidebar-widget input[type="checkbox"]').on('change', fetchResults);
 
 		function fetchResults(){
@@ -369,6 +393,8 @@
 				});
 			}
 
+			$('.materialenSearchPreloader').removeClass('showPreloader');
+			$('.material__items').removeClass('material__items-overlay');
 
 		}
 
