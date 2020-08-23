@@ -142,6 +142,10 @@
   .item__single-desc {
     margin-bottom: 0;
   }
+
+  .item__single-attachements, .item__single-members-list, .information-box-wrapper {
+    display: none;
+  }
 }
 .search__items {
   .item__single {

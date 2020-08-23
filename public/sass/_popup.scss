@@ -150,9 +150,26 @@
       margin-right: 10px;
     }
 
-    a {
+    ul {
       display: inline-block;
       margin-left: 10px;
+      list-style-type: none;
+
+      li {
+        display: inline-block;
+        margin-right: 10px;
+
+        a {
+
+          img {
+            height: 25px;
+          }
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
     }
   }
 
@@ -180,7 +197,7 @@
   // popoverbox
   .popoverbox {
     background-color: $secondary-color;
-    width: 70%;
+    width: 80%;
     position: absolute;
     bottom: -70px;
     left: 10px;
@@ -298,10 +315,39 @@
         }
       }
     }
+
+    .license-info {
+      display: inline-block;
+
+      .licenses-list-wrapper {
+        display: inline-block;
+
+        ul {
+          padding: 0;
+          list-style-type: none;
+
+          li {
+            display: inline-block;
+            margin-left: 5px;
+
+            a {
+              display: inline-block;
+              height: 15px;
+              width: auto;
+
+              img {
+                height: 15px;
+                width: auto;
+              }
+            }
+          }
+        }
+      }
+    }
   }
  .content-btn {
    width: 25%;
-  button {
+  a {
     padding: 4px 6px !important;
     background-color: #ffffff !important;
     color: $secondary-color !important;

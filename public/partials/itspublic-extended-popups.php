@@ -74,19 +74,7 @@ function itspublic_team_popup() {
                     <div class="information__box-icon"><i class="fas fa-info-circle"></i></div>
 
                     <!-- Information box content -->
-                    <div class="information__box-content">
-                        <div class="information__box-cover">
-                        <div class="content-text">
-                            <p class="info-title">Maker: Kennisland</p>
-                            <p class="info-title">Rechten: <a href="#"><i class="fab fa-creative-commons-by"></i></a></p>
-                        </div>
-                        <div class="content-btn">
-                            <button class="info-btn">Download</button>
-                        </div>
-                        </div>
-                                                
-                        
-                    </div>
+                    <div class="information__box-content"></div>
 
                     </figure>
                     
@@ -129,65 +117,9 @@ function itspublic_team_popup() {
                 <!-- Itspublic Popup Footer -->
                 <div class="itspublic__footer">
 
-                    <div class="itspublic__footer-avatar">
-                        <!-- Avatar -->                    
-                        <a href="#" class="profile_img popoverbtn">
-                            <img src="<?php echo plugin_dir_url(__FILE__); ?>../images/avatar-1.jpg" alt="" />
-                        </a>
-                        <a href="#" class="profile_img popoverbtn">
-                            <img src="<?php echo plugin_dir_url(__FILE__); ?>../images/avatar-2.jpg" alt="" />
-                        </a>
-                        <a href="#">
-                            <img src="<?php echo plugin_dir_url(__FILE__); ?>../images/avatar-3.jpg" alt="" />
-                        </a>    
-                    </div>
+                    <div class="itspublic__footer-members-list"></div>
 
-                    <!-- popover start -->
-                    <div class="popoverbox">                        
-                        <div class="persons__ul">
-                            <li>
-                                <a href="#">
-                                    <h5>Hugo en Breejen</h5>
-                                    <span class="person-email">hugo.denbreejen@itspublic.nl</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                <h5>Eva Nivard</h5>
-                                    <span class="person-email">eva.nivard@itspublic.nl</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <h5>Kees van der Meeren</h5>
-                                    <span class="person-email">kees@itspublic.nl</span>
-                                </a>
-                            </li>
-                        </div>
-                    </div>
-                    <!-- popover end -->
-
-                    <div class="itspublic__footer-download">
-                        <span>Download</span>
-                        <a href="#" class="popup-weblink" target="_blank">
-                            <img src="<?php echo plugin_dir_url(__FILE__); ?>../images/glob.svg" alt="Web Link" />
-                        </a>
-                        <a href="#" class="popup-pdf" target="_blank">
-                            <img src="<?php echo plugin_dir_url(__FILE__); ?>../images/pop-pdf.svg" alt="Download PDF" />
-                        </a>
-                        <a href="#" class="popup-ppt" target="_blank">
-                            <img src="<?php echo plugin_dir_url(__FILE__); ?>../images/pop-ppt.svg" alt="Download PPT" />
-                        </a>
-                        <a href="#" class="popup-excel" target="_blank">
-                            <img src="<?php echo plugin_dir_url(__FILE__); ?>../images/pop-xls.svg" alt="Download Excel" />
-                        </a>
-                        <a href="#" class="popup-word" target="_blank">
-                            <img src="<?php echo plugin_dir_url(__FILE__); ?>../images/pop-doc.svg" alt="Download Word" />
-                        </a>
-                        <a href="#" class="popup-folder" target="_blank">
-                            <img src="<?php echo plugin_dir_url(__FILE__); ?>../images/folder.svg" alt="Folder" style="height: 27px" />
-                        </a>
-                    </div>
+                    <div class="itspublic__footer-download"></div>
                 </div>
             </div>
         </div>

@@ -53,83 +53,34 @@
 
 			const materialenModal = $('#materialenModal');
 			const getImageURL = $('.active-item .materialen-hidden-fields .img-url').text();
+			const getFullImageURL = $('.active-item .materialen-hidden-fields .img-url-full').text();
 			const getMateriaalTitle = $('.active-item .materialen-hidden-fields .materiaal-title').text();
 			const getCategorieName = $('.active-item .materialen-hidden-fields .category-name').text();
 			const getMateriaalContent = $('.active-item .materialen-hidden-fields .materiaal-content').html();
 			const getMateriaalDate = $('.active-item .materialen-hidden-fields .materiaal-date').text();
-			const getWebLink = $('.active-item .materialen-hidden-fields .materiaal-weblink').text();
-			const getPDF = $('.active-item .materialen-hidden-fields .materiaal-pdf').text();
-			const getPPT = $('.active-item .materialen-hidden-fields .materiaal-ppt').text();
-			const getExcel = $('.active-item .materialen-hidden-fields .materiaal-excel').text();
-			const getWord = $('.active-item .materialen-hidden-fields .materiaal-word').text();
-			const getFolder = $('.active-item .materialen-hidden-fields .materiaal-folder').text();
+			const getMateriaalDownloads = $('.active-item .item__single-attachements').html();
+			const getMateriaalMembers = $('.active-item .item__single-members-list').html();
+			const getMateriaalImageInfo = $('.active-item .information-box-wrapper').html();
 
 			const materiaalPopupImage = $('#materialenModal .itspublic__cover-img img');
+			const materiaalFullImageDownload = $('#materialenModal .full-img-download-btn');
 			const materiaalPopupTitle = $('#materialenModal .itspublic__popcontent h3');
 			const materiaalPopupCategorieName = $('#materialenModal .taxonomies .materiaal-popup-categorie span');
 			const materiaalPopupContent = $('#materialenModal .popup_materiaal_content');
 			const materiaalPopupDate = $('#materialenModal .taxonomies .materiaal-popup-date span');
-			const materiaalPopupWebLink = $('#materialenModal .itspublic__footer-download .popup-weblink');
-			const materiaalPopupPDF = $('#materialenModal .itspublic__footer-download .popup-pdf');
-			const materiaalPopupPPT = $('#materialenModal .itspublic__footer-download .popup-ppt');
-			const materiaalPopupExcel = $('#materialenModal .itspublic__footer-download .popup-excel');
-			const materiaalPopupWord = $('#materialenModal .itspublic__footer-download .popup-word');
-			const materiaalPopupFolder = $('#materialenModal .itspublic__footer-download .popup-folder');
+			const materiaalPopupDownloads = $('#materialenModal .itspublic__footer-download');
+			const materiaalPopupMembers = $('#materialenModal .itspublic__footer-members-list');
+			const materiaalImageInfo = $('#materialenModal .information__box-content');
 
 			materiaalPopupImage.attr('src', getImageURL);
+			materiaalFullImageDownload.attr('href', getFullImageURL);
 			materiaalPopupTitle.text(getMateriaalTitle);
 			materiaalPopupCategorieName.text(getCategorieName);
 			materiaalPopupContent.html(getMateriaalContent);
 			materiaalPopupDate.text(getMateriaalDate);
-
-			console.log(getWebLink);
-
-			if (getWebLink) {
-				materiaalPopupWebLink.attr('href', getWebLink);
-				materiaalPopupWebLink.show();
-			} else {
-				materiaalPopupWebLink.attr('href', '');
-				materiaalPopupWebLink.hide();
-			}
-
-			if (getPDF) {
-				materiaalPopupPDF.attr('href', getPDF);
-				materiaalPopupPDF.show();
-			} else {
-				materiaalPopupPDF.attr('href', '');
-				materiaalPopupPDF.hide();
-			}
-
-			if (getPPT) {
-				materiaalPopupPPT.attr('href', getPPT);
-				materiaalPopupPPT.show();
-			} else {
-				materiaalPopupPPT.attr('href', '');
-				materiaalPopupPPT.hide();
-			}
-
-			if (getExcel) {
-				materiaalPopupExcel.attr('href', getExcel);
-				materiaalPopupExcel.show();
-			} else {
-				materiaalPopupExcel.attr('href', '');
-				materiaalPopupExcel.hide();
-			}
-
-			if (getWord) {
-				materiaalPopupWord.attr('href', getWord);
-				materiaalPopupWord.show();
-			} else {
-				materiaalPopupWord.attr('href', '');
-				materiaalPopupWord.hide();
-			}
-			if (getFolder) {
-				materiaalPopupFolder.attr('href', getFolder);
-				materiaalPopupFolder.show();
-			} else {
-				materiaalPopupFolder.attr('href', '');
-				materiaalPopupFolder.hide();
-			}
+			materiaalPopupDownloads.html('<span>Download</span>' + getMateriaalDownloads);
+			materiaalPopupMembers.html(getMateriaalMembers);
+			materiaalImageInfo.html(getMateriaalImageInfo);
 
 			materialenModal.show();
 		}
@@ -138,7 +89,7 @@
 			$('#materialenModal').hide();
 		});
 
-		$('.itspublic__footer-avatar a').hover(function () {
+		$('.itspublic__footer-members-list').hover(function () {
 			$('.popoverbox').addClass('showpopover');
 		});
 

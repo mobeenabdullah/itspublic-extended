@@ -77,57 +77,92 @@ function data_fetch(){
 		            if( $getDate ): ?>
                         <span class="date"><?php echo $getDate; ?></span>
 		            <?php endif; ?>
-                    <ul>
-			            <?php $getWebLink = get_field('web_link');
-			            if( $getWebLink ): ?>
-                            <li>
-                                <a href="<?php echo $getWebLink; ?>" class="icon-box" target="_blank"><img src="<?php echo plugin_dir_url(__FILE__); ?>../images/glob.svg" alt="Web Link"></a>
-                            </li>
-			            <?php endif; ?>
-			            <?php $getPDF = get_field('pdf');
-			            if( $getPDF ): ?>
-                            <li>
-                                <a href="<?php echo $getPDF['url']; ?>" class="icon-box" target="_blank"><img src="<?php echo plugin_dir_url(__FILE__); ?>../images/pdf.svg" alt="Download PDF"></a>
-                            </li>
-			            <?php endif; ?>
-			            <?php $getPPT = get_field('ppt');
-			            if( $getPPT ): ?>
-                            <li>
-                                <a href="<?php echo $getPPT['url']; ?>" class="icon-box" target="_blank"><img src="<?php echo plugin_dir_url(__FILE__); ?>../images/ppt.svg" alt="Download PPT"></a>
-                            </li>
-			            <?php endif; ?>
-			            <?php $getExcel = get_field('excel');
-			            if( $getExcel ): ?>
-                            <li>
-                                <a href="<?php echo $getExcel['url']; ?>" class="icon-box" target="_blank"><img src="<?php echo plugin_dir_url(__FILE__); ?>../images/excel.svg" alt="Download Excel"></a>
-                            </li>
-			            <?php endif; ?>
-			            <?php $getWord = get_field('word');
-			            if( $getWord ): ?>
-                            <li>
-                                <a href="<?php echo $getWord['url']; ?>" class="icon-box" target="_blank"><img src="<?php echo plugin_dir_url(__FILE__); ?>../images/word.svg" alt="Download Doc"></a>
-                            </li>
-			            <?php endif; ?>
-	                    <?php $getFolder = get_field('folder');
-	                    if( $getFolder ): ?>
-                            <li>
-                                <a href="<?php echo $getFolder; ?>" class="icon-box" target="_blank"><img src="<?php echo plugin_dir_url(__FILE__); ?>../images/folder.svg" alt="Download Doc"></a>
-                            </li>
-	                    <?php endif; ?>
-                    </ul>
+
+	                <?php $getAttachements = get_field('attachements'); ?>
+
+                    <div class="item__single-attachements">
+                        <ul>
+			                <?php foreach ($getAttachements as $getAttachement) { ?>
+                                <li>
+					                <?php
+
+					                $getDownloadLink = '';
+					                $getFileType = $getAttachement['file_type'];
+
+					                if ($getFileType === 'file') {
+						                $getDownloadLink = $getAttachement['select_file'];
+					                } elseif ($getFileType === 'link') {
+						                $getDownloadLink = $getAttachement['external_link'];
+					                }
+
+					                ?>
+                                    <a href="<?php echo $getDownloadLink ?>" class="icon-box" target="_blank">
+                                        <img src="<?php echo $getAttachement['file_icon']; ?>" alt="Download">
+                                    </a>
+                                </li>
+			                <?php } ?>
+                        </ul>
+                    </div>
+
+                    <div class="item__single-members-list">
+		                <?php $getMateriaalMembers = get_field('members'); ?>
+                        <div class="itspublic__footer-avatar">
+			                <?php foreach ($getMateriaalMembers as $getMateriaalMember) { ?>
+                                <a href="#!" class="profile_img popoverbtn">
+                                    <img src="<?php echo get_the_post_thumbnail_url($getMateriaalMember->ID); ?>" alt="<?php echo $getMateriaalMember->post_title; ?>" />
+                                </a>
+			                <?php } ?>
+                        </div>
+                        <!-- popover start -->
+                        <div class="popoverbox">
+                            <div class="persons__ul">
+				                <?php foreach ($getMateriaalMembers as $getMateriaalMember) { ?>
+                                    <li>
+                                        <a href="#">
+                                            <h5><?php echo $getMateriaalMember->post_title; ?></h5>
+                                            <span class="person-email"><?php echo get_post_meta($getMateriaalMember->ID, 'itspublic-member_email', true);  ?></span>
+                                        </a>
+                                    </li>
+				                <?php } ?>
+                            </div>
+                        </div>
+                        <!-- popover end -->
+                    </div>
+
+                    <div class="information-box-wrapper">
+                        <div class="information__box-cover">
+                            <div class="content-text">
+                                <p class="info-title">Maker: <?php echo get_field('maker'); ?></p>
+                                <div class="license-info">
+                                    Rechten:
+                                    <div class="licenses-list-wrapper">
+						                <?php $getMateriaalLicenses = get_field('license'); ?>
+                                        <ul>
+							                <?php foreach($getMateriaalLicenses as $getMateriaalLicense) { ?>
+                                                <li>
+                                                    <a href="<?php echo $getMateriaalLicense['license_link']; ?>" title="<?php echo $getMateriaalLicense['license_name']; ?>" target="_blank">
+                                                        <img src="<?php echo $getMateriaalLicense['license_icon']; ?>" alt="<?php echo $getMateriaalLicense['license_name']; ?>">
+                                                    </a>
+                                                </li>
+							                <?php } ?>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content-btn">
+                                <a href="<?php echo get_the_post_thumbnail_url(); ?>" class="info-btn full-img-download-btn" download>Download</a>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
                 <div class="materialen-hidden-fields" style="display: none;">
-                    <div class="img-url"><?php echo get_the_post_thumbnail_url(get_the_ID(), 'materialen-popup'); ?></div>
+                    <div class="img-url"><?php echo get_the_post_thumbnail_url(get_the_ID(), 'materialen-popup-half'); ?></div>
+                    <div class="img-url-full"><?php echo get_the_post_thumbnail_url(); ?></div>
                     <div class="materiaal-title"><?php the_title(); ?></div>
                     <div class="category-name"><?php echo $categorie_name; ?></div>
                     <div class="materiaal-content"><?php the_content(); ?></div>
                     <div class="materiaal-date"><?php echo $getDate; ?></div>
-                    <div class="materiaal-weblink"><?php echo $getWebLink; ?></div>
-                    <div class="materiaal-pdf"><?php echo $getPDF['url']; ?></div>
-                    <div class="materiaal-ppt"><?php echo $getPPT['url']; ?></div>
-                    <div class="materiaal-excel"><?php echo $getExcel['url']; ?></div>
-                    <div class="materiaal-word"><?php echo $getWord['url']; ?></div>
-                    <div class="materiaal-folder"><?php echo $getFolder; ?></div>
                 </div>
             </div>
 
@@ -215,57 +250,92 @@ function data_fetch_all(){
                     if( $getDate ): ?>
                         <span class="date"><?php echo $getDate; ?></span>
 	                <?php endif; ?>
-                    <ul>
-	                    <?php $getWebLink = get_field('web_link');
-	                    if( $getWebLink ): ?>
-                            <li>
-                                <a href="<?php echo $getWebLink; ?>" class="icon-box" target="_blank"><img src="<?php echo plugin_dir_url(__FILE__); ?>../images/glob.svg" alt="Web Link"></a>
-                            </li>
-	                    <?php endif; ?>
-	                    <?php $getPDF = get_field('pdf');
-	                    if( $getPDF ): ?>
-                            <li>
-                                <a href="<?php echo $getPDF['url']; ?>" class="icon-box" target="_blank"><img src="<?php echo plugin_dir_url(__FILE__); ?>../images/pdf.svg" alt="Download PDF"></a>
-                            </li>
-	                    <?php endif; ?>
-	                    <?php $getPPT = get_field('ppt');
-	                    if( $getPPT ): ?>
-                            <li>
-                                <a href="<?php echo $getPPT['url']; ?>" class="icon-box" target="_blank"><img src="<?php echo plugin_dir_url(__FILE__); ?>../images/ppt.svg" alt="Download PPT"></a>
-                            </li>
-	                    <?php endif; ?>
-	                    <?php $getExcel = get_field('excel');
-	                    if( $getExcel ): ?>
-                            <li>
-                                <a href="<?php echo $getExcel['url']; ?>" class="icon-box" target="_blank"><img src="<?php echo plugin_dir_url(__FILE__); ?>../images/excel.svg" alt="Download Excel"></a>
-                            </li>
-	                    <?php endif; ?>
-	                    <?php $getWord = get_field('word');
-	                    if( $getWord ): ?>
-                            <li>
-                                <a href="<?php echo $getWord['url']; ?>" class="icon-box" target="_blank"><img src="<?php echo plugin_dir_url(__FILE__); ?>../images/word.svg" alt="Download Doc"></a>
-                            </li>
-	                    <?php endif; ?>
-	                    <?php $getFolder = get_field('folder');
-	                    if( $getFolder ): ?>
-                            <li>
-                                <a href="<?php echo $getFolder; ?>" class="icon-box" target="_blank"><img src="<?php echo plugin_dir_url(__FILE__); ?>../images/folder.svg" alt="Download Doc"></a>
-                            </li>
-	                    <?php endif; ?>
-                    </ul>
+
+                    <?php $getAttachements = get_field('attachements'); ?>
+
+                    <div class="item__single-attachements">
+                        <ul>
+		                    <?php foreach ($getAttachements as $getAttachement) { ?>
+                                <li>
+				                    <?php
+
+				                    $getDownloadLink = '';
+				                    $getFileType = $getAttachement['file_type'];
+
+				                    if ($getFileType === 'file') {
+					                    $getDownloadLink = $getAttachement['select_file'];
+				                    } elseif ($getFileType === 'link') {
+					                    $getDownloadLink = $getAttachement['external_link'];
+				                    }
+
+				                    ?>
+                                    <a href="<?php echo $getDownloadLink ?>" class="icon-box" target="_blank">
+                                        <img src="<?php echo $getAttachement['file_icon']; ?>" alt="Download">
+                                    </a>
+                                </li>
+		                    <?php } ?>
+                        </ul>
+                    </div>
+
+                    <div class="item__single-members-list">
+	                    <?php $getMateriaalMembers = get_field('members'); ?>
+                        <div class="itspublic__footer-avatar">
+			                <?php foreach ($getMateriaalMembers as $getMateriaalMember) { ?>
+                                <a href="#!" class="profile_img popoverbtn">
+                                    <img src="<?php echo get_the_post_thumbnail_url($getMateriaalMember->ID); ?>" alt="<?php echo $getMateriaalMember->post_title; ?>" />
+                                </a>
+                            <?php } ?>
+                        </div>
+                        <!-- popover start -->
+                        <div class="popoverbox">
+                            <div class="persons__ul">
+	                            <?php foreach ($getMateriaalMembers as $getMateriaalMember) { ?>
+                                <li>
+                                    <a href="#">
+                                        <h5><?php echo $getMateriaalMember->post_title; ?></h5>
+                                        <span class="person-email"><?php echo get_post_meta($getMateriaalMember->ID, 'itspublic-member_email', true);  ?></span>
+                                    </a>
+                                </li>
+	                            <?php } ?>
+                            </div>
+                        </div>
+                        <!-- popover end -->
+                    </div>
+
+                    <div class="information-box-wrapper">
+                        <div class="information__box-cover">
+                            <div class="content-text">
+                                <p class="info-title">Maker: <?php echo get_field('maker'); ?></p>
+                                <div class="license-info">
+                                    Rechten:
+                                    <div class="licenses-list-wrapper">
+	                                    <?php $getMateriaalLicenses = get_field('license'); ?>
+                                        <ul>
+                                            <?php foreach($getMateriaalLicenses as $getMateriaalLicense) { ?>
+                                                <li>
+                                                    <a href="<?php echo $getMateriaalLicense['license_link']; ?>" title="<?php echo $getMateriaalLicense['license_name']; ?>" target="_blank">
+                                                        <img src="<?php echo $getMateriaalLicense['license_icon']; ?>" alt="<?php echo $getMateriaalLicense['license_name']; ?>">
+                                                    </a>
+                                                </li>
+                                            <?php } ?>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content-btn">
+                                <a href="<?php echo get_the_post_thumbnail_url(); ?>" class="info-btn full-img-download-btn" download>Download</a>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
                 <div class="materialen-hidden-fields" style="display: none;">
-                    <div class="img-url"><?php echo get_the_post_thumbnail_url(get_the_ID(), 'materialen-popup'); ?></div>
+                    <div class="img-url"><?php echo get_the_post_thumbnail_url(get_the_ID(), 'materialen-popup-half'); ?></div>
+                    <div class="img-url-full"><?php echo get_the_post_thumbnail_url(); ?></div>
                     <div class="materiaal-title"><?php the_title(); ?></div>
                     <div class="category-name"><?php echo $categorie_name; ?></div>
                     <div class="materiaal-content"><?php the_content(); ?></div>
                     <div class="materiaal-date"><?php echo $getDate; ?></div>
-                    <div class="materiaal-weblink"><?php echo $getWebLink; ?></div>
-                    <div class="materiaal-pdf"><?php echo $getPDF['url']; ?></div>
-                    <div class="materiaal-ppt"><?php echo $getPPT['url']; ?></div>
-                    <div class="materiaal-excel"><?php echo $getExcel['url']; ?></div>
-                    <div class="materiaal-word"><?php echo $getWord['url']; ?></div>
-                    <div class="materiaal-folder"><?php echo $getFolder; ?></div>
                 </div>
             </div>
 
@@ -318,17 +388,89 @@ function data_fetch_hero(){
                 </div>
 
                 <div class="materialen-hidden-fields" style="display: none;">
-                    <div class="img-url"><?php echo get_the_post_thumbnail_url(get_the_ID(), 'materialen-popup'); ?></div>
+                    <div class="img-url"><?php echo get_the_post_thumbnail_url(get_the_ID(), 'materialen-popup-half'); ?></div>
+                    <div class="img-url-full"><?php echo get_the_post_thumbnail_url(); ?></div>
                     <div class="materiaal-title"><?php the_title(); ?></div>
                     <div class="category-name"><?php echo $categorie_name; ?></div>
                     <div class="materiaal-content"><?php the_content(); ?></div>
                     <div class="materiaal-date"><?php echo get_field('date'); ?></div>
-                    <div class="materiaal-weblink"><?php echo get_field('web_link'); ?></div>
-                    <div class="materiaal-pdf"><?php echo get_field('pdf'); ?></div>
-                    <div class="materiaal-ppt"><?php echo get_field('ppt'); ?></div>
-                    <div class="materiaal-excel"><?php echo get_field('excel'); ?></div>
-                    <div class="materiaal-word"><?php echo get_field('word'); ?></div>
-                    <div class="materiaal-folder"><?php echo get_field('folder'); ?></div>
+                </div>
+
+	            <?php $getAttachements = get_field('attachements'); ?>
+
+                <div class="item__single-attachements">
+                    <ul>
+			            <?php foreach ($getAttachements as $getAttachement) { ?>
+                            <li>
+					            <?php
+
+					            $getDownloadLink = '';
+					            $getFileType = $getAttachement['file_type'];
+
+					            if ($getFileType === 'file') {
+						            $getDownloadLink = $getAttachement['select_file'];
+					            } elseif ($getFileType === 'link') {
+						            $getDownloadLink = $getAttachement['external_link'];
+					            }
+
+					            ?>
+                                <a href="<?php echo $getDownloadLink ?>" class="icon-box" target="_blank">
+                                    <img src="<?php echo $getAttachement['file_icon']; ?>" alt="Download">
+                                </a>
+                            </li>
+			            <?php } ?>
+                    </ul>
+                </div>
+
+                <div class="item__single-members-list">
+		            <?php $getMateriaalMembers = get_field('members'); ?>
+                    <div class="itspublic__footer-avatar">
+			            <?php foreach ($getMateriaalMembers as $getMateriaalMember) { ?>
+                            <a href="#!" class="profile_img popoverbtn">
+                                <img src="<?php echo get_the_post_thumbnail_url($getMateriaalMember->ID); ?>" alt="<?php echo $getMateriaalMember->post_title; ?>" />
+                            </a>
+			            <?php } ?>
+                    </div>
+                    <!-- popover start -->
+                    <div class="popoverbox">
+                        <div class="persons__ul">
+				            <?php foreach ($getMateriaalMembers as $getMateriaalMember) { ?>
+                                <li>
+                                    <a href="#">
+                                        <h5><?php echo $getMateriaalMember->post_title; ?></h5>
+                                        <span class="person-email"><?php echo get_post_meta($getMateriaalMember->ID, 'itspublic-member_email', true);  ?></span>
+                                    </a>
+                                </li>
+				            <?php } ?>
+                        </div>
+                    </div>
+                    <!-- popover end -->
+                </div>
+
+                <div class="information-box-wrapper">
+                    <div class="information__box-cover">
+                        <div class="content-text">
+                            <p class="info-title">Maker: <?php echo get_field('maker'); ?></p>
+                            <div class="license-info">
+                                Rechten:
+                                <div class="licenses-list-wrapper">
+						            <?php $getMateriaalLicenses = get_field('license'); ?>
+                                    <ul>
+							            <?php foreach($getMateriaalLicenses as $getMateriaalLicense) { ?>
+                                            <li>
+                                                <a href="<?php echo $getMateriaalLicense['license_link']; ?>" title="<?php echo $getMateriaalLicense['license_name']; ?>" target="_blank">
+                                                    <img src="<?php echo $getMateriaalLicense['license_icon']; ?>" alt="<?php echo $getMateriaalLicense['license_name']; ?>">
+                                                </a>
+                                            </li>
+							            <?php } ?>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-btn">
+                            <a href="<?php echo get_the_post_thumbnail_url(); ?>" class="info-btn full-img-download-btn" download>Download</a>
+                        </div>
+                    </div>
                 </div>
 
             </div>

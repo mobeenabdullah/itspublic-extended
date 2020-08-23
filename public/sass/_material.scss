@@ -411,14 +411,12 @@
                     list-style-type: none;   
                     
                     a {
-                        width: 12px;
-                        height: 20px;
                         display: inline-block;
                         margin-left: 2px;
                         margin-right: 2px;
                         
-                        img {  
-                            width: 100%;                        
+                        img {
+                            height: 12px;
                             @include grayscale_element(100%);
                             transition: all 200ms ease-in-out;
                            
@@ -428,6 +426,10 @@
                     
                 
                 }
+            }
+
+            .item__single-members-list, .information-box-wrapper {
+                display: none;
             }
         }
 
