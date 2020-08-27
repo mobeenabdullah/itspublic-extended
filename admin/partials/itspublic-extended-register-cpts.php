@@ -116,6 +116,64 @@ function create_project_cpt() {
 }
 add_action( 'init', 'create_project_cpt', 0 );
 
+// Register Custom Post Type Photo
+function create_photo_cpt() {
+
+	$labels = array(
+		'name' => _x( 'Photos', 'Post Type General Name', 'itspublic' ),
+		'singular_name' => _x( 'Photo', 'Post Type Singular Name', 'itspublic' ),
+		'menu_name' => _x( 'Photos', 'Admin Menu text', 'itspublic' ),
+		'name_admin_bar' => _x( 'Photo', 'Add New on Toolbar', 'itspublic' ),
+		'archives' => __( 'Photo Archives', 'itspublic' ),
+		'attributes' => __( 'Photo Attributes', 'itspublic' ),
+		'parent_item_colon' => __( 'Parent Photo:', 'itspublic' ),
+		'all_items' => __( 'All Photos', 'itspublic' ),
+		'add_new_item' => __( 'Add New Photo', 'itspublic' ),
+		'add_new' => __( 'Add New', 'itspublic' ),
+		'new_item' => __( 'New Photo', 'itspublic' ),
+		'edit_item' => __( 'Edit Photo', 'itspublic' ),
+		'update_item' => __( 'Update Photo', 'itspublic' ),
+		'view_item' => __( 'View Photo', 'itspublic' ),
+		'view_items' => __( 'View Photos', 'itspublic' ),
+		'search_items' => __( 'Search Photo', 'itspublic' ),
+		'not_found' => __( 'Not found', 'itspublic' ),
+		'not_found_in_trash' => __( 'Not found in Trash', 'itspublic' ),
+		'featured_image' => __( 'Featured Image', 'itspublic' ),
+		'set_featured_image' => __( 'Set featured image', 'itspublic' ),
+		'remove_featured_image' => __( 'Remove featured image', 'itspublic' ),
+		'use_featured_image' => __( 'Use as featured image', 'itspublic' ),
+		'insert_into_item' => __( 'Insert into Photo', 'itspublic' ),
+		'uploaded_to_this_item' => __( 'Uploaded to this Photo', 'itspublic' ),
+		'items_list' => __( 'Photos list', 'itspublic' ),
+		'items_list_navigation' => __( 'Photos list navigation', 'itspublic' ),
+		'filter_items_list' => __( 'Filter Photos list', 'itspublic' ),
+	);
+	$args = array(
+		'label' => __( 'Photo', 'itspublic' ),
+		'description' => __( 'Custom post type for Photos', 'itspublic' ),
+		'labels' => $labels,
+		'menu_icon' => 'dashicons-format-gallery',
+		'supports' => array('title', 'thumbnail'),
+		'taxonomies' => array(),
+		'public' => true,
+		'show_ui' => true,
+		'show_in_menu' => true,
+		'menu_position' => 25,
+		'show_in_admin_bar' => true,
+		'show_in_nav_menus' => false,
+		'can_export' => true,
+		'has_archive' => true,
+		'hierarchical' => false,
+		'exclude_from_search' => false,
+		'show_in_rest' => true,
+		'publicly_queryable' => true,
+		'capability_type' => 'post',
+	);
+	register_post_type( 'photo', $args );
+
+}
+add_action( 'init', 'create_photo_cpt', 0 );
+
 // Register Custom Post Type Materiaal
 function create_materiaal_cpt() {
 

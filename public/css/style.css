@@ -1043,7 +1043,7 @@ body {
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.6);
   padding: 15px 60px 15px 15px;
-  max-width: 30%;
+  max-width: 35%;
   width: 100%;
   display: none; }
   .information__box-content .information__box-cover {
@@ -1060,15 +1060,17 @@ body {
         .information__box-content .content-text p.info-title a:hover {
           color: #5cd79e !important; }
     .information__box-content .content-text .license-info {
-      display: inline-block; }
+      display: inline-block;
+      font-size: 12px; }
       .information__box-content .content-text .license-info .licenses-list-wrapper {
-        display: inline-block; }
+        display: inline-block;
+        transform: translateY(5px); }
         .information__box-content .content-text .license-info .licenses-list-wrapper ul {
           padding: 0;
           list-style-type: none; }
           .information__box-content .content-text .license-info .licenses-list-wrapper ul li {
             display: inline-block;
-            margin-left: 5px; }
+            margin-left: 7px; }
             .information__box-content .content-text .license-info .licenses-list-wrapper ul li a {
               display: inline-block;
               height: 15px;
@@ -1076,6 +1078,12 @@ body {
               .information__box-content .content-text .license-info .licenses-list-wrapper ul li a img {
                 height: 15px;
                 width: auto; }
+              .information__box-content .content-text .license-info .licenses-list-wrapper ul li a svg {
+                fill: #FFFFFF;
+                height: 15px;
+                width: auto; }
+              .information__box-content .content-text .license-info .licenses-list-wrapper ul li a:hover svg {
+                fill: #5cd79e; }
   .information__box-content .content-btn {
     width: 25%; }
     .information__box-content .content-btn a {

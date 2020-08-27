@@ -293,7 +293,7 @@
   cursor: pointer;
   background-color: rgba(0,0,0,0.6);
   padding: 15px 60px 15px 15px;
-  max-width: 30%;
+  max-width: 35%;
   width: 100%;
   display: none;
   .information__box-cover {
@@ -318,9 +318,11 @@
 
     .license-info {
       display: inline-block;
+      font-size: 12px;
 
       .licenses-list-wrapper {
         display: inline-block;
+        transform: translateY(5px);
 
         ul {
           padding: 0;
@@ -328,7 +330,7 @@
 
           li {
             display: inline-block;
-            margin-left: 5px;
+            margin-left: 7px;
 
             a {
               display: inline-block;
@@ -338,6 +340,19 @@
               img {
                 height: 15px;
                 width: auto;
+              }
+
+              svg {
+                fill: #FFFFFF;
+                height: 15px;
+                width: auto;
+              }
+
+              &:hover {
+
+                svg {
+                  fill: #5cd79e;
+                }
               }
             }
           }
