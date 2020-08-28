@@ -211,7 +211,7 @@ function create_materiaal_cpt() {
 		'description' => __( 'Custom post type for Materials', 'itspublic' ),
 		'labels' => $labels,
 		'menu_icon' => 'dashicons-media-default',
-		'supports' => array('title', 'editor', 'thumbnail'),
+		'supports' => array('title', 'editor'),
 		'taxonomies' => array(),
 		'public' => true,
 		'show_ui' => true,
