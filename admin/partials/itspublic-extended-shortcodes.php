@@ -16,7 +16,7 @@ function itspublic_show_members( ) {
 
     if( $my_query->have_posts() ): ?>
 
-        <div class="itspublic-members">
+        <div class="itspublic-members <?php if (wp_count_posts('member')->publish > 8) { echo 'itspublic-members-slider'; } ?>">
 
         <?php if (wp_count_posts('member')->publish > 8) { echo '<div>'; } ?>
 

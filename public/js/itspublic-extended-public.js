@@ -18,7 +18,7 @@
 
 	$(document).ready(function () {
 
-		$('.itspublic-members').slick({
+		$('.itspublic-members-slider').slick({
 			appendArrows: '.custom-arrow-buttons',
 			prevArrow: '<span class="custom-prev-arrow"><i class="fa fa-arrow-left"></i></span>',
 			nextArrow: '<span class="custom-next-arrow"><i class="fa fa-arrow-right"></i></span>',
