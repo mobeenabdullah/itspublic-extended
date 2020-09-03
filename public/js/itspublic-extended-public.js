@@ -154,7 +154,7 @@
 							</div>
 							<div class="search__filters-viewallresult">
 								<a href="#" class="search-btn">
-									View all result
+									Bekijk alle resultaten
 									<span class="viewbtn-arrow">
 								<svg
 										xmlns="http://www.w3.org/2000/svg"

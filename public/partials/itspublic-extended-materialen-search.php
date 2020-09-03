@@ -310,7 +310,7 @@ function data_fetch(){
 		<?php endwhile;
 		wp_reset_postdata();
 	else:
-		echo '<h3 class="materiaal-no-results">No Results Found</h3>';
+		echo '<h3 class="materiaal-no-results">Geen resultaten gevonden</h3>';
 	endif;
 
 	die();
@@ -624,7 +624,7 @@ function data_fetch_all(){
 		<?php endwhile;
 		wp_reset_postdata();
 	else:
-		echo '<h3 class="materiaal-no-results">No Results Found</h3>';
+		echo '<h3 class="materiaal-no-results">Geen resultaten gevonden</h3>';
 	endif;
 
 	die();
@@ -899,7 +899,7 @@ function data_fetch_hero(){
 		<?php endwhile;
 		wp_reset_postdata();
 	else:
-		echo '<h3 class="materiaal-no-results">No Results Found</h3>';
+		echo '<h3 class="materiaal-no-results">Geen resultaten gevonden</h3>';
 	endif;
 
 	echo '</div>';
