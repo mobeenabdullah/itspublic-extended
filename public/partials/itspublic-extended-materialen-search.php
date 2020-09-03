@@ -69,7 +69,7 @@ function data_fetch(){
                     <img src="<?php echo get_the_post_thumbnail_url($getPhotoField->ID, 'materialen-card'); ?>" alt="<?php the_title();?>">
                     <div class="cat-label" style="background-color: <?php echo $categorie_color; ?> !important;"><?php echo $categorie_name; ?></div>
                 </figure>
-                <h4 class="item__single-title"><?php the_title();?></h4>
+                <h4 class="item__single-title"><?php the_title();?> </h4>
                 <div class="item__single-desc">
                     <?php the_excerpt(); ?>
                 </div>
