@@ -43,7 +43,7 @@ function itspublic_show_members( ) {
                 </h6>
 
                 <div class="member-info">
-                    <?php the_excerpt(); ?>
+                    <p><?php echo get_excerpt(); ?></p>
                 </div>
 
                 <div class="member-info-full" style="display: none;">
