@@ -280,7 +280,7 @@
 .information__box-icon {
   position: absolute;
   right: 10px;
-  bottom: 10px;
+  bottom: 5px;
   color: #ffffff;
   cursor: pointer;
   z-index: 3333;
@@ -292,8 +292,8 @@
   color: #ffffff;
   cursor: pointer;
   background-color: rgba(0,0,0,0.6);
-  padding: 15px 60px 15px 15px;
-  max-width: 35%;
+  padding: 5px 31px 5px 15px;
+  max-width: 32%;
   width: 100%;
   display: none;
   .information__box-cover {
@@ -302,11 +302,13 @@
   }
 
   .content-text {
-    width: 75%;
+    width: auto;
+    display: flex;
     p.info-title {
       margin-bottom: 0 !important;
       color: #ffffff !important;
       font-size: 12px;
+      margin-right: 20px;
 
       a {
         color: #ffffff !important;
@@ -361,20 +363,20 @@
     }
   }
  .content-btn {
-   width: 25%;
+  width: auto;
+  margin-left: 20px;
   a {
-    padding: 4px 6px !important;
-    background-color: #ffffff !important;
-    color: $secondary-color !important;
-    border: none;
-    margin-top: 20px;
+    // padding: 4px 6px !important;
+    background-color: transparent !important;
+    color: #ffffff !important;
+    border: none; 
     font-size: 12px !important;
     line-height: 18px !important;
     outline: none !important;
-    border-radius: 4px !important;
+    
     &:hover {
-      background-color: $primary-color !important;
-      color: #ffffff !important;
+      background-color: transparent !important;
+      color: $primary-color!important;
     }
   }
  }
