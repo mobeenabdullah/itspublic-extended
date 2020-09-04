@@ -1,17 +1,3 @@
-// Vanilla stuff
-
-// // Show Team Popup
-// document.querySelector('.itspubic-single-member').addEventListener('click', showTeamPopup);
-//
-// function showTeamPopup(e) {
-//
-// 	//document.querySelector('.itspubic-single-member').className = 'itspubic-single-member';
-//
-// 	//this.className = 'itspubic-single-member active-member';
-//
-// 	console.log(e.target);
-// }
-
 // jQuery stuff
 (function ($) {
 	'use strict';
@@ -368,7 +354,41 @@
 			$(this).closest('.itspublic__sidebar-title').siblings().toggleClass('display-hide');
 		});
 
+		// Typewriter Effect
+		var ph = "Zoek hier naar publicaties, trainingen en methodieken. Bijvoorbeeld 'onderwijs' of 'storytelling'",
+			searchBar = $('#search_field'),
+
+			phCount = 0;
+
+		function randDelay(min, max) {
+			return Math.floor(Math.random() * (max-min+1)+min);
+		}
+
+		function printLetter(string, el) {
+			var arr = string.split(''),
+				input = el,
+				origString = string,
+				curPlace = $(input).attr("placeholder"),
+				placeholder = curPlace + arr[phCount];
+
+			setTimeout(function(){
+				$(input).attr("placeholder", placeholder);
+				phCount++;
+				if (phCount < arr.length) {
+					printLetter(origString, input);
+				}
+			}, randDelay(30, 60));
+		}
+
+		function placeholder() {
+			$(searchBar).attr("placeholder", "");
+			printLetter(ph, searchBar);
+		}
+		placeholder();
+
 	});
+
+
 
 
 })(jQuery);
