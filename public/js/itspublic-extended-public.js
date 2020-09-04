@@ -280,7 +280,7 @@
 
 			let getFiletypes = (function() {
 				let filetypes = [];
-				$(".filetypes .filter_checkbox_field").each(function() {
+				$(".filetype .filter_checkbox_field").each(function() {
 					filetypes.push(this.value);
 				});
 				return filetypes;
@@ -304,7 +304,7 @@
 
 			let getFiletypesSelected = (function() {
 				let filetypesSelected = [];
-				$(".filetypes .filter_checkbox_field:checked").each(function() {
+				$(".filetype .filter_checkbox_field:checked").each(function() {
 					filetypesSelected.push(this.value);
 				});
 				return filetypesSelected;

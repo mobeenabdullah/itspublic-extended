@@ -109,7 +109,7 @@ add_action( 'init', 'create_categorie_tax' );
 function create_filetype_tax() {
 
 	$labels = array(
-		'name'              => _x( 'Filetypes', 'taxonomy general name', 'itspublic' ),
+		'name'              => _x( 'Filetype', 'taxonomy general name', 'itspublic' ),
 		'singular_name'     => _x( 'Filetype', 'taxonomy singular name', 'itspublic' ),
 		'search_items'      => __( 'Search Filetypes', 'itspublic' ),
 		'all_items'         => __( 'All Filetypes', 'itspublic' ),

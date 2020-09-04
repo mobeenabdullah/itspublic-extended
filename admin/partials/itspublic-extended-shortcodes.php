@@ -266,12 +266,12 @@ function itspublic_materialen_search_page() {
                     </div>
                 </div>
                 <div class="filter__box-or">
-                    <span class="filter__box-or--box">or</span>
+                    <span class="filter__box-or--box">Of</span>
                 </div>
                 <div class="filter__box-searchbox">
                     <div class="filter__search-cover">
                         <form action="#" id="searchForm" action="<?php echo esc_url( home_url('/') ); ?>" autocomplete="off">
-                            <input type="text" name="s" id="materialenPageSearchInput" placeholder="Type your keyword here for search....">
+                            <input type="text" name="s" id="materialenPageSearchInput" placeholder="Type hier uw zoekterm.">
                             <button type="button">
                                 <i class="fa fa-search" aria-hidden="true"></i>
                             </button>
