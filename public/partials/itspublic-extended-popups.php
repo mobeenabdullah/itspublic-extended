@@ -76,14 +76,7 @@ function itspublic_team_popup() {
                     <!-- Information box content -->
                     <div class="information__box-content"></div>
 
-                    </figure>
-                    
-                    <!-- Close btn -->
-                    <span class="close itspublic__cover-close">
-                      <img src="<?php echo plugin_dir_url(__FILE__); ?>../images/close.svg" alt="" />
-                    </span>   
-                    
-                    
+                    </figure>                    
 
                 </div>
                 <!-- Itspublic Popup Content -->
@@ -121,6 +114,11 @@ function itspublic_team_popup() {
 
                     <div class="itspublic__footer-download"></div>
                 </div>
+
+                <!-- Close btn -->
+                <span class="close itspublic__cover-close">
+                      <img src="<?php echo plugin_dir_url(__FILE__); ?>../images/close.svg" alt="" />
+                    </span>  
             </div>
         </div>
 
