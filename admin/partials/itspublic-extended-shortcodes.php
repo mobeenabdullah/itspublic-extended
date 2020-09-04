@@ -43,7 +43,7 @@ function itspublic_show_members( ) {
                 </h6>
 
                 <div class="member-info">
-                    <?php the_excerpt(); ?>
+                    <p><?php echo get_excerpt(); ?></p>
                 </div>
 
                 <div class="member-info-full" style="display: none;">
@@ -253,7 +253,7 @@ function itspublic_materialen_search_page() {
 
                             ?>
                             <select class="custom__select-list" id="categories_dropdown_filter">
-                                <option disabled="disabled" selected="selected">Select Categories</option>
+                                <option value="showall" selected="selected">Alle categorieën</option>
                                 <?php
 
                                 foreach ($dropdownCategories as $dropdownCategorie) { ?>
@@ -261,7 +261,6 @@ function itspublic_materialen_search_page() {
                                 <?php }
 
                                 ?>
-                                <option value="showall">Show All</option>
                             </select>
                         </div>
                     </div>
