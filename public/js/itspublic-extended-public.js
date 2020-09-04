@@ -418,7 +418,6 @@ document.onkeydown = function(evt) {
 		isEscape = (evt.keyCode === 27);
 	}
 	if (isEscape) {
-		document.querySelector('#teamModal').style.display = "none";
-		document.querySelector('#materialenModal').style.display = "none";
+		document.querySelector('.modal').style.display = "none";
 	}
 };
