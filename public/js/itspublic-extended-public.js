@@ -15,7 +15,8 @@
 			appendArrows: '.projecten__arrows',
 			prevArrow: '<span class="projecten__arrows-left arrowstyle"><i class="fa fa-arrow-left"></i></span>',
 			nextArrow: '<span class="projecten__arrows-right arrowstyle"><i class="fa fa-arrow-right"></i></span>',
-			draggable: false
+			draggable: false,
+			speed: 100
 		});
 
 		$('.project_types_list').slick({
