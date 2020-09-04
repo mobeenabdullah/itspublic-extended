@@ -28,6 +28,9 @@ function data_fetch(){
 			'posts_per_page' => -1,
 			's' => esc_attr( $_POST['keyword'] ),
 			'post_type' => 'materiaal',
+			'meta_key' => 'date',
+			'orderby' => 'meta_value',
+			'order'   => 'DESC',
 			'tax_query' => array(
 				array(
 					'taxonomy' => 'onderwerp',
@@ -342,6 +345,9 @@ function data_fetch_all(){
 		array(
 			'posts_per_page' => -1,
 			'post_type' => 'materiaal',
+			'meta_key' => 'date',
+			'orderby' => 'meta_value',
+			'order'   => 'DESC',
 			'tax_query' => array(
 				array(
 					'taxonomy' => 'onderwerp',
