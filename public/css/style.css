@@ -846,7 +846,7 @@ body {
   height: 100%;
   overflow: auto;
   background-color: black;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.8);
   z-index: 100; }
   .modal .modal-content {
     background-color: #fefefe;
@@ -874,15 +874,15 @@ body {
 .itspublic__cover {
   position: relative;
   overflow: hidden;
-  height: 350px;
-  width: 40%;
-  padding: 15px; }
+  height: 250px;
+  width: 100%; }
   .itspublic__cover-img {
     height: 100% !important;
     margin: 0;
     align-self: stretch;
-    border-radius: 6px;
-    overflow: hidden; }
+    border-top-left-radius: 6px;
+    overflow: hidden;
+    border-top-right-radius: 6px; }
     .itspublic__cover-img img {
       width: 100%;
       height: 100%;
@@ -912,7 +912,7 @@ body {
       background-color: #f77b64; }
 
 .itspublic__popcontent {
-  width: 58%;
+  width: 100%;
   padding: 15px; }
   .itspublic__popcontent h3 {
     margin-bottom: 15px;
@@ -993,9 +993,6 @@ body {
       border-radius: 50%;
       overflow: hidden;
       margin-left: -15px; }
-      .itspublic__footer-avatar a:hover {
-        z-index: 5;
-        position: relative; }
       .itspublic__footer-avatar a img {
         width: 100%;
         height: 100%;
@@ -1005,7 +1002,7 @@ body {
     width: auto;
     position: absolute;
     bottom: -70px;
-    left: 10px;
+    left: 16px;
     border-radius: 4px;
     display: none;
     z-index: 9999; }
@@ -1059,7 +1056,7 @@ body {
 
 .information__box-icon {
   position: absolute;
-  right: 25px;
+  right: 20px;
   bottom: 17px;
   color: #ffffff;
   cursor: pointer;
@@ -1067,14 +1064,14 @@ body {
 
 .information__box-content {
   position: absolute;
-  right: 15px;
-  bottom: 15px;
+  right: 10px;
+  bottom: 10px;
   color: #ffffff;
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.6);
-  padding: 5px 31px 5px 15px;
+  padding: 5px 40px 7px 15px;
   max-width: 92.35%;
-  width: 100%;
+  width: auto;
   display: none;
   border-radius: 4px; }
   .information__box-content .information__box-cover {
@@ -1097,7 +1094,7 @@ body {
       font-size: 12px; }
       .information__box-content .content-text .license-info .licenses-list-wrapper {
         display: inline-block;
-        transform: translateY(5px); }
+        transform: translateY(3px); }
         .information__box-content .content-text .license-info .licenses-list-wrapper ul {
           padding: 0;
           list-style-type: none; }
@@ -1125,7 +1122,6 @@ body {
       color: #ffffff !important;
       border: none;
       font-size: 12px !important;
-      line-height: 18px !important;
       outline: none !important; }
       .information__box-content .content-btn a:hover {
         background-color: transparent !important;
@@ -1215,9 +1211,9 @@ body {
 
 @media screen and (max-width: 1366px) {
   .itspublic__cover {
-    height: 200px; }
+    height: 150px; }
     .itspublic__cover-img {
-      height: 200px !important; }
+      height: 150px !important; }
   .itspublic__popcontent h3 {
     margin-bottom: 0 !important;
     font-size: 16px !important;
@@ -1228,7 +1224,7 @@ body {
   .itspublic__popcontent .taxonomies {
     margin-bottom: 0 !important; }
   .modal {
-    padding-top: 70px !important; }
+    padding-top: 55px !important; }
   .itspublic__cover-close {
     position: absolute;
     top: 20px;
@@ -1238,7 +1234,26 @@ body {
     background-color: rgba(255, 255, 255, 0.4);
     border-radius: 50%;
     text-align: center;
-    line-height: 24px; } }
+    line-height: 24px; }
+  .itspublic__heromain {
+    transform: translateY(-120px) !important; }
+    .itspublic__heromain .elementor-heading-title {
+      font-size: 48px; }
+    .itspublic__heromain .elementor-element .elementor-text-editor p {
+      font-size: 18px !important;
+      margin: 0; }
+    .itspublic__heromain .searchbox__cover-form--input {
+      height: 55px; }
+      .itspublic__heromain .searchbox__cover-form--input input {
+        padding: 10px 20px; }
+      .itspublic__heromain .searchbox__cover-form--input .search-btn {
+        width: 15%;
+        padding: 10px; }
+    .itspublic__heromain .elementor-widget-icon {
+      top: 490px !important; }
+    .itspublic__heromain .quickSearchPreloader, .itspublic__heromain .materialenSearchPreloader {
+      top: 10px;
+      right: 150px; } }
 
 @media screen and (max-width: 1024px) {
   #materialenModal .modal-content {
@@ -1269,15 +1284,27 @@ body {
     width: 100%;
     bottom: -69px;
     left: 0; }
-    .itspublic__footer .popoverbox .persons__ul li a h5 {
-      font-size: 14px; }
-    .itspublic__footer .popoverbox .persons__ul li a span {
-      font-size: 12px; } }
+    .itspublic__footer .popoverbox .persons__ul {
+      flex-wrap: wrap;
+      text-align: center; }
+      .itspublic__footer .popoverbox .persons__ul li {
+        padding: 0;
+        margin-right: 0;
+        width: 100%;
+        margin-bottom: 10px; }
+        .itspublic__footer .popoverbox .persons__ul li a h5 {
+          font-size: 14px; }
+        .itspublic__footer .popoverbox .persons__ul li a span {
+          font-size: 12px; }
+        .itspublic__footer .popoverbox .persons__ul li::last-child {
+          margin-bottom: 0; } }
 
 @media screen and (max-width: 480px) {
   .information__box-content {
-    max-width: 100%;
+    max-width: 94%;
     width: 100%; }
+    .information__box-content .content-text {
+      flex-wrap: wrap; }
   .itspublic__cover {
     height: 140px; }
   .itspublic__footer {
@@ -1292,15 +1319,20 @@ body {
     .itspublic__footer-download {
       width: 100%;
       margin-bottom: 10px;
-      text-align: center; }
+      text-align: center;
+      justify-content: center; }
       .itspublic__footer-download img {
-        width: 70%; }
+        width: 100%; }
+      .itspublic__footer-download span {
+        width: auto; }
     .itspublic__footer .popoverbox {
       bottom: 120px; }
       .itspublic__footer .popoverbox::after {
         top: inherit;
         bottom: -5px;
         left: 50%; }
+  .itspublic__footer-avatar a {
+    margin-left: -9px; }
   .itspublic__popcontent h3 {
     font-size: 14px !important;
     line-height: 18px !important; }
