@@ -846,7 +846,7 @@ body {
   height: 100%;
   overflow: auto;
   background-color: black;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.6);
   z-index: 100; }
   .modal .modal-content {
     background-color: #fefefe;
