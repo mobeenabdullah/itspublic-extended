@@ -4,7 +4,7 @@
   box-sizing: border-box; }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif !important;
   position: relative; }
 
 .material__section {
@@ -48,7 +48,7 @@ body {
         display: inline-block;
         width: 100%; }
         .filter__box-category .custom__select .trigger-box::before {
-          content: '\f078';
+          content: '\f107';
           position: absolute;
           display: block;
           right: 0;
@@ -1117,7 +1117,8 @@ body {
                 fill: #5cd79e; }
   .information__box-content .content-btn {
     width: auto;
-    margin-left: 20px; }
+    margin-left: 20px;
+    display: none; }
     .information__box-content .content-btn a {
       background-color: transparent !important;
       color: #ffffff !important;
