@@ -51,8 +51,8 @@ body {
           content: '';
           position: absolute;
           display: block;
-          right: 0;
-          top: 16px;
+          right: -5px;
+          top: 20px;
           color: #f6f6f6;
           padding: 0 16px 0 24px;
           line-height: 47px;
@@ -60,7 +60,7 @@ body {
           cursor: pointer !important;
           width: 20px;
           height: 20px;
-          background-image: url(https://itspublic.local/wp-content/uploads/2020/09/down-arrow.svg);
+          background-image: url(https://wordpress-434521-1361392.cloudwaysapps.com/wp-content/uploads/2020/09/down-arrow.svg);
           background-repeat: no-repeat; }
         .filter__box-category .custom__select .trigger-box .custom__select-list {
           width: 100%;
@@ -866,7 +866,8 @@ body {
     float: right;
     font-size: 28px;
     font-weight: bold;
-    cursor: pointer; }
+    cursor: pointer;
+    line-height: 32px; }
   .modal:hover, .modal:focus {
     color: #000;
     text-decoration: none; }
@@ -992,18 +993,32 @@ body {
           margin-right: 0; }
   .itspublic__footer-avatar {
     height: 50px;
-    padding-left: 20px; }
+    padding-left: 20px;
+    position: relative; }
     .itspublic__footer-avatar a {
       display: inline-block;
       width: 50px;
       height: 50px;
       border-radius: 50%;
       overflow: hidden;
-      margin-left: -15px; }
+      margin-left: -20px;
+      position: relative; }
+      .itspublic__footer-avatar a:nth-child(1) img {
+        position: relative;
+        z-index: 10; }
+      .itspublic__footer-avatar a:nth-child(2) img {
+        position: relative;
+        z-index: 9; }
+      .itspublic__footer-avatar a:nth-child(3) img {
+        position: relative;
+        z-index: 8; }
       .itspublic__footer-avatar a img {
         width: 100%;
         height: 100%;
         object-fit: cover; }
+    .itspublic__footer-avatar:last-child {
+      margin-left: -50px;
+      z-index: 7; }
   .itspublic__footer .popoverbox {
     background-color: #000000;
     width: auto;
@@ -1026,14 +1041,17 @@ body {
           text-decoration: none;
           color: #ffffff;
           font-size: 15px;
-          font-weight: 500; }
+          font-weight: 500;
+          text-align: left; }
           .itspublic__footer .popoverbox .persons__ul li a h5 {
             color: #ffffff;
-            margin: 0 !important; }
+            margin: 0 !important;
+            text-align: left; }
           .itspublic__footer .popoverbox .persons__ul li a span {
             display: block;
             font-size: 15px;
-            font-weight: 300; }
+            font-weight: 300;
+            text-align: left; }
           .itspublic__footer .popoverbox .persons__ul li a:hover {
             color: #5cd79e; }
           .itspublic__footer .popoverbox .persons__ul li a:hover span {

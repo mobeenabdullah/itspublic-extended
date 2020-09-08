@@ -30,6 +30,7 @@
       font-size: 28px;
       font-weight: bold;
       cursor: pointer;
+      line-height: 32px;
     }
     &:hover,
     &:focus {
@@ -211,13 +212,29 @@
   &-avatar {
     height: 50px;
     padding-left: 20px;
+    position: relative;
     a {
       display: inline-block;
       width: 50px;
       height: 50px;
       border-radius: 50%;
       overflow: hidden;
-      margin-left: -15px;
+      margin-left: -20px;
+      position: relative;
+
+      &:nth-child(1) img { 
+        position: relative;     
+        z-index: 10;
+      }
+      &:nth-child(2) img {
+        position: relative;     
+        z-index: 9;
+      }
+      &:nth-child(3) img {
+        position: relative;     
+        z-index: 8;
+      }
+  
    
       img {
         width: 100%;
@@ -225,6 +242,14 @@
         object-fit: cover;
       }
     }
+    &:last-child {
+      margin-left: -50px;
+      z-index: 7;
+    }
+   
+  
+    
+
   }
 
   // popoverbox
@@ -252,15 +277,20 @@
           text-decoration: none;
           color: #ffffff;
           font-size: 15px;
-          font-weight: 500;         
+          font-weight: 500;
+          text-align: left;
+          
+                 
           h5 {
             color: #ffffff;
             margin: 0 !important;
+            text-align: left;
           }
           span {
             display: block;
             font-size: 15px;
             font-weight: 300;
+            text-align: left;
           }
 
           &:hover {
