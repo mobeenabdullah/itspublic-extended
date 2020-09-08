@@ -949,7 +949,9 @@ body {
   position: relative;
   width: 100%;
   border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px; }
+  border-bottom-right-radius: 10px;
+  padding-left: 20px;
+  padding-right: 20px; }
   .itspublic__footer-date {
     display: flex;
     position: relative; }
@@ -960,8 +962,9 @@ body {
   .itspublic__footer-download {
     display: flex;
     width: 50%;
-    justify-content: flex-end;
-    padding-right: 10px; }
+    justify-content: flex-start;
+    padding-right: 10px;
+    order: 1; }
     .itspublic__footer-download span {
       margin-right: 10px;
       width: 15%;
@@ -1003,7 +1006,7 @@ body {
     width: auto;
     position: absolute;
     bottom: -70px;
-    left: 16px;
+    right: 16px;
     border-radius: 4px;
     display: none;
     z-index: 9999; }
@@ -1044,10 +1047,12 @@ body {
       border-radius: 3px;
       background-color: #000000;
       top: -5px;
-      left: 15px;
+      right: 15px;
       transform: rotate(45deg); }
   .itspublic__footer-members-list {
-    width: 50%; }
+    width: 50%;
+    order: 2;
+    text-align: right; }
 
 #materialenModal {
   margin-top: 0; }
