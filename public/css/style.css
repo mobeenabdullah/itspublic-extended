@@ -48,17 +48,20 @@ body {
         display: inline-block;
         width: 100%; }
         .filter__box-category .custom__select .trigger-box::before {
-          content: '\f107';
+          content: '';
           position: absolute;
           display: block;
           right: 0;
-          top: 0;
-          font: 22px "FontAwesome";
+          top: 16px;
           color: #f6f6f6;
           padding: 0 16px 0 24px;
           line-height: 47px;
           pointer-events: none;
-          cursor: pointer !important; }
+          cursor: pointer !important;
+          width: 20px;
+          height: 20px;
+          background-image: url(https://itspublic.local/wp-content/uploads/2020/09/down-arrow.svg);
+          background-repeat: no-repeat; }
         .filter__box-category .custom__select .trigger-box .custom__select-list {
           width: 100%;
           padding: 13px;
