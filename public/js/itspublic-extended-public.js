@@ -23,7 +23,7 @@
 			slidesToShow: 10,
 			slidesToScroll: 1,
 			asNavFor: '.itspublic-projects',
-			focusOnSelect: true
+			focusOnSelect: truez
 		});
 
 		$('.material__items').on('click', '.item__single-img', showMaterialenPopup);
