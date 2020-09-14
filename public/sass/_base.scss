@@ -12,7 +12,7 @@ $bp-small: 37.5em; //600px
 
 
 
-
+// mixins 
 
 * {
   padding: 0;
@@ -21,7 +21,7 @@ $bp-small: 37.5em; //600px
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif !important;
   position: relative;
 }
 // .container {

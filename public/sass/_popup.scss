@@ -30,6 +30,7 @@
       font-size: 28px;
       font-weight: bold;
       cursor: pointer;
+      line-height: 32px;
     }
     &:hover,
     &:focus {
@@ -149,6 +150,8 @@
   width: 100%;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
 
   &-date {
     display: flex;
@@ -163,8 +166,9 @@
   &-download {
     display: flex;
     width: 50%;
-    justify-content: flex-end;
+    justify-content: flex-start;
     padding-right: 10px;
+    order: 1;
 
     span {
       margin-right: 10px;
@@ -208,13 +212,29 @@
   &-avatar {
     height: 50px;
     padding-left: 20px;
+    position: relative;
     a {
       display: inline-block;
       width: 50px;
       height: 50px;
       border-radius: 50%;
       overflow: hidden;
-      margin-left: -15px;
+      margin-left: -20px;
+      position: relative;
+
+      &:nth-child(1) img { 
+        position: relative;     
+        z-index: 10;
+      }
+      &:nth-child(2) img {
+        position: relative;     
+        z-index: 9;
+      }
+      &:nth-child(3) img {
+        position: relative;     
+        z-index: 8;
+      }
+  
    
       img {
         width: 100%;
@@ -222,6 +242,14 @@
         object-fit: cover;
       }
     }
+    &:last-child {
+      margin-left: -50px;
+      z-index: 7;
+    }
+   
+  
+    
+
   }
 
   // popoverbox
@@ -230,7 +258,7 @@
     width: auto;
     position: absolute;
     bottom: -70px;
-    left: 16px;
+    right: 16px;
     border-radius: 4px;
     display: none;
     z-index: 9999;
@@ -249,15 +277,20 @@
           text-decoration: none;
           color: #ffffff;
           font-size: 15px;
-          font-weight: 500;         
+          font-weight: 500;
+          text-align: left;
+          
+                 
           h5 {
             color: #ffffff;
             margin: 0 !important;
+            text-align: left;
           }
           span {
             display: block;
             font-size: 15px;
             font-weight: 300;
+            text-align: left;
           }
 
           &:hover {
@@ -286,7 +319,7 @@
       border-radius: 3px;
       background-color: $secondary-color;
       top: -5px;
-      left: 15px;
+      right: 15px;
       transform: rotate(45deg);
     }
 
@@ -296,6 +329,8 @@
   &-members-list  {
 
     width: 50%;
+    order: 2;
+    text-align: right;
   }
 
 }
@@ -406,6 +441,7 @@
  .content-btn {
   width: auto;
   margin-left: 20px;
+  display: none;
   a {
     // padding: 4px 6px !important;
     background-color: transparent !important;

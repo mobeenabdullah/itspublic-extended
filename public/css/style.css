@@ -4,7 +4,7 @@
   box-sizing: border-box; }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif !important;
   position: relative; }
 
 .material__section {
@@ -48,17 +48,20 @@ body {
         display: inline-block;
         width: 100%; }
         .filter__box-category .custom__select .trigger-box::before {
-          content: '\f078';
+          content: '';
           position: absolute;
           display: block;
-          right: 0;
-          top: 0;
-          font: 22px "FontAwesome";
+          right: -5px;
+          top: 20px;
           color: #f6f6f6;
           padding: 0 16px 0 24px;
           line-height: 47px;
           pointer-events: none;
-          cursor: pointer !important; }
+          cursor: pointer !important;
+          width: 20px;
+          height: 20px;
+          background-image: url(https://wordpress-434521-1361392.cloudwaysapps.com/wp-content/uploads/2020/09/down-arrow.svg);
+          background-repeat: no-repeat; }
         .filter__box-category .custom__select .trigger-box .custom__select-list {
           width: 100%;
           padding: 13px;
@@ -863,7 +866,8 @@ body {
     float: right;
     font-size: 28px;
     font-weight: bold;
-    cursor: pointer; }
+    cursor: pointer;
+    line-height: 32px; }
   .modal:hover, .modal:focus {
     color: #000;
     text-decoration: none; }
@@ -949,7 +953,9 @@ body {
   position: relative;
   width: 100%;
   border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px; }
+  border-bottom-right-radius: 10px;
+  padding-left: 20px;
+  padding-right: 20px; }
   .itspublic__footer-date {
     display: flex;
     position: relative; }
@@ -960,8 +966,9 @@ body {
   .itspublic__footer-download {
     display: flex;
     width: 50%;
-    justify-content: flex-end;
-    padding-right: 10px; }
+    justify-content: flex-start;
+    padding-right: 10px;
+    order: 1; }
     .itspublic__footer-download span {
       margin-right: 10px;
       width: 15%;
@@ -986,24 +993,38 @@ body {
           margin-right: 0; }
   .itspublic__footer-avatar {
     height: 50px;
-    padding-left: 20px; }
+    padding-left: 20px;
+    position: relative; }
     .itspublic__footer-avatar a {
       display: inline-block;
       width: 50px;
       height: 50px;
       border-radius: 50%;
       overflow: hidden;
-      margin-left: -15px; }
+      margin-left: -20px;
+      position: relative; }
+      .itspublic__footer-avatar a:nth-child(1) img {
+        position: relative;
+        z-index: 10; }
+      .itspublic__footer-avatar a:nth-child(2) img {
+        position: relative;
+        z-index: 9; }
+      .itspublic__footer-avatar a:nth-child(3) img {
+        position: relative;
+        z-index: 8; }
       .itspublic__footer-avatar a img {
         width: 100%;
         height: 100%;
         object-fit: cover; }
+    .itspublic__footer-avatar:last-child {
+      margin-left: -50px;
+      z-index: 7; }
   .itspublic__footer .popoverbox {
     background-color: #000000;
     width: auto;
     position: absolute;
     bottom: -70px;
-    left: 16px;
+    right: 16px;
     border-radius: 4px;
     display: none;
     z-index: 9999; }
@@ -1020,14 +1041,17 @@ body {
           text-decoration: none;
           color: #ffffff;
           font-size: 15px;
-          font-weight: 500; }
+          font-weight: 500;
+          text-align: left; }
           .itspublic__footer .popoverbox .persons__ul li a h5 {
             color: #ffffff;
-            margin: 0 !important; }
+            margin: 0 !important;
+            text-align: left; }
           .itspublic__footer .popoverbox .persons__ul li a span {
             display: block;
             font-size: 15px;
-            font-weight: 300; }
+            font-weight: 300;
+            text-align: left; }
           .itspublic__footer .popoverbox .persons__ul li a:hover {
             color: #5cd79e; }
           .itspublic__footer .popoverbox .persons__ul li a:hover span {
@@ -1044,10 +1068,12 @@ body {
       border-radius: 3px;
       background-color: #000000;
       top: -5px;
-      left: 15px;
+      right: 15px;
       transform: rotate(45deg); }
   .itspublic__footer-members-list {
-    width: 50%; }
+    width: 50%;
+    order: 2;
+    text-align: right; }
 
 #materialenModal {
   margin-top: 0; }
@@ -1117,7 +1143,8 @@ body {
                 fill: #5cd79e; }
   .information__box-content .content-btn {
     width: auto;
-    margin-left: 20px; }
+    margin-left: 20px;
+    display: none; }
     .information__box-content .content-btn a {
       background-color: transparent !important;
       color: #ffffff !important;
