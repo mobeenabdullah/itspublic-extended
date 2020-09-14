@@ -284,7 +284,7 @@ $break-mobile: 480px;
       }
     }
     .popoverbox {
-      bottom: 120px;
+      bottom: 50px;
       &::after {
         top: inherit;
         bottom: -5px;
@@ -315,6 +315,7 @@ $break-mobile: 480px;
       ul {
         li {
           font-size: 10px !important;
+          margin-left: -38px;
         }
       }
     }
@@ -391,6 +392,53 @@ $break-mobile: 480px;
     line-height: 20px !important;
     margin-bottom: 10px !important  ;
   }
+  .project_types_list {
+    .slick-track {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+} 
+
+.itspublic__footer {
+
+  &-download {
+    width: 48%;
+    margin-bottom: 0;
+
+    ul {      
+      padding-left: 0;
+      li {
+        a {
+          height: 25px;
+    width: 25px;
+        }
+      }
+    }
+ 
+  }
+
+  &-avatar {
+    height: auto;
+    text-align: right;
+    margin-top: 2px;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+ 
+  
+    
+
+  }
+
+
+
+
+
+
 
 
 }

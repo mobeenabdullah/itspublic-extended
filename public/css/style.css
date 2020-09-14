@@ -1350,7 +1350,7 @@ body {
       .itspublic__footer-download span {
         width: auto; }
     .itspublic__footer .popoverbox {
-      bottom: 120px; }
+      bottom: 50px; }
       .itspublic__footer .popoverbox::after {
         top: inherit;
         bottom: -5px;
@@ -1364,7 +1364,8 @@ body {
     font-size: 12px;
     line-height: 16px !important; }
   .itspublic__popcontent .taxonomies ul li {
-    font-size: 10px !important; }
+    font-size: 10px !important;
+    margin-left: -38px; }
   .filter__box-category {
     width: 100%; }
   .filter__box-or {
@@ -1400,4 +1401,24 @@ body {
   .teampop-detail {
     font-size: 12px !important;
     line-height: 20px !important;
-    margin-bottom: 10px !important; } }
+    margin-bottom: 10px !important; }
+  .project_types_list .slick-track {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; }
+  .itspublic__footer-download {
+    width: 48%;
+    margin-bottom: 0; }
+    .itspublic__footer-download ul {
+      padding-left: 0; }
+      .itspublic__footer-download ul li a {
+        height: 25px;
+        width: 25px; }
+  .itspublic__footer-avatar {
+    height: auto;
+    text-align: right;
+    margin-top: 2px;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; } }
