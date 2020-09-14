@@ -10,16 +10,6 @@ $bp-large: 62.5em; // 1000px
 $bp-medium: 50em; // 800px
 $bp-small: 37.5em; //600px
 
-
-
-// mixins
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
 body {
   font-family: "Poppins", sans-serif !important;
   position: relative;
