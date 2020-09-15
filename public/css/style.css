@@ -1431,4 +1431,6 @@ body {
     justify-content: flex-end; }
   .projecten__single-content h4 {
     font-size: 20px;
-    margin-top: 15px; } }
+    margin-top: 15px; }
+  .projecten__single img {
+    margin-right: 0 !important; } }
