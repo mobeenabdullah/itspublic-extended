@@ -1304,24 +1304,26 @@ body {
       width: 48%; }
       .material__page-itemscover .material__items .item__single-img {
         height: 156px; }
-  .itspublic__footer .popoverbox {
-    width: 100%;
-    bottom: -69px;
-    left: 0; }
-    .itspublic__footer .popoverbox .persons__ul {
-      flex-wrap: wrap;
-      text-align: center; }
-      .itspublic__footer .popoverbox .persons__ul li {
-        padding: 0;
-        margin-right: 0;
-        width: 100%;
-        margin-bottom: 10px; }
-        .itspublic__footer .popoverbox .persons__ul li a h5 {
-          font-size: 14px; }
-        .itspublic__footer .popoverbox .persons__ul li a span {
-          font-size: 12px; }
-        .itspublic__footer .popoverbox .persons__ul li::last-child {
-          margin-bottom: 0; } }
+  .itspublic__footer {
+    padding: 10px 15px; }
+    .itspublic__footer .popoverbox {
+      width: 100%;
+      bottom: -69px;
+      left: 0; }
+      .itspublic__footer .popoverbox .persons__ul {
+        flex-wrap: wrap;
+        text-align: center; }
+        .itspublic__footer .popoverbox .persons__ul li {
+          padding: 0;
+          margin-right: 0;
+          width: 100%;
+          margin-bottom: 10px; }
+          .itspublic__footer .popoverbox .persons__ul li a h5 {
+            font-size: 14px; }
+          .itspublic__footer .popoverbox .persons__ul li a span {
+            font-size: 12px; }
+          .itspublic__footer .popoverbox .persons__ul li::last-child {
+            margin-bottom: 0; } }
 
 @media screen and (max-width: 480px) {
   .information__box-content {
@@ -1349,7 +1351,7 @@ body {
         width: 100%; }
       .itspublic__footer-download span {
         width: auto;
-        font-size: 12px; }
+        font-size: 10px; }
     .itspublic__footer .popoverbox {
       bottom: 50px; }
       .itspublic__footer .popoverbox::after {
@@ -1416,11 +1418,13 @@ body {
     .itspublic__footer-download ul {
       padding-left: 0;
       margin-left: 0; }
-      .itspublic__footer-download ul li a {
-        height: 25px;
-        width: 25px; }
-        .itspublic__footer-download ul li a img {
-          height: 18px; }
+      .itspublic__footer-download ul li {
+        margin-right: 0; }
+        .itspublic__footer-download ul li a {
+          height: 25px;
+          width: 25px; }
+          .itspublic__footer-download ul li a img {
+            height: 18px; }
   .itspublic__footer-avatar {
     height: auto;
     text-align: right;
@@ -1430,7 +1434,9 @@ body {
     align-items: center;
     justify-content: flex-end; }
   .projecten__single-content h4 {
-    font-size: 20px;
+    font-size: 16px !important;
     margin-top: 15px; }
-  .projecten__single img {
-    margin-right: 0 !important; } }
+  .projecten__single-img {
+    margin-right: 0 !important; }
+  .modal .close {
+    line-height: 26px; } }

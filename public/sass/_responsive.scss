@@ -212,6 +212,7 @@ $break-mobile: 480px;
 
 
 .itspublic__footer {
+  padding: 10px 15px;
   .popoverbox {
    width: 100%;
     bottom: -69px;
@@ -281,7 +282,7 @@ $break-mobile: 480px;
       }
       span {
         width: auto;
-        font-size: 12px;
+        font-size: 10px;
       }
     }
     .popoverbox {
@@ -415,6 +416,7 @@ $break-mobile: 480px;
       padding-left: 0;
       margin-left: 0;
       li {
+        margin-right: 0;
         a {
           height: 25px;
           width: 25px;
@@ -446,15 +448,19 @@ $break-mobile: 480px;
 
   .projecten__single-content {
     h4 {
-      font-size: 20px;
+      font-size: 16px !important;
       margin-top: 15px;
     }
   }
-  .projecten__single img {
+  .projecten__single-img {
     margin-right: 0 !important;
   }
 
-
+  .modal {
+    .close {
+      line-height: 26px;
+    }
+  } 
 
 
 
