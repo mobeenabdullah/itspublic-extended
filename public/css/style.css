@@ -1348,7 +1348,8 @@ body {
       .itspublic__footer-download img {
         width: 100%; }
       .itspublic__footer-download span {
-        width: auto; }
+        width: auto;
+        font-size: 12px; }
     .itspublic__footer .popoverbox {
       bottom: 50px; }
       .itspublic__footer .popoverbox::after {
@@ -1366,6 +1367,8 @@ body {
   .itspublic__popcontent .taxonomies ul li {
     font-size: 10px !important;
     margin-left: -38px; }
+    .itspublic__popcontent .taxonomies ul li i {
+      margin-right: 5px; }
   .filter__box-category {
     width: 100%; }
   .filter__box-or {
@@ -1408,12 +1411,16 @@ body {
     justify-content: center; }
   .itspublic__footer-download {
     width: 48%;
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    justify-content: left; }
     .itspublic__footer-download ul {
-      padding-left: 0; }
+      padding-left: 0;
+      margin-left: 0; }
       .itspublic__footer-download ul li a {
         height: 25px;
         width: 25px; }
+        .itspublic__footer-download ul li a img {
+          height: 18px; }
   .itspublic__footer-avatar {
     height: auto;
     text-align: right;
@@ -1421,4 +1428,7 @@ body {
     margin-bottom: 0;
     display: flex;
     align-items: center;
-    justify-content: flex-end; } }
+    justify-content: flex-end; }
+  .projecten__single-content h4 {
+    font-size: 20px;
+    margin-top: 15px; } }
