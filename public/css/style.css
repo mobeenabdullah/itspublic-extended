@@ -623,7 +623,7 @@ body {
       border-radius: 5px;
       background-color: #ffffff; }
       .searchbox__cover-form--input .search-input {
-        width: 85%;
+        width: 100%;
         padding: 20px;
         background-color: transparent;
         border: none;
