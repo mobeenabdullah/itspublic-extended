@@ -31,7 +31,7 @@ function itspublic_team_popup() {
 							<div class="icon-social-cover">
 								<a href="" target="_blank" class="email-link">
 									<i class="fa fa-envelope"></i>
-									<span>Email</span>
+									<span>e-mail</span>
 								</a>
 							</div>
 						</div>

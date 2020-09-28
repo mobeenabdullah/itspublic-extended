@@ -52,7 +52,7 @@ function itspublic_show_members( ) {
 
                 <div class="member-footer-info">
                     <div class="member-more-details">
-                        <a href="#!">+ More details</a>
+                        <a href="#!">+ Meer detail</a>
                     </div>
                     <div class="member-social-icons">
                         <ul>

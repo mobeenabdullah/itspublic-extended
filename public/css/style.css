@@ -928,16 +928,19 @@ body {
     color: #000000 !important; }
   .itspublic__popcontent .taxonomies {
     margin-bottom: 5px; }
-    .itspublic__popcontent .taxonomies ul li {
-      list-style-type: none;
-      display: inline-block;
-      margin-right: 15px;
-      color: #000000;
-      font-size: 14px; }
-      .itspublic__popcontent .taxonomies ul li i {
-        margin-right: 10px; }
-    .itspublic__popcontent .taxonomies ul li.materiaal-popup-categorie {
-      display: none; }
+    .itspublic__popcontent .taxonomies ul {
+      margin: 0;
+      padding: 0; }
+      .itspublic__popcontent .taxonomies ul li {
+        list-style-type: none;
+        display: inline-block;
+        margin-right: 15px;
+        color: #000000;
+        font-size: 14px; }
+        .itspublic__popcontent .taxonomies ul li i {
+          margin-right: 10px; }
+      .itspublic__popcontent .taxonomies ul li.materiaal-popup-categorie {
+        display: none; }
 
 .itspublic__footer {
   display: flex;
@@ -973,7 +976,9 @@ body {
     .itspublic__footer-download ul {
       display: flex;
       margin-left: 10px;
-      justify-content: flex-end; }
+      justify-content: flex-start;
+      padding-left: 0;
+      margin-left: 15px; }
       .itspublic__footer-download ul li {
         margin-right: 10px;
         display: flex;
@@ -1368,7 +1373,7 @@ body {
     line-height: 16px !important; }
   .itspublic__popcontent .taxonomies ul li {
     font-size: 10px !important;
-    margin-left: -38px; }
+    margin-left: 0; }
     .itspublic__popcontent .taxonomies ul li i {
       margin-right: 5px; }
   .filter__box-category {

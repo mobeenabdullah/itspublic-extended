@@ -122,7 +122,8 @@
   .taxonomies{
     margin-bottom: 5px;
     ul {
-      
+        margin: 0;
+        padding: 0;
       li {
         list-style-type: none;
         display: inline-block;
@@ -169,7 +170,7 @@
     justify-content: flex-start;
     padding-right: 10px;
     order: 1;
-
+    
     span {
       margin-right: 10px;
     width: 15%;
@@ -181,8 +182,9 @@
     ul {
       display: flex;
       margin-left: 10px;
-      justify-content: flex-end;
-
+      justify-content: flex-start;
+      padding-left: 0;
+      margin-left: 15px;
 
       li {
         margin-right: 10px;
