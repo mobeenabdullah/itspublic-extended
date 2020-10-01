@@ -13,15 +13,11 @@ function itspublic_team_popup() {
 				<!-- Image Box -->
 				<div class="teampopup__cover">
 					<!-- Image cover -->
-					<figure class="teampopup__cover-img">
+                    <div class="teampopup__cover-img">
+					<figure class="teampopup__cover-img-figure">
 						<img src="" alt="" />
 					</figure>
-
-					<div class="teampopup__cover-content">
-						<span class="teampop-designation"></span>
-						<h3 class="teampop-member-name"></h3>
-						<div class="teampop-detail"></div>
-						<div class="social-icon-cover">
+                    <div class="social-icon-cover">
 							<div class="icon-social-cover">
 								<a href="" target="_blank" class="linkedin-bg linkedin-link">
 									<i class="fa fa-linkedin"></i>
@@ -35,6 +31,13 @@ function itspublic_team_popup() {
 								</a>
 							</div>
 						</div>
+                    </div>
+
+					<div class="teampopup__cover-content">
+						<span class="teampop-designation"></span>
+						<h3 class="teampop-member-name"></h3>
+						<div class="teampop-detail"></div>
+						
 
 					</div>
 

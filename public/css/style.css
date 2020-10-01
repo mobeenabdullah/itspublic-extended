@@ -1155,24 +1155,31 @@ body {
         background-color: transparent !important;
         color: #5cd79e !important; }
 
+#teamModal .modal_team_content {
+  width: 1000px !important; }
+
 .modal_team_content {
   padding: 20px;
   position: relative;
   border-radius: 10px; }
   .modal_team_content .teampopup__cover {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between; }
     .modal_team_content .teampopup__cover-img {
-      height: 300px !important;
-      max-width: 312px !important;
-      overflow: hidden;
-      border-radius: 6px; }
-      .modal_team_content .teampopup__cover-img img {
+      max-width: 312px !important; }
+      .modal_team_content .teampopup__cover-img-figure {
+        height: 300px !important;
         width: 100%;
-        height: 100%;
-        object-fit: cover;
-        margin: 0 !important; }
+        overflow: hidden;
+        border-radius: 6px;
+        margin: 0;
+        margin-bottom: 30px; }
+        .modal_team_content .teampopup__cover-img-figure img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          margin: 0 !important; }
     .modal_team_content .teampopup__cover-content {
       width: 100%;
       padding-left: 30px; }
