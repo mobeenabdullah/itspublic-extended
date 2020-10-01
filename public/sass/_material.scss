@@ -57,7 +57,7 @@
 
         .custom__select {
             width: 100%;
-            background-color: #5CD79E;
+            background-color: $primary-color;
             border-radius: 5px;
             overflow: hidden;
           
@@ -213,7 +213,7 @@
     }
     .itspublic__sidebar-content {
         .loadmore-btn {
-            color: #5CD79E !important;
+            color: $primary-color !important;
             font-size: 12px;
         
             &:hover {
@@ -280,7 +280,7 @@
         border-radius: 2px;
 
         &:checked ~ .checkmark {
-            background-color: #5CD79E;
+            background-color: $primary-color;
           }
         &:checked ~ .checkmark::after {
             display: block;
