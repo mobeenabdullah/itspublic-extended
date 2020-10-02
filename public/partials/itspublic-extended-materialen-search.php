@@ -384,7 +384,28 @@ function data_fetch(){
 
                 </div>
                 <div class="materialen-hidden-fields" style="display: none;">
-                    <div class="img-url"><?php echo get_the_post_thumbnail_url($getPhotoField->ID, 'materialen-popup'); ?></div>
+                    <?php
+                        $popup_photo_size = '';
+                        $get_popup_photo_size = get_field('photo_position')['value'];
+                        print_r($popup_photo_size);
+                        if ($get_popup_photo_size == 'center') {
+	                        $popup_photo_size = 'materialen-popup';
+                        } elseif ($get_popup_photo_size == 'top') {
+	                        $popup_photo_size = 'materialen-popup-top';
+                        } elseif ($get_popup_photo_size == 'bottom') {
+	                        $popup_photo_size = 'materialen-popup-bottom';
+                        } else {
+	                        $popup_photo_size = 'materialen-popup';
+                        }
+                    ?>
+
+	                <div style="display: none;">
+                        <?php echo get_the_post_thumbnail_url($getPhotoField->ID, 'materialen-popup'); ?>
+	                    <?php echo get_the_post_thumbnail_url($getPhotoField->ID, 'materialen-popup-top'); ?>
+	                    <?php echo get_the_post_thumbnail_url($getPhotoField->ID, 'materialen-popup-bottom'); ?>
+                    </div>
+
+                    <div class="img-url"><?php echo get_the_post_thumbnail_url($getPhotoField->ID, $popup_photo_size); ?></div>
                     <div class="img-url-full"><?php echo get_the_post_thumbnail_url($getPhotoField->ID, 'full'); ?></div>
                     <div class="materiaal-title"><?php the_title(); ?></div>
                     <div class="category-name"><?php echo $categorie_name; ?></div>
@@ -784,7 +805,28 @@ function data_fetch_all(){
 
                 </div>
                 <div class="materialen-hidden-fields" style="display: none;">
-                    <div class="img-url"><?php echo get_the_post_thumbnail_url($getPhotoField->ID, 'materialen-popup'); ?></div>
+	                <?php
+                        $popup_photo_size = '';
+                        $get_popup_photo_size = get_field('photo_position')['value'];
+                        print_r($popup_photo_size);
+                        if ($get_popup_photo_size == 'center') {
+                            $popup_photo_size = 'materialen-popup';
+                        } elseif ($get_popup_photo_size == 'top') {
+                            $popup_photo_size = 'materialen-popup-top';
+                        } elseif ($get_popup_photo_size == 'bottom') {
+                            $popup_photo_size = 'materialen-popup-bottom';
+                        } else {
+                            $popup_photo_size = 'materialen-popup';
+                        }
+	                ?>
+
+                    <div style="display: none;">
+		                <?php echo get_the_post_thumbnail_url($getPhotoField->ID, 'materialen-popup'); ?>
+		                <?php echo get_the_post_thumbnail_url($getPhotoField->ID, 'materialen-popup-top'); ?>
+		                <?php echo get_the_post_thumbnail_url($getPhotoField->ID, 'materialen-popup-bottom'); ?>
+                    </div>
+
+                    <div class="img-url"><?php echo get_the_post_thumbnail_url($getPhotoField->ID, $popup_photo_size); ?></div>
                     <div class="img-url-full"><?php echo get_the_post_thumbnail_url($getPhotoField->ID, 'full'); ?></div>
                     <div class="materiaal-title"><?php the_title(); ?></div>
                     <div class="category-name"><?php echo $categorie_name; ?></div>
@@ -841,7 +883,28 @@ function data_fetch_hero(){
                 </div>
 
                 <div class="materialen-hidden-fields" style="display: none;">
-                    <div class="img-url"><?php echo get_the_post_thumbnail_url($getPhotoField->ID, 'materialen-popup'); ?></div>
+	                <?php
+                        $popup_photo_size = '';
+                        $get_popup_photo_size = get_field('photo_position')['value'];
+                        print_r($popup_photo_size);
+                        if ($get_popup_photo_size == 'center') {
+                            $popup_photo_size = 'materialen-popup';
+                        } elseif ($get_popup_photo_size == 'top') {
+                            $popup_photo_size = 'materialen-popup-top';
+                        } elseif ($get_popup_photo_size == 'bottom') {
+                            $popup_photo_size = 'materialen-popup-bottom';
+                        } else {
+                            $popup_photo_size = 'materialen-popup';
+                        }
+	                ?>
+
+                    <div style="display: none;">
+		                <?php echo get_the_post_thumbnail_url($getPhotoField->ID, 'materialen-popup'); ?>
+		                <?php echo get_the_post_thumbnail_url($getPhotoField->ID, 'materialen-popup-top'); ?>
+		                <?php echo get_the_post_thumbnail_url($getPhotoField->ID, 'materialen-popup-bottom'); ?>
+                    </div>
+
+                    <div class="img-url"><?php echo get_the_post_thumbnail_url($getPhotoField->ID, $popup_photo_size); ?></div>
                     <div class="img-url-full"><?php echo get_the_post_thumbnail_url($getPhotoField->ID, 'full'); ?></div>
                     <div class="materiaal-title"><?php the_title(); ?></div>
                     <div class="category-name"><?php echo $categorie_name; ?></div>
