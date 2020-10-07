@@ -51,6 +51,7 @@
 			$('.item__single').removeClass('active-item');
 			$(this).closest('.item__single').addClass('active-item');
 
+			const getMateriaalID = $('.active-item .materialen-hidden-fields .materiaal-id').text();
 			const materialenModal = $('#materialenModal');
 			const getImageURL = $('.active-item .materialen-hidden-fields .img-url').text();
 			const getFullImageURL = $('.active-item .materialen-hidden-fields .img-url-full').text();
@@ -83,6 +84,15 @@
 			materiaalImageInfo.html(getMateriaalImageInfo);
 
 			materialenModal.show();
+
+			$.ajax({
+				url: ajax_object.ajax_url,
+				type: 'post',
+				data: { action: 'update_materiaal_card_stats', getMateriaalID},
+				success: function(data) {
+					console.log(data);
+				}
+			});
 		}
 
 		$('.itspublic__cover-close').on('click', function () {

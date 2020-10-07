@@ -399,6 +399,8 @@ function data_fetch(){
                         }
                     ?>
 
+                    <div class="materiaal-id"><?php the_ID(); ?></div>
+
 	                <div style="display: none;">
                         <?php echo get_the_post_thumbnail_url($getPhotoField->ID, 'materialen-popup'); ?>
 	                    <?php echo get_the_post_thumbnail_url($getPhotoField->ID, 'materialen-popup-top'); ?>
@@ -821,6 +823,8 @@ function data_fetch_all(){
                         }
 	                ?>
 
+                    <div class="materiaal-id"><?php the_ID(); ?></div>
+
                     <div style="display: none;">
 		                <?php echo get_the_post_thumbnail_url($getPhotoField->ID, 'materialen-popup'); ?>
 		                <?php echo get_the_post_thumbnail_url($getPhotoField->ID, 'materialen-popup-top'); ?>
@@ -898,6 +902,8 @@ function data_fetch_hero(){
                             $popup_photo_size = 'materialen-popup';
                         }
 	                ?>
+
+                    <div class="materiaal-id"><?php the_ID(); ?></div>
 
                     <div style="display: none;">
 		                <?php echo get_the_post_thumbnail_url($getPhotoField->ID, 'materialen-popup'); ?>
@@ -1241,4 +1247,19 @@ add_filter('acf/load_field/name=date', 'my_acf_default_date');
 function my_acf_default_date($field) {
 	$field['default_value'] = date('Ymd');
 	return $field;
+}
+
+add_action('wp_ajax_update_materiaal_card_stats' , 'update_materiaal_card_stats');
+add_action('wp_ajax_nopriv_update_materiaal_card_stats','update_materiaal_card_stats');
+function update_materiaal_card_stats() {
+
+    $materiaal_ID = $_POST['getMateriaalID'];
+
+    $materiaal_stats = get_post_meta($materiaal_ID, 'materiaal_clicks', true);
+    if ( ! $materiaal_stats ) {
+	    $materiaal_stats = 0;
+    }
+    $materiaal_stats++;
+	update_post_meta($materiaal_ID, 'materiaal_clicks', $materiaal_stats);
+
 }
