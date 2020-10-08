@@ -379,7 +379,7 @@
 		});
 
 		// Typewriter Effect
-		var ph = "Zoek hier naar publicaties, trainingen en methodieken. Bijvoorbeeld 'onderwijs' of 'storytelling'",
+		var ph = "Doorzoek hier onze publicaties. Zoek bijvoorbeeld op 'onderwijs",
 			searchBar = $('#search_field'),
 
 			phCount = 0;
