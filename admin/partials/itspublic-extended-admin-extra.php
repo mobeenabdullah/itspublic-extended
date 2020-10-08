@@ -73,7 +73,7 @@ function materialen_stats_page() { ?>
             </thead>
             <tbody>
 
-		<?php while ($materiaal_query->have_posts()) : $materiaal_query->the_post(); ?>
+		<?php $sno_counter = 0; while ($materiaal_query->have_posts()) : $materiaal_query->the_post(); $sno_counter++ ?>
 
             <?php
 
@@ -86,7 +86,7 @@ function materialen_stats_page() { ?>
             ?>
 
                 <tr>
-                    <td>1</td>
+                    <td><?php echo $sno_counter; ?></td>
                     <td><?php the_ID(); ?></td>
                     <td><?php the_title(); ?></td>
                     <td><?php echo $getMateriaalStats; ?></td>
