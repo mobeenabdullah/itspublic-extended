@@ -1673,7 +1673,19 @@ body {
     justify-content: center; }
   #startenals .elementor-tab-content p:last-child, #startenals .elementor-tab-content {
     margin-bottom: 0 !important;
-    padding-bottom: 0 !important; } }
+    padding-bottom: 0 !important; }
+  .its-newsletter-grids .elementor-widget-wrap .newsletter-download .elementor-icon-box-wrapper {
+    width: 100% !important;
+    display: flex;
+    flex-wrap: wrap; }
+  .its-newsletter-grids .elementor-widget-wrap .newsletter-download {
+    width: 100% !important; }
+  .its-newsletter-grids .elementor-widget-wrap .newsletter-download .elementor-icon-box-wrapper .elementor-icon-box-icon {
+    order: 2;
+    width: 100%;
+    margin-bottom: 0; }
+  .its-newsletter-grids .elementor-widget-wrap .newsletter-download .elementor-icon-box-wrapper .elementor-icon-box-content {
+    order: 1; } }
 
 @media only screen and (max-width: 600px) {
   .elementor-tab-title.elementor-tab-mobile-title {
