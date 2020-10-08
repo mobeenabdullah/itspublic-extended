@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "watch:sass": "node-sass public/sass/main.scss public/css/style.css -w",
-    "devserver": "live-server --browser=chrome",
-    "start": "npm-run-all --parallel devserver watch:sass",
+    "start": "npm-run-all --parallel watch:sass",
     "compile:sass": "node-sass public/sass/main.scss public/css/style.comp.css",
     "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' public/css/style.comp.css -o public/css/style.prefix.css",
     "compress:css": "node-sass public/css/style.prefix.css public/css/style.css --output-style compressed",
