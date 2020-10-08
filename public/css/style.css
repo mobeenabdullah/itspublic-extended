@@ -1666,7 +1666,11 @@ body {
   .logged-in .elementor-sticky--active {
     top: 46px !important; }
   .elementor-sticky--active {
-    top: 0 !important; } }
+    top: 0 !important; }
+  #startenals .elementor-tabs-view-horizontal .elementor-tab-desktop-title, #kennismaken .elementor-tabs-view-horizontal .elementor-tab-desktop-title {
+    display: flex;
+    align-items: center;
+    justify-content: center; } }
 
 @media only screen and (max-width: 600px) {
   .elementor-tab-title.elementor-tab-mobile-title {
