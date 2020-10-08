@@ -1670,7 +1670,10 @@ body {
   #startenals .elementor-tabs-view-horizontal .elementor-tab-desktop-title, #kennismaken .elementor-tabs-view-horizontal .elementor-tab-desktop-title {
     display: flex;
     align-items: center;
-    justify-content: center; } }
+    justify-content: center; }
+  #startenals .elementor-tab-content p:last-child, #startenals .elementor-tab-content {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important; } }
 
 @media only screen and (max-width: 600px) {
   .elementor-tab-title.elementor-tab-mobile-title {
