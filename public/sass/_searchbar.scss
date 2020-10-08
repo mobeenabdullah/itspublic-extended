@@ -101,11 +101,11 @@
       .item__single {
         margin-bottom: 0;
 
-        .item__single-img {
+        &-img {
           height: 98px;
         }
 
-        .item__single-title {
+        &-title {
           -webkit-line-clamp: 2;
           display: -webkit-box;
           -webkit-box-orient: vertical;

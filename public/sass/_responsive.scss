@@ -309,7 +309,7 @@ $break-mobile: 480px;
     }
   }
   #materialenModal {
-    margin-top: 8%;
+    padding-top: 8% !important;
   }
   
   .modal_team_content {
@@ -413,6 +413,45 @@ $break-mobile: 480px;
   } 
 
 
+
+  //  Team popup 
+  #teamModal .modal_team_content {
+    width: 100% !important;
+    padding: 10px;
+
+    .teampopup__cover {
+      margin-bottom: 10px;
+      &-img {
+        max-width: 100% !important;
+        margin-bottom: 15px;
+
+        &-figure {
+          margin-bottom: 10px;
+          height: 180px !important;
+        }
+      }
+    }
+    
+}
+#teamModal.modal {
+  padding: 20px 20px 20px 20px;
+  z-index: 999999 !important; 
+}
+.modal {
+  z-index: 999999 !important;
+}
+
+
+.social-icon-cover {
+  .icon-social-cover {
+    a {
+      i {
+        padding: 4px 10px;
+        line-height: 28px;
+      }
+    }
+  }
+} 
 
 
 }
