@@ -1546,6 +1546,8 @@ body {
     width: 75% !important; }
     .modal_team_content .teampopup__cover {
       flex-wrap: wrap; }
+  .material__page-sidebar {
+    display: none; }
   .teampopup__cover-img {
     max-width: 100% !important; }
   .modal_team_content .teampopup__cover-content {
@@ -1613,7 +1615,19 @@ body {
     z-index: 999999 !important; }
   .social-icon-cover .icon-social-cover a i {
     padding: 4px 10px;
-    line-height: 28px; } }
+    line-height: 28px; }
+  #searchForm {
+    position: relative; }
+    #searchForm input {
+      width: 100%;
+      padding: 0 50px 0 20px; }
+    #searchForm button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      align-self: stretch;
+      margin-top: 0; } }
 
 @media only screen and (max-width: 1366px) {
   .itspublic__heromain .elementor-heading-title {
@@ -1683,7 +1697,8 @@ body {
   .its-newsletter-grids .elementor-widget-wrap .newsletter-download .elementor-icon-box-wrapper .elementor-icon-box-icon {
     order: 2;
     width: 100%;
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    padding: 10px; }
   .its-newsletter-grids .elementor-widget-wrap .newsletter-download .elementor-icon-box-wrapper .elementor-icon-box-content {
     order: 1; } }
 
