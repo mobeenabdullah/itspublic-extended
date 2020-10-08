@@ -600,3 +600,53 @@ margin-bottom: 30px;
 }
 
 
+
+
+@media screen and (max-width: $bp-laptop13inches) {
+  .elementor-section.elementor-section-boxed > .elementor-container {
+    max-width: 960px !important;
+}
+// Search bar on materlian page
+#searchForm {
+  position: relative;
+  input {
+    width: 100%;
+    padding: 0 50px 0 20px;
+  }
+  button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    align-self: stretch;
+    margin-top: 0;
+}
+}
+
+.material__section {
+  .filter__box {
+    padding: 0;
+  }
+}
+
+.itspublic__material-section {
+  .material__page {
+    padding: 0;
+  }
+}
+
+.modal {
+  z-index: 9999999 !important;
+  padding-top: 12% !important;
+}
+#kennismaken {
+  padding-top: 0;
+}
+#startenals {
+  padding-bottom: 0;
+}
+.interview__section {
+  margin-bottom: 40px;
+}
+
+}

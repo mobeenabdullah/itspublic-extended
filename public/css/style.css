@@ -1705,3 +1705,32 @@ body {
 @media only screen and (max-width: 600px) {
   .elementor-tab-title.elementor-tab-mobile-title {
     display: none !important; } }
+
+@media screen and (max-width: 64em) {
+  .elementor-section.elementor-section-boxed > .elementor-container {
+    max-width: 960px !important; }
+  #searchForm {
+    position: relative; }
+    #searchForm input {
+      width: 100%;
+      padding: 0 50px 0 20px; }
+    #searchForm button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      align-self: stretch;
+      margin-top: 0; }
+  .material__section .filter__box {
+    padding: 0; }
+  .itspublic__material-section .material__page {
+    padding: 0; }
+  .modal {
+    z-index: 9999999 !important;
+    padding-top: 12% !important; }
+  #kennismaken {
+    padding-top: 0; }
+  #startenals {
+    padding-bottom: 0; }
+  .interview__section {
+    margin-bottom: 40px; } }
