@@ -1631,7 +1631,9 @@ body {
       align-self: stretch;
       margin-top: 0; }
   .material__items .item__single:nth-child(1n) {
-    margin-right: 0; } }
+    margin-right: 0; }
+  #startenals .elementor-tab-content p {
+    font-size: 14px !important; } }
 
 @media only screen and (max-width: 1366px) {
   .itspublic__heromain .elementor-heading-title {
@@ -1671,7 +1673,13 @@ body {
   .material__page-itemscover .material__items .item__single-img {
     height: 140px; }
   .material__section {
-    margin: 10px 0 20px 0; } }
+    margin: 10px 0 20px 0; }
+  .searchbox__cover {
+    margin-top: 0 !important; }
+  #teamModal.modal {
+    padding-top: 5%; }
+  #teamModal .modal_team_content {
+    width: 700px !important; } }
 
 @media only screen and (max-width: 767px) {
   .itspubic-single-member {
@@ -1712,7 +1720,9 @@ body {
 
 @media only screen and (max-width: 600px) {
   .elementor-tab-title.elementor-tab-mobile-title {
-    display: none !important; } }
+    display: none !important; }
+  #teamModal .modal_team_content {
+    width: 100% !important; } }
 
 @media screen and (max-width: 64em) {
   .elementor-section.elementor-section-boxed > .elementor-container {
@@ -1742,3 +1752,7 @@ body {
     padding-bottom: 0; }
   .interview__section {
     margin-bottom: 40px; } }
+
+@media screen and (max-width: 320px) {
+  .main-hero-section {
+    padding-top: 130px !important; } }

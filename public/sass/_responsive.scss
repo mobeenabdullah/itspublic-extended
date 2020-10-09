@@ -488,6 +488,10 @@ $break-mobile-smallast: 320px;
   }
 }
 
+#startenals .elementor-tab-content p {
+  font-size: 14px !important;
+}
+
 }
 
 
@@ -549,6 +553,15 @@ line-height: 20px!important;;
   margin: 10px 0 20px 0;
 }
 
+.searchbox__cover {
+  margin-top: 0 !important;
+}
+#teamModal.modal {
+  padding-top: 5%;
+}
+#teamModal .modal_team_content {
+  width: 700px !important;
+}
 
 }
 
@@ -615,6 +628,9 @@ margin-bottom: 30px;
  .elementor-tab-title.elementor-tab-mobile-title {
      display: none !important;
  }
+ #teamModal .modal_team_content {
+  width: 100% !important;
+}
 
 }
 
@@ -671,6 +687,10 @@ margin-bottom: 30px;
 }
 
 @media screen and (max-width: $break-mobile-smallast) {
+
+  .main-hero-section {
+    padding-top: 130px !important;
+}
 
 }
 
