@@ -256,6 +256,11 @@ $break-mobile-smallast: 320px;
         margin-left: -9px;
       }
     }
+
+    .project_types_list .slick-slide {
+      padding: 5px 10px !important;
+      font-size: 12px !important;
+    }
 }
   .itspublic__popcontent {
     h3 {
@@ -692,6 +697,15 @@ margin-bottom: 30px;
     padding-top: 130px !important;
 }
 .main-hero-section{margin-top: 0 !important; }
+
+.projecten__cover {
+  width: 100%;
+  padding: 0;  
+}  
+.project_types_list .slick-slide {
+  padding: 5px 10px !important;
+  font-size: 12px !important;
+}
 
 }
 

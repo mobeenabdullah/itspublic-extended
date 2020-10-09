@@ -579,7 +579,10 @@ body {
       margin-bottom: 20px;
       margin-right: 0; }
     .projecten__single-content {
-      width: 100%; } }
+      width: 100%; }
+  .projecten__cover {
+    width: 100%;
+    padding: 10px; } }
 
 .project_types_list .slick-slide {
   background-color: #ffffff;
@@ -1517,6 +1520,9 @@ body {
         left: 50%; }
   .itspublic__footer-avatar a {
     margin-left: -9px; }
+  .itspublic__footer .project_types_list .slick-slide {
+    padding: 5px 10px !important;
+    font-size: 12px !important; }
   .itspublic__popcontent h3 {
     font-size: 14px !important;
     line-height: 18px !important; }
@@ -1755,4 +1761,12 @@ body {
 
 @media screen and (max-width: 320px) {
   .main-hero-section {
-    padding-top: 130px !important; } }
+    padding-top: 130px !important; }
+  .main-hero-section {
+    margin-top: 0 !important; }
+  .projecten__cover {
+    width: 100%;
+    padding: 0; }
+  .project_types_list .slick-slide {
+    padding: 5px 10px !important;
+    font-size: 12px !important; } }
