@@ -379,7 +379,7 @@
 		});
 
 		// Typewriter Effect
-		var ph = "Doorzoek hier onze publicaties. Zoek bijvoorbeeld op 'onderwijs",
+		var ph = "Doorzoek hier onze publicaties. Zoek bijvoorbeeld op 'onderwijs'",
 			searchBar = $('#search_field'),
 
 			phCount = 0;
