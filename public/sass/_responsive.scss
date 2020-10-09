@@ -132,7 +132,7 @@ $break-mobile-smallast: 320px;
 @media screen and (max-width: $break-ipad) { 
 
 #materialenModal {
-  margin-top: 10%;
+  padding-top: 10%;
 }
 
 .information__box-content {
@@ -247,6 +247,12 @@ $break-mobile-smallast: 320px;
         left: 50%;
       }
     }
+
+    #materialenModal {
+      padding-top: 15% !important;
+    }
+
+    
   }
 
 
@@ -260,6 +266,11 @@ $break-mobile-smallast: 320px;
     .project_types_list .slick-slide {
       padding: 5px 10px !important;
       font-size: 12px !important;
+    }
+
+    .modal {
+      overflow-y: scroll;
+-webkit-overflow-scrolling: touch;
     }
 }
   .itspublic__popcontent {
@@ -317,9 +328,7 @@ $break-mobile-smallast: 320px;
       margin-bottom: 10px !important;
     }
   }
-  #materialenModal {
-    padding-top: 8% !important;
-  }
+
   
   .modal_team_content {
     width: 75% !important;
@@ -706,6 +715,8 @@ margin-bottom: 30px;
   padding: 5px 10px !important;
   font-size: 12px !important;
 }
+
+
 
 }
 

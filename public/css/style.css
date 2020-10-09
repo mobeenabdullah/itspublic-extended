@@ -1448,7 +1448,7 @@ body {
 
 @media screen and (max-width: 600px) {
   #materialenModal {
-    margin-top: 10%; }
+    padding-top: 10%; }
   .information__box-content {
     max-width: 45%;
     width: 100%; }
@@ -1518,11 +1518,16 @@ body {
         top: inherit;
         bottom: -5px;
         left: 50%; }
+    .itspublic__footer #materialenModal {
+      padding-top: 15% !important; }
   .itspublic__footer-avatar a {
     margin-left: -9px; }
   .itspublic__footer .project_types_list .slick-slide {
     padding: 5px 10px !important;
     font-size: 12px !important; }
+  .itspublic__footer .modal {
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch; }
   .itspublic__popcontent h3 {
     font-size: 14px !important;
     line-height: 18px !important; }
@@ -1548,8 +1553,6 @@ body {
     height: auto !important; }
   .material__items .item__single-desc {
     margin-bottom: 10px !important; }
-  #materialenModal {
-    padding-top: 8% !important; }
   .modal_team_content {
     width: 75% !important; }
     .modal_team_content .teampopup__cover {
