@@ -1688,7 +1688,10 @@ body {
   #teamModal.modal {
     padding-top: 5%; }
   #teamModal .modal_team_content {
-    width: 700px !important; } }
+    width: 700px !important; }
+  .projecten__cover {
+    width: 100%;
+    padding: 0 13px 0 13px !important; } }
 
 @media only screen and (max-width: 767px) {
   .itspubic-single-member {
@@ -1731,7 +1734,9 @@ body {
   .elementor-tab-title.elementor-tab-mobile-title {
     display: none !important; }
   #teamModal .modal_team_content {
-    width: 100% !important; } }
+    width: 100% !important; }
+  .main-hero-section {
+    padding-top: 150px !important; } }
 
 @media screen and (max-width: 64em) {
   .elementor-section.elementor-section-boxed > .elementor-container {

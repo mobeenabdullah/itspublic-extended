@@ -199,6 +199,8 @@ $break-mobile-smallast: 320px;
 
 }
 
+
+
 }
 
 
@@ -577,6 +579,11 @@ line-height: 20px!important;;
   width: 700px !important;
 }
 
+.projecten__cover {
+  width: 100%;
+  padding: 0 13px 0 13px !important;
+}
+
 }
 
 @media only screen and (max-width: 767px) {
@@ -644,6 +651,10 @@ margin-bottom: 30px;
  }
  #teamModal .modal_team_content {
   width: 100% !important;
+}
+
+.main-hero-section {
+  padding-top: 150px !important;
 }
 
 }
