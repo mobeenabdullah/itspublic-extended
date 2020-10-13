@@ -68,7 +68,6 @@ function materialen_stats_page() { ?>
                 <th>Materiaal ID</th>
                 <th>Materiaal Title</th>
                 <th>No. of Clicks</th>
-                <th>Edit Materiaals</th>
             </tr>
             </thead>
             <tbody>
@@ -90,7 +89,6 @@ function materialen_stats_page() { ?>
                     <td><?php the_ID(); ?></td>
                     <td><?php the_title(); ?></td>
                     <td><?php echo $getMateriaalStats; ?></td>
-                    <td><a href="<?php echo admin_url('/post.php?post=' . get_the_ID() . '&action=edit'); ?>">Edit Materiaal</a></td>
                 </tr>
 
 		<?php endwhile; ?>
