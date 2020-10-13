@@ -1728,7 +1728,9 @@ body {
     margin-bottom: 0;
     padding: 10px; }
   .its-newsletter-grids .elementor-widget-wrap .newsletter-download .elementor-icon-box-wrapper .elementor-icon-box-content {
-    order: 1; } }
+    order: 1; }
+  .footer-widgets .elementor-column {
+    margin-bottom: 30px !important; } }
 
 @media only screen and (max-width: 600px) {
   .elementor-tab-title.elementor-tab-mobile-title {
@@ -1736,7 +1738,9 @@ body {
   #teamModal .modal_team_content {
     width: 100% !important; }
   .main-hero-section {
-    padding-top: 150px !important; } }
+    padding-top: 150px !important; }
+  .samen-boxes-section .heading-boxes-height h3 {
+    height: auto !important; } }
 
 @media screen and (max-width: 64em) {
   .elementor-section.elementor-section-boxed > .elementor-container {

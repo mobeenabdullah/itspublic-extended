@@ -641,6 +641,10 @@ margin-bottom: 30px;
   order: 1;
 }
 
+.footer-widgets .elementor-column {
+  margin-bottom: 30px !important;
+}
+
 }
 
     
@@ -651,11 +655,18 @@ margin-bottom: 30px;
  }
  #teamModal .modal_team_content {
   width: 100% !important;
+  
 }
 
 .main-hero-section {
   padding-top: 150px !important;
 }
+
+.samen-boxes-section .heading-boxes-height h3 {
+  height: auto !important;
+}
+
+
 
 }
 
