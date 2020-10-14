@@ -4,6 +4,13 @@ $break-ipad: 600px;
 $break-mobile: 480px;
 $break-mobile-smallast: 320px;
 
+// Oriantations
+
+$i67landscape: 667px;
+$i67portrait: 375px;
+
+$i5SElandscape: 568px;
+$i5SEportrait: 320px;
 
 
 
@@ -741,4 +748,39 @@ margin-bottom: 30px;
 
 
 }
+
+
+//only for iphone 6 and 7 
+
+
+@media screen and (min-device-width: $i67portrait) and (max-device-width: $i67landscape) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+    .material__page-itemscover .material__items .item__single-img {
+        height: 122px;
+    }
+    .main-hero-section {
+      padding-top: 240px !important;
+    }    
+}
+
+
+// only iphone 5/SE 
+@media screen and (min-device-width: $i5SEportrait) and (max-device-width: $i5SElandscape) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+    .main-hero-section {
+      padding-top: 240px !important;
+    }
+
+}
+
+
+// Retina Display 
+
+
+
+
+
+
+
+
+
+
 

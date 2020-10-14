@@ -1782,3 +1782,13 @@ body {
   .project_types_list .slick-slide {
     padding: 5px 10px !important;
     font-size: 12px !important; } }
+
+@media screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  .material__page-itemscover .material__items .item__single-img {
+    height: 122px; }
+  .main-hero-section {
+    padding-top: 240px !important; } }
+
+@media screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  .main-hero-section {
+    padding-top: 240px !important; } }
