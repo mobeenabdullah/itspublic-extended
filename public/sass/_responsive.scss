@@ -103,7 +103,7 @@ $i5SEportrait: 320px;
       }
 
       .elementor-widget-icon {
-        top: 490px !important;
+        top: 300px !important;
       }
 
       .quickSearchPreloader {
@@ -545,7 +545,9 @@ $i5SEportrait: 320px;
   .main-hero-section {
     padding-top: 60px; }
     .main-hero-section .elementor-row {
-      transform: translateY(-75px) !important; } 
+      transform: translateY(50px) !important; } 
+      
+    
 }
 
 @media only screen and (max-width: 768px) { 
@@ -771,5 +773,17 @@ margin-bottom: 30px;
 
 }
 
+@media only screen and (min-width: 1367px) {
+  .hero-arrow {
+    top: 380px !important;
+  }
 
-// Retina Display 
+  .main-hero-section .elementor-row {
+    transform: translateY(50px) !important; }
+
+}
+
+    
+    
+
+  
