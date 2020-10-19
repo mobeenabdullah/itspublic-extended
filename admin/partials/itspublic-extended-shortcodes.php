@@ -207,7 +207,7 @@ function itspublic_hero_search_form() {
 	ob_start(); ?>
 
     <div class="searchbox__cover">
-        <form action="http://itspublic.local/materialen/?ms=a" class="searchbox__cover-form" method="get">
+        <form action="<?php echo home_url(); ?>/materialen/?ms=a" class="searchbox__cover-form" method="get">
             <div class="searchbox__cover-form--input">
                 <input type="text" value="" class="search-input" id="search_field" placeholder="Doorzoek hier onze publicaties. Zoek bijvoorbeeld op 'onderwijs'" />
                 <button type="submit" class="search-btn">
