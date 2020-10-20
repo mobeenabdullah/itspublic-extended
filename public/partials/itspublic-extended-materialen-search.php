@@ -1244,17 +1244,16 @@ add_action('wp_footer', 'materialen_param_search');
 
 // Show card based on Parameters in URL
 function materialen_param_show_card() {
-	if (isset($_GET['mc_title'])) {
 
-		$get_materiaal_card = get_page_by_title($_GET['mc_title'], OBJECT, 'materiaal');
-
-		$get_materiaal_card_ID = $get_materiaal_card->ID; ?>
+	if (isset($_GET['mc_slug'])) {
+	    $get_materiaal_card = get_page_by_path( $_GET['mc_slug'], OBJECT, 'materiaal' ); ?>
 
 		<script>
             jQuery(document).ready(function(){
+                console.log(<?php echo $get_materiaal_card->ID; ?>);
                 setTimeout(function (){
-                    jQuery('#materiaal-<?php echo $get_materiaal_card_ID; ?> .item__single-img').trigger('click');
-                }, 500);
+                    jQuery('#materiaal-<?php echo $get_materiaal_card->ID; ?> .item__single-img').trigger('click');
+                }, 1000);
             });
         </script>
 

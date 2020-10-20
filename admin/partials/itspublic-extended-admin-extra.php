@@ -67,6 +67,7 @@ function materialen_stats_page() { ?>
                 <th>S.No</th>
                 <th>Materiaal ID</th>
                 <th>Materiaal Title</th>
+                <th>Materiaal Slug</th>
                 <th>Clicks (30 Days)</th>
                 <th>Total Clicks</th>
             </tr>
@@ -104,6 +105,7 @@ function materialen_stats_page() { ?>
                     <td><?php echo $sno_counter; ?></td>
                     <td><?php the_ID(); ?></td>
                     <td><?php the_title(); ?></td>
+                    <td><?php echo basename(get_permalink()); ?></td>
                     <td>
                         <?php echo clicks_x_days($getMateriaalStats, 30); ?>
                     </td>
