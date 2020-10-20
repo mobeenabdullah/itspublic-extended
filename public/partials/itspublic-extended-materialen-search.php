@@ -1255,11 +1255,25 @@ function update_materiaal_card_stats() {
 
     $materiaal_ID = $_POST['getMateriaalID'];
 
-    $materiaal_stats = get_post_meta($materiaal_ID, 'materiaal_clicks', true);
+//    $materiaal_stats = get_post_meta($materiaal_ID, 'materiaal_clicks', true);
+//    if ( ! $materiaal_stats ) {
+//	    $materiaal_stats = 0;
+//    }
+//    $materiaal_stats++;
+
+	//update_post_meta($materiaal_ID, 'materiaal_clicks', $materiaal_stats);
+
+    $material_time = [];
+
+	$materiaal_stats = get_post_meta($materiaal_ID, 'materiaal_clicks', true);
+
     if ( ! $materiaal_stats ) {
-	    $materiaal_stats = 0;
+	    array_push($material_time, date('Y-m-d', time()));
+    } else {
+	    $material_time = $materiaal_stats;
+	    array_push($material_time, date('Y-m-d', time()));
     }
-    $materiaal_stats++;
-	update_post_meta($materiaal_ID, 'materiaal_clicks', $materiaal_stats);
+
+	update_post_meta($materiaal_ID, 'materiaal_clicks', $material_time);
 
 }

@@ -67,10 +67,26 @@ function materialen_stats_page() { ?>
                 <th>S.No</th>
                 <th>Materiaal ID</th>
                 <th>Materiaal Title</th>
-                <th>No. of Clicks</th>
+                <th>Clicks (30 Days)</th>
+                <th>Total Clicks</th>
             </tr>
             </thead>
             <tbody>
+
+            <?php
+
+            function clicks_x_days($getMateriaalStats, $days) {
+
+	            $last_x_days = date('Y-m-d', time() - (60*60*24*$days));
+
+	            $filter_days = array_filter($getMateriaalStats, function ($date)use($last_x_days){
+		            return $date > $last_x_days;
+	            });
+
+	            return count($filter_days);
+            }
+
+            ?>
 
 		<?php $sno_counter = 0; while ($materiaal_query->have_posts()) : $materiaal_query->the_post(); $sno_counter++ ?>
 
@@ -88,7 +104,10 @@ function materialen_stats_page() { ?>
                     <td><?php echo $sno_counter; ?></td>
                     <td><?php the_ID(); ?></td>
                     <td><?php the_title(); ?></td>
-                    <td><?php echo $getMateriaalStats; ?></td>
+                    <td>
+                        <?php echo clicks_x_days($getMateriaalStats, 30); ?>
+                    </td>
+                    <td><?php echo count($getMateriaalStats); ?></td>
                 </tr>
 
 		<?php endwhile; ?>
