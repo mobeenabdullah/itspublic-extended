@@ -490,7 +490,7 @@ function data_fetch_all(){
             ?>
 
             <!-- Single Item -->
-            <div class="item__single">
+            <div class="item__single" id="materiaal-<?php echo get_the_ID(); ?>">
                 <figure class="item__single-img template-item hover-item">
 	                <?php $getPhotoField = get_field('photo'); ?>
                     <img src="<?php echo get_the_post_thumbnail_url($getPhotoField->ID, 'materialen-card'); ?>" alt="<?php the_title();?>">
@@ -1241,6 +1241,26 @@ function materialen_param_search() {
 	<?php }
 }
 add_action('wp_footer', 'materialen_param_search');
+
+// Show card based on Parameters in URL
+function materialen_param_show_card() {
+	if (isset($_GET['mc_title'])) {
+
+		$get_materiaal_card = get_page_by_title($_GET['mc_title'], OBJECT, 'materiaal');
+
+		$get_materiaal_card_ID = $get_materiaal_card->ID; ?>
+
+		<script>
+            jQuery(document).ready(function(){
+                setTimeout(function (){
+                    jQuery('#materiaal-<?php echo $get_materiaal_card_ID; ?> .item__single-img').trigger('click');
+                }, 500);
+            });
+        </script>
+
+	<?php }
+}
+add_action('wp_footer', 'materialen_param_show_card', 100);
 
 // Setting default value of Date field in ACF
 add_filter('acf/load_field/name=date', 'my_acf_default_date');
