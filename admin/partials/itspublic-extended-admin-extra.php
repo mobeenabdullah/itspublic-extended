@@ -81,7 +81,6 @@ function materialen_stats_page() { ?>
         <table class="rtable cell-border stripe">
             <thead>
             <tr>
-                <th>S.No</th>
                 <th>Materiaal ID</th>
                 <th>Materiaal Title</th>
                 <th>Materiaal Slug</th>
@@ -121,7 +120,6 @@ function materialen_stats_page() { ?>
             ?>
 
                 <tr>
-                    <td><?php echo $sno_counter; ?></td>
                     <td><?php the_ID(); ?></td>
                     <td><?php the_title(); ?></td>
                     <td><?php echo basename(get_permalink()); ?></td>
@@ -146,7 +144,7 @@ function materialen_stats_page() { ?>
         <script type="text/javascript">
             jQuery(document).ready(function() {
                 jQuery('.rtable').DataTable({
-                    "order": [[ 4, "desc" ]]
+                    "order": [[ 3, "desc" ]]
                 });
             } );
         </script>
