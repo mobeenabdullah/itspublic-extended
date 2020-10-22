@@ -34,7 +34,7 @@ function materialen_stats_page() { ?>
 
         <style type="text/css">
             .table-wrapper {
-                max-width: 1180px;
+                max-width: 1110px;
                 margin: 50px auto;
             }
             .dataTables_wrapper {
