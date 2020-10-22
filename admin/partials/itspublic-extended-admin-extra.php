@@ -22,7 +22,7 @@ function materialen_stats_page() { ?>
 	<?php $args = array(
 		'posts_per_page' => -1,
 		'post_type' => 'materiaal',
-		'post_status' => 'publish'
+		'post_status' => 'publish',
 	);
 	$materiaal_query = null;
 	$materiaal_query = new WP_Query($args);
@@ -30,7 +30,23 @@ function materialen_stats_page() { ?>
 
 	<?php if( $materiaal_query->have_posts() ): ?>
 
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+
         <style type="text/css">
+            .table-wrapper {
+                max-width: 1180px;
+                margin: 50px auto;
+            }
+            .dataTables_wrapper {
+                padding: 20px;
+                background-color: #FFFFFF;
+            }
+            .dataTables_length, .dataTables_filter {
+                margin-bottom: 10px;
+            }
+            .dataTables_length select {
+                width: 50px;
+            }
             .rtable {
                 display: inline-block;
                 vertical-align: top;
@@ -44,7 +60,6 @@ function materialen_stats_page() { ?>
             .rtable,
             .rtable--flip tbody {
                 -webkit-overflow-scrolling: touch;
-                background: #FFFFFF;
             }
 
             .rtable th {
@@ -61,7 +76,9 @@ function materialen_stats_page() { ?>
             }
         </style>
 
-        <table class="rtable">
+        <div class="table-wrapper">
+
+        <table class="rtable cell-border stripe">
             <thead>
             <tr>
                 <th>S.No</th>
@@ -86,6 +103,8 @@ function materialen_stats_page() { ?>
 
 	            return count($filter_days);
             }
+
+            $materialen_stats_container = [];
 
             ?>
 
@@ -116,6 +135,21 @@ function materialen_stats_page() { ?>
 
             </tbody>
         </table>
+
+        </div>
+
+        <?php
+
+        ?>
+
+        <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript">
+            jQuery(document).ready(function() {
+                jQuery('.rtable').DataTable({
+                    "order": [[ 4, "desc" ]]
+                });
+            } );
+        </script>
 
 	<?php endif; wp_reset_query();  ?>
 
