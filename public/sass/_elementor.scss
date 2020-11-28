@@ -1,9 +1,9 @@
 :root {
-    --itspublic-primary-color: #5CD79E;
+    --itspublic-primary-color: #22777B;
 }
 
 .home header {
-   background-color: rgba(0,0,0,.81)!important;
+//    background-color: rgba(0,0,0,.81)!important;
 }
 
 .primary-color {
@@ -11,7 +11,7 @@
 }
 
 .home header .elementor-element .elementor-nav-menu--dropdown {
-    background-color: rgba(0,0,0,.81)!important;
+    // background-color: rgba(0,0,0,.81)!important;
 }
 
 #more {display: none;}
@@ -89,6 +89,7 @@
 .member-footer-info {
 	display: flex;
 	justify-content: space-between;
+	margin-top: 20px;
 }
 .member-footer-info ul li {
 	display: inline-block;
@@ -108,7 +109,7 @@
 	line-height: 30px;
 }
 .member-footer-info ul li a:hover {
-	background-color: #40B57F;
+	background-color: var(--itspublic-primary-color);
 	color: #ffffff;
 }
 
