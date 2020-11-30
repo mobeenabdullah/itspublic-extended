@@ -339,7 +339,9 @@
         margin-bottom: 15px;
         margin-right: 10px;
         transition: all .2s;
-    
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid transparent;   
 
         &-img {
             width: 100%;
@@ -353,6 +355,8 @@
                 width: 100%;
                 @include grayscale_element(100%);
                 transition: all 200ms ease-in-out;
+                height: 100%;
+                object-fit: cover;
                 
             }
             .cat-label {
@@ -402,7 +406,8 @@
             align-items: center;
             justify-content: space-between;
             border-top: 1px solid  #ececec;
-            padding: 12px 0 ;
+            padding: 12px 0  0 0 ;
+            height: 30px;
 
             .date {
                 font-size: 8px;
@@ -438,6 +443,10 @@
 
         &:last-child {
             margin-right: 0;
+        }
+
+        &:hover {
+            border: 1px solid rgba(0,0,0,0.10);
         }
       
     }

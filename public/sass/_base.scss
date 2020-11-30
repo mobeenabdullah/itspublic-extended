@@ -19,3 +19,34 @@ body {
 //   width: 1280px;
 //   margin: 0 auto;
 // }
+
+// navigation
+
+.its-public-menu {
+  .elementor-nav-menu--main {
+    .elementor-nav-menu {
+      a {
+        transition: .1s !important;
+      }
+    }
+  }
+}
+
+// Footer {
+  .footer_links {
+    .elementor-nav-menu--main {
+      .elementor-nav-menu--main {
+        .elementor-nav-menu {
+          li {
+            a {
+              &:hover {
+                text-decoration: underline !important;
+              }              
+            }
+          }
+        }
+      }
+  } 
+}
+
+  

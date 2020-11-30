@@ -111,7 +111,7 @@
           display: -webkit-box;
           -webkit-box-orient: vertical;
           white-space: normal;
-          height: 35px;
+          height: auto !important;
           overflow: hidden;
 
           a {
