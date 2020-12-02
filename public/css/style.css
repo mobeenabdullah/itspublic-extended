@@ -503,7 +503,10 @@ body {
     width: 100%; } }
 
 .itspubic-single-member .member-img {
-  cursor: pointer; }
+  cursor: pointer;
+  border: 1px solid transparent; }
+  .itspubic-single-member .member-img:hover {
+    border: 1px solid #22777B; }
 
 .itspubic-single-member .member-name {
   cursor: pointer; }
@@ -1175,8 +1178,10 @@ body {
         background-color: transparent !important;
         color: #22777B !important; }
 
-#teamModal .modal_team_content {
-  width: 1000px !important; }
+#teamModal {
+  z-index: 9999; }
+  #teamModal .modal_team_content {
+    width: 1000px !important; }
 
 .modal_team_content {
   padding: 20px;

@@ -467,6 +467,7 @@
 
 
 #teamModal {
+  z-index: 9999;
    .modal_team_content {      
       width: 1000px !important;
   }

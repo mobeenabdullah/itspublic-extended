@@ -812,6 +812,12 @@
 .itspubic-single-member {
     .member-img {
         cursor: pointer;
+        border: 1px solid transparent;
+
+        &:hover {
+            border: 1px solid $primary-color;
+
+        }
     }
     .member-name {
         cursor: pointer;
