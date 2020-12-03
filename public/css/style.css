@@ -8,6 +8,94 @@ body {
 .footer_links .elementor-nav-menu--main .elementor-nav-menu--main .elementor-nav-menu li a:hover {
   text-decoration: underline !important; }
 
+.wie-zoeken-we-sec .elementor-column {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  margin: 15px;
+  border-radius: 10px; }
+  .wie-zoeken-we-sec .elementor-column .elementor-icon-box-title {
+    text-align: center !important;
+    position: relative; }
+    .wie-zoeken-we-sec .elementor-column .elementor-icon-box-title::after {
+      content: '';
+      width: 60px;
+      height: 3px;
+      background-color: #22777B;
+      border-radius: 100px;
+      position: absolute;
+      bottom: -5px;
+      right: 50%;
+      transform: translateX(50%); }
+
+.werkenbij-slider .elementor-swiper .elementor-slides-wrapper .swiper-pagination .swiper-pagination-bullet {
+  width: 20px !important;
+  height: 3px !important;
+  border-radius: 0 !important; }
+
+.werkenbij-slider .elementor-swiper .elementor-slides-wrapper .swiper-pagination-bullet-active {
+  background-color: #22777B !important; }
+
+.werkenbij-slider .elementor-swiper .elementor-slides-wrapper .elementor-swiper-button-prev, .werkenbij-slider .elementor-swiper .elementor-slides-wrapper .elementor-swiper-button-next {
+  background-color: #1c6467 !important;
+  padding: 20px 15px;
+  opacity: .9; }
+
+.werkenbij-slider .elementor-swiper .elementor-slides-wrapper .elementor-swiper-button-prev {
+  left: 0 !important; }
+
+.werkenbij-slider .elementor-swiper .elementor-slides-wrapper .elementor-swiper-button-next {
+  right: 0 !important; }
+
+.werkenbij-employee-tabs .eael-tabs-nav .eael-tab-title .employee-tagline {
+  display: block;
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 400; }
+
+.werkenbij-employee-tabs .eael-tabs-nav .inactive img {
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  -ms-filter: grayscale(100%); }
+
+.werkenbij-employee-tabs .eael-tabs-content {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  position: relative;
+  margin-top: 30px;
+  overflow: inherit !important; }
+  .werkenbij-employee-tabs .eael-tabs-content .active:nth-child(2)::after {
+    content: '';
+    width: 33px;
+    height: 19px;
+    background-image: url("../images/tabs-arrow.png");
+    background-repeat: no-repeat;
+    position: absolute;
+    top: -19px;
+    right: 50%;
+    transform: translateX(50%); }
+  .werkenbij-employee-tabs .eael-tabs-content .active:nth-child(1)::after {
+    content: '';
+    width: 33px;
+    height: 19px;
+    background-image: url("../images/tabs-arrow.png");
+    background-repeat: no-repeat;
+    position: absolute;
+    top: -19px;
+    transform: translateX(50%);
+    left: 150px !important; }
+  .werkenbij-employee-tabs .eael-tabs-content .active:nth-child(3)::after {
+    content: '';
+    width: 33px;
+    height: 19px;
+    background-image: url("../images/tabs-arrow.png");
+    background-repeat: no-repeat;
+    position: absolute;
+    top: -19px;
+    transform: translateX(50%);
+    right: 180px !important; }
+
 .material__section {
   background-color: transparent; }
 
@@ -759,26 +847,23 @@ body {
     width: 100%;
     text-align: right; }
     .search__filters-viewallresult a {
-      text-decoration: none;
-      color: #ffffff;
+      text-decoration: none !important;
+      color: #ffffff !important;
       text-transform: uppercase;
       font-size: 12px;
       line-height: 18px;
       outline: none;
-      transition: all 0.2s; }
+      transition: all 0.2s;
+      padding: 10px 15px;
+      border-radius: 4px;
+      background-color: #22777B; }
       .search__filters-viewallresult a .viewbtn-arrow {
         display: inline-block;
-        width: 34px;
-        height: 34px;
-        background-color: #22777B;
-        border-radius: 50%;
         margin-left: 10px;
         line-height: 34px;
         text-align: center; }
-      .search__filters-viewallresult a:hover .viewbtn-arrow {
-        background-color: #ffffff; }
-        .search__filters-viewallresult a:hover .viewbtn-arrow svg path {
-          fill: #000000; }
+      .search__filters-viewallresult a:hover {
+        background-color: #0c2a2b; }
 
 .custom-radio {
   display: block;

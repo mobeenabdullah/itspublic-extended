@@ -203,35 +203,27 @@
     text-align: right;
 
     a {
-      text-decoration: none;
-      color: #ffffff;
+      text-decoration: none !important;
+      color: #ffffff !important;
       text-transform: uppercase;
       font-size: 12px;
       line-height: 18px;
       outline: none;
       transition: all 0.2s;
+      padding: 10px 15px;
+      border-radius: 4px;
+      background-color: $primary-color;
 
       .viewbtn-arrow {
         display: inline-block;
-        width: 34px;
-        height: 34px;
-        background-color: $primary-color;
-        border-radius: 50%;
         margin-left: 10px;
         line-height: 34px;
         text-align: center;
       }
+      
 
       &:hover {
-        .viewbtn-arrow {
-          background-color: #ffffff;
-
-          svg {
-            path {
-              fill: $secondary-color;
-            }
-          }
-        }
+       background-color: darken($primary-color, 20%);
       }
     }
   }

@@ -2,8 +2,10 @@ $template-color: #e8b02e;
 $opendocs-color: #dd50c5;
 $projectinzichten-color: #f77b64;
 $training-color: #196dc1;
+
 $primary-color: #22777B;
 $secondary-color: #000000;
+
 
 $bp-largest: 75em; // 1200px
 $bp-large: 62.5em; // 1000px
@@ -49,4 +51,152 @@ body {
   } 
 }
 
+
+
+// Werkinbij 
+
+.wie-zoeken-we-sec {
+  .elementor-column {
+    border: 1px solid rgba(0,0,0,0.20);
+    margin: 15px;
+    border-radius: 10px;
+
+    .elementor-icon-box-title {
+      text-align: center !important;
+      position: relative;
+
+      &::after {
+        content: '';
+        width: 60px;
+        height: 3px;
+        background-color: $primary-color;
+        border-radius: 100px;
+        position: absolute;
+        bottom: -5px;
+        right: 50%;
+        transform: translateX(50%);
+
+      }
+
+    }
+  }
   
+}
+
+// werkenbij slider 
+.werkenbij-slider {
+  .elementor-swiper {
+    .elementor-slides-wrapper {
+
+      .swiper-pagination {
+        .swiper-pagination-bullet {
+          width: 20px !important;;
+          height: 3px !important;;
+          border-radius: 0 !important;
+        }
+      }
+      .swiper-pagination-bullet-active {
+        background-color: $primary-color !important;;
+      }
+
+      .elementor-swiper-button-prev, .elementor-swiper-button-next {
+        background-color: darken($primary-color, 5%) !important;
+        padding: 20px 15px;
+        opacity: .9;
+      }
+      .elementor-swiper-button-prev {
+        left: 0 !important;
+      }
+      .elementor-swiper-button-next {
+        right: 0 !important;
+      }
+
+    }
+  }
+ 
+}
+
+
+// werkenbij tabs
+
+.werkenbij-employee-tabs {
+  .eael-tabs-nav {
+    .eael-tab-title {
+      .employee-tagline {
+        display: block;
+        margin-top: 10px;
+        font-size: 12px;
+        font-weight: 400;
+      }
+    }
+
+    .inactive {
+      img {
+        filter: grayscale(100%);
+        -webkit-filter: grayscale(100%);
+        -moz-filter: grayscale(100%);
+        -o-filter: grayscale(100%);
+        -ms-filter: grayscale(100%);
+      }
+    }
+  }
+
+  .eael-tabs-content {
+    border: 1px solid rgba(0,0,0,0.10);
+    border-radius: 10px;
+    padding: 20px;
+    position: relative;
+    margin-top: 30px;
+    overflow: inherit !important;
+    .active:nth-child(2) {
+      &::after {
+        content: '';
+        width: 33px;
+        height: 19px;
+        background-image: url("../images/tabs-arrow.png");
+        background-repeat: no-repeat;
+        position: absolute;
+        top: -19px;
+        right: 50%;
+        transform: translateX(50%);
+      }
+    }
+
+    .active:nth-child(1) {
+      &::after {
+        content: '';
+        width: 33px;
+        height: 19px;
+        background-image: url("../images/tabs-arrow.png");
+        background-repeat: no-repeat;
+        position: absolute;
+        top: -19px;
+        transform: translateX(50%);
+        left: 150px !important;
+      }
+    }
+    .active:nth-child(3) {
+      &::after {
+        content: '';
+        width: 33px;
+        height: 19px;
+        background-image: url("../images/tabs-arrow.png");
+        background-repeat: no-repeat;
+        position: absolute;
+        top: -19px;
+        transform: translateX(50%);
+        right: 180px !important;
+      }
+    }
+    
+  }
+
+  
+}
+
+
+
+
+
+
+
