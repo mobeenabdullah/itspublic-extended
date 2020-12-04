@@ -392,8 +392,8 @@ add_shortcode('itspublic_materialen_search', 'itspublic_materialen_search_page')
 
 
 
-// Materialen Page Shortcode
-function itspublic_materialen_landing_page() {
+// Materialen Single Page 
+function itspublic_materialen_single() {
 
     ob_start(); 
     // Plugin Directory Url
@@ -629,4 +629,4 @@ return $content;
 
 }
 
-add_shortcode('itspublic_materialen_landing_page', 'itspublic_materialen_landing_page');  
+add_shortcode('itspublic_materialen_single', 'itspublic_materialen_single');  
