@@ -1,5 +1,5 @@
 body {
-  font-family: "Poppins", sans-serif !important;
+  font-family: 'Hind', sans-serif !important;
   position: relative; }
 
 .its-public-menu .elementor-nav-menu--main .elementor-nav-menu a {
@@ -592,9 +592,9 @@ body {
 
 .itspubic-single-member .member-img {
   cursor: pointer;
-  border: 1px solid transparent; }
+  border: 2px solid transparent; }
   .itspubic-single-member .member-img:hover {
-    border: 1px solid #22777B; }
+    border-color: #ffbd42; }
 
 .itspubic-single-member .member-name {
   cursor: pointer; }
@@ -728,7 +728,7 @@ body {
     .searchbox__cover-form--input {
       display: flex;
       justify-content: space-between;
-      border: 1px solid #ededed;
+      border: 2px solid #e0e0e0;
       border-radius: 5px;
       background-color: #ffffff; }
       .searchbox__cover-form--input .search-input {
