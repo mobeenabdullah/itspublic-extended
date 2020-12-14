@@ -641,6 +641,8 @@ function itspublic_materialen_single() {
         </div>
     </section>
 
+    <?php $getPost = get_post(get_the_ID()); ?>
+
     <section class="materialen__details">
         <div class="custom-container">
             <div class="materialen__details-cover">
