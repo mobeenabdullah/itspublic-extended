@@ -396,6 +396,7 @@ add_shortcode('itspublic_materialen_search', 'itspublic_materialen_search_page')
 function itspublic_materialen_single() {
 
     ob_start();
+
     $getPhotoField = get_field('photo', get_the_ID()); ?>
 
     <section class="materialen__single" style="background-image: url('<?php echo get_the_post_thumbnail_url($getPhotoField->ID, 'full'); ?>'); background-position: <?php echo get_field('photo_position', get_the_ID() ); ?> ">
@@ -740,89 +741,52 @@ function itspublic_materialen_single() {
     </div>
     </section>
 
+    <?php
+
+        $getAllMaterialenTerms = get_the_terms(get_the_ID(), 'categorie');
+        $getLastMaterialenTerm = array_pop($getAllMaterialenTerms);
+
+    ?>
+
     <section class="related__materialSec">
         <div class="custom-container">
             <div class="cat__title">
-                <h3>Meer projections:</h3>
+                <h3>Meer <?php echo $getLastMaterialenTerm->name; ?>:</h3>
             </div>
             <div class="related__materialSec-items">
-                <!-- Single Item -->
-                <div class="item__single">
-                    <figure class="item__single-img">
-                        <img src="https://itspublicstagingfinal.local/wp-content/uploads/2020/11/Huizen2_Amsterdam_zero_ann-fossa2019-200x115.jpg" alt="">
-                    </figure>
-                    <h4 class="item__single-title">
-                        <a href="#">Maatschappelijk vastgoed</a>
-                    </h4>
-                    <div class="item__single-desc">
-                    <p>Gemeenten hebben vastgoed in bezit voor gemeentelijke huisvesting, het realiseren van</p>
-                    </div>
-                </div>
+                <?php
+
+                $meerQuery = new WP_Query( array(
+                    'post_type' => 'materiaal',
+                    'tax_query' => array(
+                        array(
+                            'taxonomy' => 'categorie',
+                            'field' => 'name',
+                            'terms' => $getLastMaterialenTerm->name,
+                        )
+                    )
+                ) );
+
+                if ( $meerQuery->have_posts() ) :
+                    while ( $meerQuery->have_posts() ) : $meerQuery->the_post(); ?>
 
                 <!-- Single Item -->
                 <div class="item__single">
                     <figure class="item__single-img">
-                        <img src="https://itspublicstagingfinal.local/wp-content/uploads/2020/11/Huizen2_Amsterdam_zero_ann-fossa2019-200x115.jpg" alt="">
+                        <?php $getMeerPhotoField = get_field('photo', get_the_ID()); ?>
+                        <a href="<?php the_permalink(); ?>">
+                            <img src="<?php echo get_the_post_thumbnail_url($getMeerPhotoField->ID, 'full'); ?>" alt="<?php the_title(); ?>">
+                        </a>
                     </figure>
                     <h4 class="item__single-title">
-                        <a href="#">Het optimale begeleidingsproces in de bijstand</a>
+                        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                     </h4>
                     <div class="item__single-desc">
-                    <p>Gemeenten hebben vastgoed in bezit voor gemeentelijke huisvesting, het realiseren van</p>
+                        <?php echo get_excerpt(); ?>
                     </div>
                 </div>
 
-                <!-- Single Item -->
-                <div class="item__single">
-                    <figure class="item__single-img">
-                        <img src="https://itspublicstagingfinal.local/wp-content/uploads/2020/11/Huizen2_Amsterdam_zero_ann-fossa2019-200x115.jpg" alt="">
-                    </figure>
-                    <h4 class="item__single-title">
-                        <a href="#">Maatschappelijk vastgoed</a>
-                    </h4>
-                    <div class="item__single-desc">
-                    <p>Gemeenten hebben vastgoed in bezit voor gemeentelijke huisvesting, het realiseren van</p>
-                    </div>
-                </div>
-
-                <!-- Single Item -->
-                <div class="item__single">
-                    <figure class="item__single-img">
-                        <img src="https://itspublicstagingfinal.local/wp-content/uploads/2020/11/Huizen2_Amsterdam_zero_ann-fossa2019-200x115.jpg" alt="">
-                    </figure>
-                    <h4 class="item__single-title">
-                        <a href="#">Maatschappelijk vastgoed Het optimale begeleidingsproces in de bijstand</a>
-                    </h4>
-                    <div class="item__single-desc">
-                    <p>Gemeenten hebben vastgoed in bezit voor gemeentelijke huisvesting, het realiseren van</p>
-                    </div>
-                </div>
-
-                <!-- Single Item -->
-                <div class="item__single">
-                    <figure class="item__single-img">
-                        <img src="https://itspublicstagingfinal.local/wp-content/uploads/2020/11/Huizen2_Amsterdam_zero_ann-fossa2019-200x115.jpg" alt="">
-                    </figure>
-                    <h4 class="item__single-title">
-                        <a href="#">Maatschappelijk vastgoed</a>
-                    </h4>
-                    <div class="item__single-desc">
-                    <p>Gemeenten hebben vastgoed in bezit voor gemeentelijke huisvesting, het realiseren van</p>
-                    </div>
-                </div>
-
-                <!-- Single Item -->
-                <div class="item__single">
-                    <figure class="item__single-img">
-                        <img src="https://itspublicstagingfinal.local/wp-content/uploads/2020/11/Huizen2_Amsterdam_zero_ann-fossa2019-200x115.jpg" alt="">
-                    </figure>
-                    <h4 class="item__single-title">
-                        <a href="#">Maatschappelijk vastgoed</a>
-                    </h4>
-                    <div class="item__single-desc">
-                    <p>Gemeenten hebben vastgoed in bezit voor gemeentelijke huisvesting, het realiseren van</p>
-                    </div>
-                </div>
+                <?php endwhile; endif; ?>
 
             </div>
         </div>
