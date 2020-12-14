@@ -722,7 +722,7 @@ function itspublic_materialen_single() {
                                 <ul>
                                     <?php foreach ($getMembers as $getMember) { ?>
                                     <li class="team__member">
-                                        <a href="#!" target="_blank">
+                                        <a href="#!">
                                             <img src="<?php echo get_the_post_thumbnail_url( $getMember->ID ); ?>" alt="<?php echo $getMember->post_title; ?>">
                                         </a>
                                     </li>
