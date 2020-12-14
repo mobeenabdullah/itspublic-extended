@@ -196,7 +196,7 @@ $i5SEportrait: 320px;
             font-size: 12px;
           }
         }
-        &::last-child {
+        &:last-child {
           margin-bottom: 0;
         }
       }
@@ -210,6 +210,48 @@ $i5SEportrait: 320px;
 
 }
 
+@media screen and (max-width: $bp-medium) {
+    // details
+    .materialen__details {
+    padding: 30px 20px 30px 20px;
+    
+
+      .materialen__details-cover {
+          display: flex;
+          flex-wrap: wrap;
+          &--left {
+              width: 100% !important;
+          }
+          &--right {
+              width: 100% !important;
+              .materialen__sidebar {
+                display: grid !important;
+                gap: 30px;
+                grid-template-columns: [container-start] repeat(2, [col-start] minmax(min-content, 1fr) [col-end]) [container-end];
+                justify-items: space-between;
+               align-items: stretch;
+
+               
+              }
+             
+          }
+      }
+    }
+
+    .related__materialSec {
+      padding: 30px 20px 30px 20px !important;    
+      &-items {
+          grid-template-columns: [container-start] repeat(4, [col-start] minmax(min-content, 1fr) [col-end]) [container-end] !important;
+          
+      }
+    }
+
+    .materialen__single {
+      min-height: 400px;
+    }
+
+
+ }
 
 @media screen and (max-width: $break-mobile) { 
   .information__box-content {
@@ -514,6 +556,51 @@ $i5SEportrait: 320px;
 #startenals .elementor-tab-content p {
   font-size: 14px !important;
 }
+
+.materialen__details {
+  padding: 20px;
+  
+
+    .materialen__details-cover {
+        &--left {
+            width: 100% !important;
+        }
+        &--right {
+            width: 100% !important;
+            .materialen__sidebar {
+              display: grid !important;
+              gap: 20px;
+              grid-template-columns: [container-start] repeat(1, [col-start] minmax(min-content, 1fr) [col-end]) [container-end] !important;
+
+              .materialen__sidebar-widget {
+                margin-bottom: 0 !important;
+              }
+
+            }
+           
+        }
+    }
+  }
+
+  .related__materialSec {
+    padding: 20px !important;    
+    &-items {
+        grid-template-columns: [container-start] repeat(2, [col-start] minmax(min-content, 1fr) [col-end]) [container-end] !important;
+        
+    }
+  }
+
+  .materialen__single {
+    // .materialen__single-header {
+    //   min-height: 60vh;
+    // }
+  }
+
+  .materialen__single {
+    min-height: 250px;
+  }
+
+
 
 }
 

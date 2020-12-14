@@ -7,8 +7,20 @@
 }
 
 .materialen__single {
+    background-position: center center;
+    background-size: cover;
+    min-height: 600px;
+    display: flex;
+    align-items: stretch;
+
+    .custom-container {
+        display: flex;
+        align-items: stretch;
+        width: 100%;
+    }
+
     .materialen__single-header {
-        min-height: 464px;
+        align-self: stretch;
         position: relative;
         width: 100%;
 
@@ -46,7 +58,7 @@
 
 // Related Material Section
 .related__materialSec {
-    padding: 80px 0;
+    padding: 60px 0;
     background-color: #FCFCFC;
 
     .cat__title {
@@ -61,12 +73,13 @@
 
         .item__single {
             width: 100%;
-            margin-bottom: 15px;
+            margin-bottom: 0;
             margin-right: 10px;
             transition: all .2s;
             padding: 10px;
             border-radius: 5px;
-            border: 1px solid transparent;   
+            border: 1px solid transparent;  
+            padding-bottom: 10px; 
     
             &-img {
                 width: 100%;
@@ -178,7 +191,17 @@
     
             &:hover {
                 border: 1px solid rgba(0,0,0,0.10);
+
+                .item__single {
+                    &-img {
+                        img {
+                            @include grayscale_element(0%);
+                        }
+                    }
+                }
             }
+
+            
           
         }
     }

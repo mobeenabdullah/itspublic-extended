@@ -18,6 +18,8 @@ $bp-small: 37.5em; //600px
 body {
   font-family: 'Hind', sans-serif !important;
   position: relative;
+  margin: 0;
+  padding: 0;
 }
 // .container {
 //   width: 1280px;
@@ -174,7 +176,7 @@ body {
         position: absolute;
         top: -19px;
         transform: translateX(50%);
-        left: 150px !important;
+        left: 180px !important;
       }
     }
     .active:nth-child(3) {
@@ -187,16 +189,34 @@ body {
         position: absolute;
         top: -19px;
         transform: translateX(50%);
-        right: 180px !important;
+        right: 197px !important;
       }
     }
-    
+
+    .active-default {
+        &::after {
+        content: '';
+        width: 33px;
+        height: 19px;
+        background-image: url("../images/tabs-arrow.png");
+        background-repeat: no-repeat;
+        position: absolute;
+        top: -19px;
+        transform: translateX(50%);
+        left: 180px !important;
+      }
+    }  
+
   }
 
   
 }
 
-
+.materialen-detial {
+  .elementor-column-wrap {
+    padding: 0 !important;
+  }
+}
 
 
 

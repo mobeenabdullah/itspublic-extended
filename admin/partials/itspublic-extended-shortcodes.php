@@ -646,6 +646,7 @@ function itspublic_materialen_single() {
     <section class="materialen__details">
         <div class="custom-container">
             <div class="materialen__details-cover">
+
                 <div class="materialen__details-cover--left">
                     <div class="itspublic__popcontent">
                         <div class="taxonomies">
@@ -659,7 +660,7 @@ function itspublic_materialen_single() {
                         </h3>
                         <div class="popup_materiaal_content">
                             <?php echo $getPost->post_content; ?>
-                    </div>
+                        </div>
                     </div>
                 </div>
 
@@ -667,8 +668,9 @@ function itspublic_materialen_single() {
                 <div class="materialen__details-cover--right">
                    <div class="materialen__sidebar">
 
-                   <!-- Single widget -->
+                        <!-- Single widget -->
                        <div class="materialen__sidebar-widget">
+
                            <div class="materialen__sidebar-widget--title">
                                 <h4>Download</h4>
                            </div>
@@ -709,9 +711,12 @@ function itspublic_materialen_single() {
                                     </li>
                                     <?php } ?>
                                 </ul>
+                            
                             </div>
-                           </div>
-                       </div>
+
+                        </div>
+
+
 
                        <div class="materialen__sidebar-widget">
                            <div class="materialen__sidebar-widget--title">
@@ -728,19 +733,14 @@ function itspublic_materialen_single() {
                                     </li>
                                     <?php } ?>
                                 </ul>
-                            </div>
-                           </div>
+                            </div>                          
                        </div>
 
-
-
-                   </div>
+                    </div>
                 </div>
-
 
             </div>
         </div>
-    </div>
     </section>
 
     <?php
