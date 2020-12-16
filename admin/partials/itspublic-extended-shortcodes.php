@@ -791,6 +791,12 @@ function itspublic_materialen_single() {
                 <?php endwhile; endif; ?>
 
             </div>
+
+            <div class="related_btn-cover">
+                <a href="#">Klik hier om alle materiale te bekijken</a>
+            </div>
+
+            
         </div>
     </section>
 
