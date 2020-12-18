@@ -4,6 +4,14 @@
 
 	$(document).ready(function () {
 
+		$('#hero-slider').slick({
+			autoplay: true,
+			arrows: false,
+			draggable: false,
+			speed: 1000,
+			fade: true
+		});
+
 		$('.itspublic-members-slider').slick({
 			appendArrows: '.custom-arrow-buttons',
 			prevArrow: '<span class="custom-prev-arrow"><i class="fa fa-arrow-left"></i></span>',
