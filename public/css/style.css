@@ -111,7 +111,7 @@ body {
   object-position: center center; }
 
 .werkenbij-employee-tabs .eael-tabs-content {
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid #22777B;
   border-radius: 10px;
   padding: 20px;
   position: relative;
@@ -512,7 +512,7 @@ body {
     opacity: 0 !important; }
   .item__single:hover .hover-item .cat-label {
     transition: all 200ms ease-in-out;
-    opacity: 0 !important; }
+    opacity: 1 !important; }
   .item__single:hover .icon-box img {
     -webkit-filter: grayscale(0);
     -moz-filter: grayscale(0);
@@ -1593,8 +1593,11 @@ body {
     text-align: center;
     padding: 20px 0;
     margin-top: 15px; }
-    .custom-container .related_btn-cover a:hover {
-      text-decoration: underline; }
+    .custom-container .related_btn-cover a {
+      font-size: 18px;
+      font-weight: 600; }
+      .custom-container .related_btn-cover a:hover {
+        text-decoration: underline; }
 
 .materialen__single {
   background-position: center center;
@@ -1816,7 +1819,7 @@ body {
     opacity: 1; }
 
 .hero__slider {
-  min-height: 60vh;
+  min-height: 70vh;
   position: relative; }
   .hero__slider .custom_container {
     width: 1280px;
@@ -1828,12 +1831,13 @@ body {
       display: flex;
       align-content: center;
       flex-wrap: wrap;
-      height: 60vh; }
+      height: 50vh; }
       .hero__slider .custom_container .slider-content-tagline {
         width: 100%; }
         .hero__slider .custom_container .slider-content-tagline h2 {
           color: #ffffff !important;
-          text-shadow: 0px 0 8px rgba(0, 0, 0, 0.45); }
+          text-shadow: 0px 0 8px rgba(0, 0, 0, 0.45);
+          margin: 0 !important; }
       .hero__slider .custom_container .slider-content-searchbar {
         width: 100%;
         background-color: rgba(255, 255, 255, 0.3);
@@ -1844,7 +1848,7 @@ body {
     top: 0;
     left: 0;
     overflow: hidden;
-    height: 60vh; }
+    height: 70vh; }
     .hero__slider .slider__cover img {
       width: 100%;
       height: 100%;
@@ -2176,7 +2180,9 @@ body {
   .main-hero-section {
     padding-top: 60px; }
   .main-hero-section .elementor-row {
-    transform: translateY(50px) !important; } }
+    transform: translateY(50px) !important; }
+  .hero__slider .custom_container .slider-content {
+    height: 35vh; } }
 
 @media only screen and (max-width: 768px) {
   .itspubic-single-member {
