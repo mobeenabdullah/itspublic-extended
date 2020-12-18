@@ -83,7 +83,32 @@ body {
   -webkit-filter: grayscale(100%);
   -moz-filter: grayscale(100%);
   -o-filter: grayscale(100%);
-  -ms-filter: grayscale(100%); }
+  -ms-filter: grayscale(100%);
+  opacity: .5;
+  border: 2px solid transparent;
+  padding: 2px;
+  height: 188px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center center; }
+
+.werkenbij-employee-tabs .eael-tabs-nav .active-default img {
+  opacity: 1;
+  border: 2px solid #22777B;
+  padding: 2px;
+  height: 188px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center center; }
+
+.werkenbij-employee-tabs .eael-tabs-nav .active img {
+  opacity: 1;
+  border: 2px solid #22777B;
+  padding: 2px;
+  height: 188px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center center; }
 
 .werkenbij-employee-tabs .eael-tabs-content {
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -634,9 +659,9 @@ body {
 
 .itspubic-single-member .member-img {
   cursor: pointer;
-  border: 2px solid transparent; }
+  box-shadow: 0 0 0 2px transparent; }
   .itspubic-single-member .member-img:hover {
-    border-color: #ffbd42; }
+    box-shadow: 0 0 0 2px #ffbd42; }
 
 .itspubic-single-member .member-name {
   cursor: pointer; }
@@ -770,7 +795,6 @@ body {
     .searchbox__cover-form--input {
       display: flex;
       justify-content: space-between;
-      border: 2px solid #e0e0e0;
       border-radius: 5px;
       background-color: #ffffff; }
       .searchbox__cover-form--input .search-input {
@@ -1485,7 +1509,7 @@ body {
   font-size: 14px;
   transition: all .2s;
   outline: none;
-  line-height: 30px; }
+  line-height: 34px; }
 
 .member-footer-info ul li a:hover {
   background-color: var(--itspublic-primary-color);
@@ -1567,7 +1591,8 @@ body {
     display: block !important; }
   .custom-container .related_btn-cover {
     text-align: center;
-    padding: 20px 0; }
+    padding: 20px 0;
+    margin-top: 15px; }
     .custom-container .related_btn-cover a:hover {
       text-decoration: underline; }
 
@@ -1705,21 +1730,24 @@ body {
           filter: grayscale(0%); }
 
 .materialen__sidebar-widget {
-  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  margin-bottom: 30px;
-  overflow: hidden; }
+  margin-bottom: 30px; }
   .materialen__sidebar-widget--title {
-    background-color: #eee;
+    background-color: rgba(0, 0, 0, 0.1);
     padding: 20px;
     text-align: left;
-    font-size: 24px; }
+    font-size: 24px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px; }
     .materialen__sidebar-widget--title h4 {
       margin: 0 !important;
       padding: 0 !important;
       line-height: 1 !important; }
   .materialen__sidebar-widget--content {
-    padding: 20px; }
+    padding: 20px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1); }
     .materialen__sidebar-widget--content ul {
       margin: 0 !important;
       padding: 0 !important;
@@ -1733,17 +1761,95 @@ body {
         .materialen__sidebar-widget--content ul li a img {
           height: 36px;
           border-radius: 0 !important; }
-      .materialen__sidebar-widget--content ul li.team__member {
-        border-radius: 50%;
-        overflow: hidden; }
-        .materialen__sidebar-widget--content ul li.team__member a {
-          display: block;
-          width: 50px;
-          height: 50px; }
-          .materialen__sidebar-widget--content ul li.team__member a img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; }
+      .materialen__sidebar-widget--content ul li.team__member a {
+        display: block;
+        width: 50px;
+        height: 50px;
+        overflow: hidden;
+        border-radius: 50%; }
+        .materialen__sidebar-widget--content ul li.team__member a img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover; }
+
+[data-tooltip] {
+  position: relative;
+  z-index: 2;
+  cursor: pointer; }
+  [data-tooltip]::before, [data-tooltip]::after {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none; }
+  [data-tooltip]::before {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-bottom: 5px;
+    transform: translateX(-50%);
+    padding: 7px;
+    width: auto;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background-color: #000;
+    background-color: rgba(51, 51, 51, 0.9);
+    color: #fff;
+    content: attr(data-tooltip);
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.2; }
+  [data-tooltip]::after {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    width: 0;
+    border-top: 5px solid #000;
+    border-top: 5px solid rgba(51, 51, 51, 0.9);
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    content: " ";
+    font-size: 0;
+    line-height: 0; }
+  [data-tooltip]:hover:before, [data-tooltip]:hover:after {
+    visibility: visible;
+    opacity: 1; }
+
+.hero__slider {
+  min-height: 60vh;
+  position: relative; }
+  .hero__slider .custom_container {
+    width: 1280px;
+    margin: 0 auto; }
+    .hero__slider .custom_container .slider-content {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-content: center;
+      flex-wrap: wrap;
+      height: 60vh; }
+      .hero__slider .custom_container .slider-content-tagline {
+        width: 100%; }
+        .hero__slider .custom_container .slider-content-tagline h2 {
+          color: #ffffff !important;
+          text-shadow: 0px 0 8px rgba(0, 0, 0, 0.45); }
+      .hero__slider .custom_container .slider-content-searchbar {
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.3);
+        padding: 10px;
+        border-radius: 6px; }
+  .hero__slider .slider__cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    height: 60vh; }
+    .hero__slider .slider__cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center; }
 
 @media screen and (max-width: 1366px) {
   .itspublic__cover {

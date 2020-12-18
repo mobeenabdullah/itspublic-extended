@@ -816,10 +816,10 @@
 .itspubic-single-member {
     .member-img {
         cursor: pointer;
-        border: 2px solid transparent;
+        box-shadow: 0 0 0 2px transparent;
 
         &:hover {
-            border-color: $orange-color;
+            box-shadow: 0 0 0 2px $orange-color;
 
         }
     }

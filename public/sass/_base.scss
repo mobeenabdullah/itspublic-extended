@@ -189,6 +189,41 @@ body {
         -moz-filter: grayscale(100%);
         -o-filter: grayscale(100%);
         -ms-filter: grayscale(100%);
+        opacity: .5;
+        border: 2px solid transparent;
+        padding: 2px;
+        height: 188px;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center center;
+        
+      
+      }      
+    }
+
+    .active-default {
+        
+      img {   
+      opacity: 1;
+      border: 2px solid #22777B;
+      padding: 2px; 
+      height: 188px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center center; 
+      }
+    }
+
+    .active {
+      img {   
+      opacity: 1;
+      border: 2px solid #22777B;
+      padding: 2px;
+      height: 188px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center center;
+    
       }
     }
   }
@@ -243,16 +278,16 @@ body {
 
     .active-default {
         &::after {
-        content: '';
-        width: 33px;
-        height: 19px;
-        background-image: url("../images/tabs-arrow.png");
-        background-repeat: no-repeat;
-        position: absolute;
-        top: -19px;
-        transform: translateX(50%);
-        left: 180px !important;
-      }
+          content: '';
+          width: 33px;
+          height: 19px;
+          background-image: url("../images/tabs-arrow.png");
+          background-repeat: no-repeat;
+          position: absolute;
+          top: -19px;
+          transform: translateX(50%);
+          left: 180px !important;
+        }
     }  
 
   }
