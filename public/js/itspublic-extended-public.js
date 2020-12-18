@@ -9,7 +9,8 @@
 			arrows: false,
 			draggable: false,
 			speed: 10000,
-			fade: true
+			fade: true,
+			lazyLoad: 'ondemand' // progressive
 		});
 
 		$('.itspublic-members-slider').slick({
