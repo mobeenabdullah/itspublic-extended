@@ -8,7 +8,7 @@
 			autoplay: true,
 			arrows: false,
 			draggable: false,
-			speed: 1000,
+			speed: 10000,
 			fade: true
 		});
 

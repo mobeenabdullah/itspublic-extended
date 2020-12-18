@@ -1057,7 +1057,7 @@ function itspublic_hero_slider() {
                 </div>
             </div>
             <div>
-                <img src="https://wordpress-434521-1391395.cloudwaysapps.com/wp-content/uploads/2020/12/Stad7_Amsterdam_zero_Jonas-denil-2017-scaled.jpg" alt="">
+                <img src="https://wordpress-434521-1391395.cloudwaysapps.com/wp-content/uploads/2020/12/Stad13_Amsterdam_Zero_Tim-goedhart-scaled.jpg" alt="">
                 <div class="information-wraper">
                     <div class="information__box-icon"><i class="fas fa-info-circle"></i></div>
                     <div class="information__box-content">
