@@ -419,7 +419,7 @@ function data_fetch(){
 		<?php endwhile;
 		wp_reset_postdata();
 	else:
-		echo '<h3 class="materiaal-no-results">Geen resultaten gevonden</h3>';
+		// echo '<h3 class="materiaal-no-results">Geen resultaten gevonden</h3>';
 	endif;
 
 	die();
@@ -861,9 +861,10 @@ function data_fetch_hero(){
 		)
 	);
 
-	echo '<div class="material__items search__items">';
+	
 
-	if( $the_query->have_posts() ) :
+    if( $the_query->have_posts() ) :
+        echo '<div class="material__items search__items">';
 		while( $the_query->have_posts() ): $the_query->the_post(); ?>
 
 			<?php
@@ -1222,12 +1223,15 @@ function data_fetch_hero(){
             </div>
 
 		<?php endwhile;
-		wp_reset_postdata();
-	else:
-		echo '<h3 class="materiaal-no-results">Geen resultaten gevonden</h3>';
+        wp_reset_postdata();
+        echo '</div>';     
+    else:
+        echo '<div class="material__items search__items noitemfound">';
+        echo '<h3 class="materiaal-no-results">Geen resultaten gevonden</h3>';
+        echo '</div>';
 	endif;
-
-	echo '</div>';
+   
+	
 
 	die();
 }
