@@ -773,6 +773,145 @@ $i5SEportrait: 320px;
 
   }
 
+  .hero__slider {
+    .custom_container {
+      .slider-content-searchbar {
+        padding: 5px !important;
+      }
+
+      .searchbox__cover {
+        &-form {
+          &--input {
+            input {
+              width: 85% !important;
+              padding: 15px !important;
+              font-size: 12px !important;
+              &::placeholder {
+                display: none !important;
+                color: #ffffff !important
+              }
+            }
+            .search-btn {
+              width: 15% !important;
+              padding: 0 !important;
+            }
+          }
+        }
+      }
+    }
+
+    .showSearchbox {
+      width: 100% !important;
+    }
+  }
+
+  .searchbox__cover {
+    #searchResult {
+      top: 50px !important;
+      margin-top: 0 !important;
+    }
+  }
+
+  .search__items {
+    .item__single {
+      width: 100% !important;
+      margin-bottom: 0 !important;
+      .item__single-img {
+        height: 99px !important;
+      }
+    }
+  }
+.project_types_list {
+  .slick-slide {
+    display: block;
+    padding: 10px 21px;
+    font-size: 12px;
+    line-height: 1;
+  }
+}
+ 
+
+  
+  
+ 
+
+  .itspublic-projects {
+    .slick-slide {
+      margin: 0!important;
+      padding: 0 5px !important;
+
+      .projecten__single {
+        margin: 0 0 20px 0 !important;
+      }
+
+      .projecten__cover {
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+
+      
+    }
+  }
+
+
+// werkinbij
+.werkenbij__eventbar {
+  .elementor-widget-wrap {
+    align-items: stretch !important;
+      .elementor-element {
+          &:nth-child(1) {
+            display: flex;
+            align-items: stretch !important ;
+            .elementor-widget-container { 
+             display: flex;   
+             align-items: stretch;
+             justify-content: center;  
+             .elementor-icon-wrapper {
+               display:flex;
+               justify-content: center;
+               align-items: stretch;
+               .elementor-icon {
+                display:flex;
+                justify-content: center;
+                align-items: center;
+               }
+             }            
+            }              
+          }
+
+          &:nth-child(2) { 
+              .elementor-widget-container { 
+                height: auto;                 
+              }
+          }
+          .elementor-icon-wrapper {
+              .elementor-icon {
+              }
+          }
+      }
+  }
+}
+
+.material__items {
+  .item__single {
+    width: 100% !important;
+    margin-bottom: 0 !important;
+    .item__single-img {
+      height: 100px !important;
+    }
+  }
+}
+
+.filter__box-searchbox {
+  margin-top: 10px;
+}
+
+.hero__slider .custom_container .searchbox__cover-form--input input::placeholder {
+  color: #ffffff !important;
+}
+
+
+
 
 
 }
@@ -1017,6 +1156,7 @@ margin-bottom: 30px;
   padding: 5px 10px !important;
   font-size: 12px !important;
 }
+
 
 
 
