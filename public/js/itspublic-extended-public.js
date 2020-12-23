@@ -143,8 +143,10 @@
 
 			if (searchValue.length > 0) {
 				document.querySelector('#searchResult').className = 'showSearchbox';
+				$('.slider-content-searchbar').css('transform', 'translateY(-100px)');
 			} else {
 				document.querySelector('#searchResult').className = '';
+				$('.slider-content-searchbar').css('transform', 'translateY(0px)');
 			}
 
 			var searrchAllLink = document.location + 'materialen/' + '?ms=' +searchValue;
