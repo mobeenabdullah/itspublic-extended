@@ -147,7 +147,7 @@ function itspublic_show_projects( ) {
 
                         <div class="projecten__single">
                             <figure class="projecten__single-img">
-                                <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
+                                <img src="<?php echo get_the_post_thumbnail_url( get_the_ID(), 'projects-slide-thumb' ); ?>" alt="<?php the_title(); ?>">
                             </figure>
 
                             <div class="projecten__single-content">
