@@ -33,7 +33,8 @@ function itspublic_show_members( ) {
                 ?>
 
                 <figure class="member-img">
-                    <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
+                    <img src="<?php echo get_the_post_thumbnail_url( get_the_ID(), 'home-team-thumb' ); ?>" alt="<?php the_title(); ?>">
+                    <span class="team-full-photo-hidden"><?php echo get_the_post_thumbnail_url( get_the_ID(), 'full' ); ?></span>
                 </figure>
 
                 <h4 class="member-name"><?php the_title(); ?></h4>
@@ -399,7 +400,7 @@ function itspublic_materialen_single() {
 
     $getPhotoField = get_field('photo', get_the_ID()); ?>
 
-    <section class="materialen__single" style="background-image: url('<?php echo get_the_post_thumbnail_url($getPhotoField->ID, 'full'); ?>'); background-position: <?php echo get_field('photo_position', get_the_ID() ); ?> ">
+    <section class="materialen__single" style="background-image: url('<?php echo get_the_post_thumbnail_url($getPhotoField->ID, 'material-single-hero'); ?>'); background-position: <?php echo get_field('photo_position', get_the_ID() ); ?> ">
         <div class="custom-container">
             <div class="materialen__single-header">
                 <div class="information-wraper">
@@ -728,7 +729,7 @@ function itspublic_materialen_single() {
                                     <?php foreach ($getMembers as $getMember) { ?>
                                     <li class="team__member" data-tooltip="<?php echo get_post_meta($getMember->ID, 'itspublic-member_email', true);  ?>">
                                         <a href="#">
-                                            <img src="<?php echo get_the_post_thumbnail_url( $getMember->ID ); ?>" alt="<?php echo $getMember->post_title; ?>">
+                                            <img src="<?php echo get_the_post_thumbnail_url( $getMember->ID, 'material-single-team' ); ?>" alt="<?php echo $getMember->post_title; ?>">
                                         </a>
                                     </li>
                                     <?php } ?>
@@ -777,7 +778,7 @@ function itspublic_materialen_single() {
                     <figure class="item__single-img">
                         <?php $getMeerPhotoField = get_field('photo', get_the_ID()); ?>
                         <a href="<?php the_permalink(); ?>">
-                            <img src="<?php echo get_the_post_thumbnail_url($getMeerPhotoField->ID, 'full'); ?>" alt="<?php the_title(); ?>">
+                            <img src="<?php echo get_the_post_thumbnail_url($getMeerPhotoField->ID, 'material-single-projects'); ?>" alt="<?php the_title(); ?>">
                         </a>
                     </figure>
                     <h4 class="item__single-title">
@@ -827,7 +828,7 @@ function itspublic_hero_slider() {
                 while ( $slidesQuery->have_posts() ) : $slidesQuery->the_post(); ?>
                 <div>
                     <?php $getPhotoField = get_field('photo', get_the_ID()); ?>
-                    <img src="<?php echo get_the_post_thumbnail_url($getPhotoField->ID); ?>" alt="<?php echo $getPhotoField->post_title; ?>">
+                    <img src="<?php echo get_the_post_thumbnail_url( $getPhotoField->ID, 'home-hero-slider' ); ?>" alt="<?php echo $getPhotoField->post_title; ?>">
 
                     <div class="information-wraper">
                         <div class="information__box-icon"><i class="fas fa-info-circle"></i></div>

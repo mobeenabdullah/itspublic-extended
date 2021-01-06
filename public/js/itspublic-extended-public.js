@@ -242,7 +242,7 @@
 			$('.itspubic-single-member').removeClass('current-member');
 			$(this).closest('.itspubic-single-member').addClass('current-member');
 
-			const memberImageUrl = $('.current-member .member-img img').attr('src');
+			const memberImageUrl = $('.current-member .member-img .team-full-photo-hidden').text();
 			const memberName = $('.current-member .member-name').text();
 			const memberDesignation = $('.current-member .member-designation').text();
 			const memberInfoText = $('.current-member .member-info-full').html();

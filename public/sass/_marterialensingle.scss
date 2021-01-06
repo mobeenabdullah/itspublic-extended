@@ -317,12 +317,34 @@
 .werkenbij__eventbar {
     .elementor-widget-wrap {
         flex-wrap: nowrap !important;
+        align-items: stretch !important;
+        
         .elementor-element {
             &:nth-child(1) {
-                width: 88px;
+                width: 63px;
                 a {
                     margin: 0 !important;
                 }
+                .elementor-icon-wrapper {
+                    display: flex;
+                    align-items: stretch;
+                    .elementor-icon {
+                        border: none;
+                        display: flex;
+                        align-items: stretch;
+                        i {
+                            align-self: center;
+                        }
+                    }
+                }
+
+                .elementor-widget-container {
+                    display: flex;
+                    align-items: stretch;
+                    height: 86px;
+                    margin-top: 0 !important;
+                }
+                
             }
             &:nth-child(2) {
                 flex-grow: 1;
@@ -350,8 +372,14 @@
             }
             .elementor-icon-wrapper {
                 display: flex;
+                align-items: stretch;
                 .elementor-icon {
                     border: none;
+                    display: flex;
+                    align-items: stretch;
+                    i {
+                        align-self: center;
+                    }
                 }
             }
             
