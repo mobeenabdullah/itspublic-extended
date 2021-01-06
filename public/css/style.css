@@ -2003,18 +2003,26 @@ body {
   .werkenbij-employee-tabs .eael-tabs-content .active:nth-child(3)::after {
     right: 110px !important; } }
 
+@media screen and (max-width: 1024px) {
+  .material__items {
+    grid-template-columns: [container-start] repeat(4, [col-start] minmax(min-content, 1fr) [col-end]) [container-end] !important; }
+  .material__page-itemscover .material__items .item__single {
+    width: 100%; }
+  .material__page-itemscover .material__items .item__single-img {
+    height: 80px; }
+  .filter__box-category {
+    width: 25%;
+    margin-right: 30px; }
+  .filter__box-searchbox {
+    width: 65%;
+    flex-grow: 1; } }
+
 @media screen and (max-width: 600px) {
   #materialenModal {
     padding-top: 10%; }
   .information__box-content {
     max-width: 45%;
     width: 100%; }
-  .filter__box-category {
-    width: 30%; }
-  .filter__box-or {
-    width: 10%; }
-  .filter__box-searchbox {
-    width: 60%; }
   .material__page-itemscover .material__items {
     flex-flow: row wrap; }
     .material__page-itemscover .material__items .item__single {
@@ -2069,8 +2077,6 @@ body {
     grid-template-columns: [container-start] repeat(3, [col-start] minmax(min-content, 1fr) [col-end]) [container-end] !important; }
   .material__page-itemscover .material__items .item__single {
     width: 100% !important; }
-  .filter__box-searchbox {
-    width: 71%; }
   .hero__slider .custom_container {
     width: 100% !important; }
     .hero__slider .custom_container .slider-content-tagline h2 {
@@ -2146,7 +2152,8 @@ body {
     .itspublic__popcontent .taxonomies ul li i {
       margin-right: 5px; }
   .filter__box-category {
-    width: 100%; }
+    width: 100%;
+    margin-right: 0 !important; }
   .filter__box-or {
     width: 100%; }
   .filter__box-searchbox {
@@ -2524,6 +2531,10 @@ body {
     padding-bottom: 0; }
   .interview__section {
     margin-bottom: 40px; } }
+
+@media only screen and (max-width: 667px) {
+  .material__items {
+    grid-template-columns: [container-start] repeat(2, [col-start] minmax(min-content, 1fr) [col-end]) [container-end] !important; } }
 
 @media screen and (max-width: 320px) {
   .main-hero-section {
