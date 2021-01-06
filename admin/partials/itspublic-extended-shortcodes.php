@@ -818,7 +818,7 @@ add_shortcode('itspublic_materialen_single', 'itspublic_materialen_single');
 function itspublic_hero_slider() {
 
     ob_start(); ?>
-    <section class="hero__slider">
+    <section class="hero__slider" style="background-image: url('https://wordpress-434521-1391395.cloudwaysapps.com/wp-content/uploads/2020/09/All-free-with-foto-Jorrit-Lousberg-flickr-4-1600x516.jpg');">
         <div class="slider__cover" id="hero-slider">
         <?php
             $slidesQuery = new WP_Query( array(

@@ -1,6 +1,9 @@
 .hero__slider {
     min-height: 70vh;
     position: relative;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
 
     .custom_container {
         width: 1280px;
