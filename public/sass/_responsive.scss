@@ -164,6 +164,9 @@ $i5SEportrait: 320px;
     width: 65%;
     flex-grow: 1;
   }
+  .projecten__arrows {
+    display: none;
+  }
 
 }
 
@@ -229,6 +232,10 @@ $i5SEportrait: 320px;
 
   }
 
+}
+
+.projecten__arrows {
+  display: none;
 }
 
 }
@@ -344,6 +351,20 @@ $i5SEportrait: 320px;
 
 
       }
+    }
+
+    .werkenbij-slider {
+      .elementor-widget-container {
+        padding-bottom: 50px !important;
+        .swiper-wrapper {
+          
+        }
+    
+        // .swiper-pagination-bullets {
+        //   bottom: 0 !important;
+        // }
+      }
+      
     }
 
 
@@ -979,6 +1000,17 @@ $i5SEportrait: 320px;
   }
 }
 
+.werkenbij__eventbar .elementor-widget-wrap .elementor-element:nth-child(2) .elementor-widget-container {
+  display: flex;
+  align-items: stretch;
+  height: 100% !important;
+  margin-top: 0 !important;
+}
+.werkenbij__eventbar .elementor-widget-wrap .elementor-element:nth-child(2) .elementor-widget-container .elementor-text-editor {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
 
 
 

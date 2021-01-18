@@ -167,6 +167,9 @@ body {
 .team-full-photo-hidden {
   display: none; }
 
+.member-info {
+  height: 110px; }
+
 .material__section {
   background-color: transparent; }
 
@@ -1014,6 +1017,12 @@ body {
 .slick-slide {
   outline: none !important;
   margin-bottom: 10px !important; }
+
+.projecten__arrows {
+  position: absolute;
+  left: -100%;
+  margin-top: -91px;
+  margin-left: -19px; }
 
 .modal {
   display: none;
@@ -2018,7 +2027,9 @@ body {
     margin-right: 30px; }
   .filter__box-searchbox {
     width: 65%;
-    flex-grow: 1; } }
+    flex-grow: 1; }
+  .projecten__arrows {
+    display: none; } }
 
 @media screen and (max-width: 600px) {
   #materialenModal {
@@ -2051,7 +2062,9 @@ body {
           .itspublic__footer .popoverbox .persons__ul li a span {
             font-size: 12px; }
           .itspublic__footer .popoverbox .persons__ul li:last-child {
-            margin-bottom: 0; } }
+            margin-bottom: 0; }
+  .projecten__arrows {
+    display: none; } }
 
 @media screen and (max-width: 50em) {
   .materialen__details {
@@ -2098,7 +2111,9 @@ body {
   .werkenbij-employee-tabs .eael-tabs-nav .inactive img {
     height: initial; }
   .werkenbij-employee-tabs .eael-tabs-nav .active img {
-    height: initial; } }
+    height: initial; }
+  .werkenbij-slider .elementor-widget-container {
+    padding-bottom: 50px !important; } }
 
 @media screen and (max-width: 480px) {
   .information__box-content {
@@ -2406,7 +2421,16 @@ body {
   .custom-container .related_btn-cover {
     text-align: center; }
     .custom-container .related_btn-cover a {
-      font-size: 14px; } }
+      font-size: 14px; }
+  .werkenbij__eventbar .elementor-widget-wrap .elementor-element:nth-child(2) .elementor-widget-container {
+    display: flex;
+    align-items: stretch;
+    height: 100% !important;
+    margin-top: 0 !important; }
+  .werkenbij__eventbar .elementor-widget-wrap .elementor-element:nth-child(2) .elementor-widget-container .elementor-text-editor {
+    display: flex;
+    align-items: center;
+    font-size: 14px; } }
 
 @media only screen and (max-width: 1366px) {
   .itspublic__heromain .elementor-heading-title {
