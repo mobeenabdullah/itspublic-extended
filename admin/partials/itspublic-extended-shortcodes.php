@@ -1073,7 +1073,7 @@ function itspublic_hero_slider() {
         <div class="custom_container">
             <div class="slider-content">
                 <div class="slider-content-tagline">
-                    <h2>Stategisch advies voor de publieke zaak​</h2>
+                    <h2>Strategisch advies voor de publieke zaak​</h2>
                 </div>
                 <div class="slider-content-searchbar">
                     <?php echo do_shortcode( '[itspublic_hero_search_form]' );   ?>
