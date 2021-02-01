@@ -8,7 +8,8 @@
 			autoplay: true,
 			arrows: false,
 			draggable: false,
-			speed: 10000,
+			speed: 1000,
+			autoplaySpeed: 5000,
 			fade: true,
 			lazyLoad: 'ondemand' // progressive
 		});
