@@ -8,7 +8,7 @@
 			autoplay: true,
 			arrows: false,
 			draggable: false,
-			speed: 1000,
+			speed: 1300,
 			autoplaySpeed: 5000,
 			fade: true,
 			lazyLoad: 'ondemand' // progressive
@@ -431,7 +431,11 @@
 
 	});
 
-
+	// $('.projecten-custom-item').on('click', function() {
+	// 	setTimeout(function(){
+	// 		$('.over-custom-item a').removeClass('elementor-item-active');
+	// 	}, 1000);
+	// });
 
 
 })(jQuery);
