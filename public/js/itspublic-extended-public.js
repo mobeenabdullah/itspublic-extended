@@ -69,6 +69,7 @@
 			const getCategorieName = $('.active-item .materialen-hidden-fields .category-name').text();
 			const getMateriaalContent = $('.active-item .materialen-hidden-fields .materiaal-content').html();
 			const getMateriaalDate = $('.active-item .materialen-hidden-fields .materiaal-date').text();
+			const getMateriaalShareSlug = $('.active-item .materialen-hidden-fields .materiaal-share-slug').text();
 			const getMateriaalDownloads = $('.active-item .item__single-attachements').html();
 			const getMateriaalMembers = $('.active-item .item__single-members-list').html();
 			const getMateriaalImageInfo = $('.active-item .information-box-wrapper').html();
@@ -79,6 +80,7 @@
 			const materiaalPopupCategorieName = $('#materialenModal .taxonomies .materiaal-popup-categorie span');
 			const materiaalPopupContent = $('#materialenModal .popup_materiaal_content');
 			const materiaalPopupDate = $('#materialenModal .taxonomies .materiaal-popup-date span');
+			const materiaalShareSlugLink = $('#materialenModal .materialPop_heading .link_tooltip');
 			const materiaalPopupDownloads = $('#materialenModal .itspublic__footer-download');
 			const materiaalPopupMembers = $('#materialenModal .itspublic__footer-members-list');
 			const materiaalImageInfo = $('#materialenModal .information__box-content');
@@ -89,6 +91,7 @@
 			materiaalPopupCategorieName.text(getCategorieName);
 			materiaalPopupContent.html(getMateriaalContent);
 			materiaalPopupDate.text(getMateriaalDate);
+			materiaalShareSlugLink.attr('href', getMateriaalShareSlug);
 			materiaalPopupDownloads.html('<span>Download</span>' + getMateriaalDownloads);
 			materiaalPopupMembers.html(getMateriaalMembers);
 			materiaalImageInfo.html(getMateriaalImageInfo);
@@ -429,7 +432,23 @@
 			}
 		});
 
+
+		// copy to clipboard
+		$('.link_tooltip').on('click', function (e) {
+			e.preventDefault();
+			var copyText = $(this).attr('href');
+		 
+			document.addEventListener('copy', function(e) {
+			   e.clipboardData.setData('text/plain', copyText);
+			   e.preventDefault();
+			}, true);
+
+			document.execCommand('copy');  			
+		});
+
 	});
+
+	
 
 	// $('.projecten-custom-item').on('click', function() {
 	// 	setTimeout(function(){
