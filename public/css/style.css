@@ -1363,9 +1363,12 @@ body {
   .materialPop_heading a {
     display: none;
     line-height: 16px;
-    margin-top: -8px; }
+    margin-top: -8px;
+    margin-left: -8px; }
     .materialPop_heading a img {
       width: 18px; }
+    .materialPop_heading a svg {
+      fill: #000000 !important; }
   .materialPop_heading:hover a {
     display: inline-block !important; }
 
