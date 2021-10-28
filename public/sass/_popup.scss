@@ -30,7 +30,7 @@
       font-size: 28px;
       font-weight: bold;
       cursor: pointer;
-      line-height: 32px;
+      line-height: 36px;
     }
     &:hover,
     &:focus {
@@ -471,4 +471,38 @@
    .modal_team_content {      
       width: 1000px !important;
   }
+}
+
+
+
+
+// Addition of Link Icon 
+
+.materialPop_heading {
+  display: flex;
+  align-items: center;
+  transition: all .2s;
+
+  h3 {
+    display: inline-block; 
+    margin-right: 15px !important;
+  }
+  a {
+    display: none;
+    line-height: 16px;
+    margin-top: -8px;
+    margin-left: -8px;
+    
+    img {
+      width: 18px;            
+    }
+    svg {
+      fill: #000000 !important;
+    }
+  }
+
+  &:hover a {
+    display: inline-block !important;
+  }
+
 }

@@ -7,12 +7,6 @@ add_image_size('materialen-popup-half', 500, 125, true);
 add_image_size('materialen-popup', 1030, 256, array('center', 'center'));
 add_image_size('materialen-popup-top', 1010, 252, array('center', 'top'));
 add_image_size('materialen-popup-bottom', 1020, 254, array('center', 'bottom'));
-add_image_size('projects-slide-thumb', 210, 142, true);
-add_image_size('home-hero-slider', 1600, 516, true);
-add_image_size('home-team-thumb', 330, 166, true);
-add_image_size('material-single-hero', 1600, 516, true);
-add_image_size('material-single-team', 60, 60, true);
-add_image_size('material-single-projects', 189, 126, true);
 
 // Adding Stats Page
 function itspublic_materialen_stats_page() {

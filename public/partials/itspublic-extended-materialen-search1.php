@@ -413,14 +413,14 @@ function data_fetch(){
                     <div class="category-name"><?php echo $categorie_name; ?></div>
                     <div class="materiaal-content"><?php the_content(); ?></div>
                     <div class="materiaal-date"><?php echo $getDate; ?></div>
-                    <div class="materiaal-share-slug"><?php echo home_url() . '/materialen/?mc_slug=' . basename(get_permalink()); ?></div>
+                    
                 </div>
             </div>
 
 		<?php endwhile;
 		wp_reset_postdata();
 	else:
-		// echo '<h3 class="materiaal-no-results">Geen resultaten gevonden</h3>';
+		echo '<h3 class="materiaal-no-results">Geen resultaten gevonden</h3>';
 	endif;
 
 	die();
@@ -838,7 +838,6 @@ function data_fetch_all(){
                     <div class="category-name"><?php echo $categorie_name; ?></div>
                     <div class="materiaal-content"><?php the_content(); ?></div>
                     <div class="materiaal-date"><?php echo $getDate; ?></div>
-                    <div class="materiaal-share-slug"><?php echo home_url() . '/materialen/?mc_slug=' . basename(get_permalink()); ?></div>
                 </div>
             </div>
 
@@ -863,10 +862,9 @@ function data_fetch_hero(){
 		)
 	);
 
-	
+	echo '<div class="material__items search__items">';
 
-    if( $the_query->have_posts() ) :
-        echo '<div class="material__items search__items">';
+	if( $the_query->have_posts() ) :
 		while( $the_query->have_posts() ): $the_query->the_post(); ?>
 
 			<?php
@@ -920,7 +918,6 @@ function data_fetch_hero(){
                     <div class="category-name"><?php echo $categorie_name; ?></div>
                     <div class="materiaal-content"><?php the_content(); ?></div>
                     <div class="materiaal-date"><?php echo get_field('date'); ?></div>
-                    <div class="materiaal-share-slug"><?php echo home_url() . '/materialen/?mc_slug=' . basename(get_permalink()); ?></div>
                 </div>
 
 	            <?php $getAttachements = get_field('attachements'); ?>
@@ -1226,15 +1223,12 @@ function data_fetch_hero(){
             </div>
 
 		<?php endwhile;
-        wp_reset_postdata();
-        echo '</div>';     
-    else:
-        echo '<div class="material__items search__items noitemfound">';
-        echo '<h3 class="materiaal-no-results">Geen resultaten gevonden</h3>';
-        echo '</div>';
+		wp_reset_postdata();
+	else:
+		echo '<h3 class="materiaal-no-results">Geen resultaten gevonden</h3>';
 	endif;
-   
-	
+
+	echo '</div>';
 
 	die();
 }

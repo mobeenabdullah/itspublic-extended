@@ -21,13 +21,14 @@
         display: block !important;
     }
     .related_btn-cover {
-        text-align: center;
+        text-align: left;
         padding: 20px 0;
         margin-top: 15px;
 
         a {
-            font-size: 18px;
+            font-size: 20px;
             font-weight: 600;
+            color: $secondary-color;
             &:hover {
                 text-decoration: underline;
             }
@@ -306,6 +307,119 @@
                    }
                    }
 
+            }
+        }
+    }
+}
+
+
+// werkinbij
+.werkenbij__eventbar {
+    .elementor-widget-wrap {
+        flex-wrap: nowrap !important;
+        align-items: stretch !important;
+        
+        .elementor-element {
+            &:nth-child(1) {
+                width: 63px;
+                a {
+                    margin: 0 !important;
+                }
+                .elementor-icon-wrapper {
+                    display: flex;
+                    align-items: stretch;
+                    .elementor-icon {
+                        border: none;
+                        display: flex;
+                        align-items: stretch;
+                        i {
+                            align-self: center;
+                        }
+                    }
+                }
+
+                .elementor-widget-container {
+                    display: flex;
+                    align-items: stretch;
+                    height: 86px;
+                    margin-top: 0 !important;
+                }
+                
+            }
+            &:nth-child(2) {
+                flex-grow: 1;
+                strong {
+                    font-weight: blod !important;
+                }
+                    strong {
+                        font-weight: bold !important;
+                        a {
+                            font-weight: bold !important;
+
+                            &:hover {
+                                text-decoration: underline;
+                            }
+                        }
+                        
+                    }
+               
+                .elementor-widget-container {
+                    display: flex;
+                    align-items: center;
+                    height: 86px;
+                    margin-top: 0 !important;
+                }
+            }
+            .elementor-icon-wrapper {
+                display: flex;
+                align-items: stretch;
+                .elementor-icon {
+                    border: none;
+                    display: flex;
+                    align-items: stretch;
+                    i {
+                        align-self: center;
+                    }
+                }
+            }
+            
+        }
+    }
+}
+
+
+.werkenbij__editor {
+    .elementor-text-editor {
+        strong {
+            font-weight: bold !important;
+        }
+    }
+}
+
+#kennismaken {
+    .elementor-text-editor {
+        ul {
+            margin-top: 15px;
+            li {
+                strong {
+                    font-weight: bold !important;
+                     a {
+                        font-weight: bold !important;
+                     }
+                }
+                a {
+                    color: #ffffff;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                    strong {
+                        font-weight: bold !important;
+                    }
+                }
+            //    a {
+            //        font-weight: bold !important;
+            //    } 
             }
         }
     }

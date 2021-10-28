@@ -83,7 +83,8 @@
       background-color: #ffffff;
       height: auto;
       border-radius: 5px;
-      padding: 15px;
+      // padding: 15px;
+      // border: 1px solid rgba(0,0,0,.30);
 
       &::before {
         content: "";
@@ -99,6 +100,8 @@
     }
 
     .search__items {
+      padding: 10px;
+      
       .item__single {
         margin-bottom: 0;
         text-align: left;

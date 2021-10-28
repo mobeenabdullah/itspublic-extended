@@ -54,5 +54,13 @@
       opacity: 1;
     }
   }
+
+  .link_tooltip[data-tooltip] {
+    &::before {
+      min-width: 100px;
+    }
+  }
+
+
   
   

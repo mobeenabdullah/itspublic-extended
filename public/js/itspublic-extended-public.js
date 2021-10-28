@@ -8,7 +8,8 @@
 			autoplay: true,
 			arrows: false,
 			draggable: false,
-			speed: 10000,
+			speed: 1300,
+			autoplaySpeed: 5000,
 			fade: true,
 			lazyLoad: 'ondemand' // progressive
 		});
@@ -68,6 +69,7 @@
 			const getCategorieName = $('.active-item .materialen-hidden-fields .category-name').text();
 			const getMateriaalContent = $('.active-item .materialen-hidden-fields .materiaal-content').html();
 			const getMateriaalDate = $('.active-item .materialen-hidden-fields .materiaal-date').text();
+			const getMateriaalShareSlug = $('.active-item .materialen-hidden-fields .materiaal-share-slug').text();
 			const getMateriaalDownloads = $('.active-item .item__single-attachements').html();
 			const getMateriaalMembers = $('.active-item .item__single-members-list').html();
 			const getMateriaalImageInfo = $('.active-item .information-box-wrapper').html();
@@ -78,6 +80,7 @@
 			const materiaalPopupCategorieName = $('#materialenModal .taxonomies .materiaal-popup-categorie span');
 			const materiaalPopupContent = $('#materialenModal .popup_materiaal_content');
 			const materiaalPopupDate = $('#materialenModal .taxonomies .materiaal-popup-date span');
+			const materiaalShareSlugLink = $('#materialenModal .materialPop_heading .link_tooltip');
 			const materiaalPopupDownloads = $('#materialenModal .itspublic__footer-download');
 			const materiaalPopupMembers = $('#materialenModal .itspublic__footer-members-list');
 			const materiaalImageInfo = $('#materialenModal .information__box-content');
@@ -88,6 +91,7 @@
 			materiaalPopupCategorieName.text(getCategorieName);
 			materiaalPopupContent.html(getMateriaalContent);
 			materiaalPopupDate.text(getMateriaalDate);
+			materiaalShareSlugLink.attr('href', getMateriaalShareSlug);
 			materiaalPopupDownloads.html('<span>Download</span>' + getMateriaalDownloads);
 			materiaalPopupMembers.html(getMateriaalMembers);
 			materiaalImageInfo.html(getMateriaalImageInfo);
@@ -143,8 +147,10 @@
 
 			if (searchValue.length > 0) {
 				document.querySelector('#searchResult').className = 'showSearchbox';
+				$('.slider-content-searchbar').css('transform', 'translateY(-100px)');
 			} else {
 				document.querySelector('#searchResult').className = '';
+				$('.slider-content-searchbar').css('transform', 'translateY(0px)');
 			}
 
 			var searrchAllLink = document.location + 'materialen/' + '?ms=' +searchValue;
@@ -240,7 +246,7 @@
 			$('.itspubic-single-member').removeClass('current-member');
 			$(this).closest('.itspubic-single-member').addClass('current-member');
 
-			const memberImageUrl = $('.current-member .member-img img').attr('src');
+			const memberImageUrl = $('.current-member .member-img .team-full-photo-hidden').text();
 			const memberName = $('.current-member .member-name').text();
 			const memberDesignation = $('.current-member .member-designation').text();
 			const memberInfoText = $('.current-member .member-info-full').html();
@@ -426,9 +432,29 @@
 			}
 		});
 
+
+		// copy to clipboard
+		$('.link_tooltip').on('click', function (e) {
+			e.preventDefault();
+			var copyText = $(this).attr('href');
+		 
+			document.addEventListener('copy', function(e) {
+			   e.clipboardData.setData('text/plain', copyText);
+			   e.preventDefault();
+			}, true);
+
+			document.execCommand('copy');  			
+		});
+
 	});
 
+	
 
+	// $('.projecten-custom-item').on('click', function() {
+	// 	setTimeout(function(){
+	// 		$('.over-custom-item a').removeClass('elementor-item-active');
+	// 	}, 1000);
+	// });
 
 
 })(jQuery);

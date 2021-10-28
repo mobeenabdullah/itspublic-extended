@@ -794,7 +794,7 @@ function itspublic_materialen_single() {
             </div>
 
             <div class="related_btn-cover">
-                <a class="materialdetailbtn" href="<?php echo home_url( '/materialen' ); ?>">Klik hier om alle materialen te bekijken</a>
+                <a href="<?php echo home_url( '/materialen' ); ?>">Klik hier om alle materialen te bekijken</a>
             </div>
 
             
@@ -818,7 +818,7 @@ add_shortcode('itspublic_materialen_single', 'itspublic_materialen_single');
 function itspublic_hero_slider() {
 
     ob_start(); ?>
-    <section class="hero__slider herotestclass" style="background-image: url('https://www.itspublic.nl/wp-content/uploads/2021/01/Trein10_Den-Haag-Centraal_CC-BY-SA_Hubertl-2015-1600x516.jpg');">
+    <section class="hero__slider testclass" style="background-image: url('https://www.itspublic.nl/wp-content/uploads/2021/01/Trein10_Den-Haag-Centraal_CC-BY-SA_Hubertl-2015-1600x516.jpg');">
         <div class="slider__cover" id="hero-slider">
         <?php
             $slidesQuery = new WP_Query( array(
