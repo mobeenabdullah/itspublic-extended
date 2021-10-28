@@ -58,6 +58,10 @@
 
 		function showMaterialenPopup() {
 
+			if ($(this).closest('.item__single').hasClass('disablePopup')) {
+				return;
+			}
+
 			$('.item__single').removeClass('active-item');
 			$(this).closest('.item__single').addClass('active-item');
 
@@ -437,18 +441,18 @@
 		$('.link_tooltip').on('click', function (e) {
 			e.preventDefault();
 			var copyText = $(this).attr('href');
-		 
+
 			document.addEventListener('copy', function(e) {
 			   e.clipboardData.setData('text/plain', copyText);
 			   e.preventDefault();
 			}, true);
 
-			document.execCommand('copy');  			
+			document.execCommand('copy');
 		});
 
 	});
 
-	
+
 
 	// $('.projecten-custom-item').on('click', function() {
 	// 	setTimeout(function(){
