@@ -63,19 +63,43 @@ function data_fetch(){
 
 			$categorie_color = get_term_meta($categorie_id, 'categorie_color', true);
 
+            $get_container_landing_page_status = get_field('open_container_landing_page');
+            $get_container_landing_page_id = get_field('select_container_landing_page');
+
 			?>
 
             <!-- Single Item -->
-            <div class="item__single">
+            <div class="item__single <?php if ($get_container_landing_page_status) echo 'disablePopup'; ?>">
                 <figure class="item__single-img template-item hover-item">
 	                <?php $getPhotoField = get_field('photo'); ?>
-                    <img src="<?php echo get_the_post_thumbnail_url($getPhotoField->ID, 'materialen-card'); ?>" alt="<?php the_title();?>">
+	                <?php if ($get_container_landing_page_status) : ?>
+                        <a href="<?php echo get_the_permalink($get_container_landing_page_id); ?>">
+                            <img src="<?php echo get_the_post_thumbnail_url($getPhotoField->ID, 'materialen-card'); ?>" alt="<?php the_title();?>">
+                        </a>
+	                <?php else : ?>
+                        <img src="<?php echo get_the_post_thumbnail_url($getPhotoField->ID, 'materialen-card'); ?>" alt="<?php the_title();?>">
+	                <?php endif; ?>
                     <div class="cat-label" style="background-color: <?php echo $categorie_color; ?> !important;"><?php echo $categorie_name; ?></div>
                 </figure>
-                <h4 class="item__single-title"><?php the_title();?> </h4>
+
+	            <?php if ($get_container_landing_page_status) : ?>
+                    <a href="<?php echo get_the_permalink($get_container_landing_page_id); ?>">
+                        <h4 class="item__single-title"><?php the_title();?> </h4>
+                    </a>
+                <?php else : ?>
+                    <h4 class="item__single-title"><?php the_title();?> </h4>
+                <?php endif; ?>
+
                 <div class="item__single-desc">
-                    <?php the_excerpt(); ?>
+	                <?php if ($get_container_landing_page_status) : ?>
+                        <a href="<?php echo get_the_permalink($get_container_landing_page_id); ?>">
+	                        <?php the_excerpt(); ?>
+                        </a>
+	                <?php else : ?>
+		                <?php the_excerpt(); ?>
+	                <?php endif; ?>
                 </div>
+
                 <div class="item__single-footer">
 		            <?php  $getDate = get_field('date');
 		            if( $getDate ): ?>
@@ -488,19 +512,43 @@ function data_fetch_all(){
 
 			    $categorie_color = get_term_meta($categorie_id, 'categorie_color', true);
 
+                $get_container_landing_page_status = get_field('open_container_landing_page');
+                $get_container_landing_page_id = get_field('select_container_landing_page');
+
             ?>
 
             <!-- Single Item -->
-            <div class="item__single" id="materiaal-<?php echo get_the_ID(); ?>">
+            <div class="item__single <?php if ($get_container_landing_page_status) echo 'disablePopup'; ?>" id="materiaal-<?php echo get_the_ID(); ?>">
                 <figure class="item__single-img template-item hover-item">
 	                <?php $getPhotoField = get_field('photo'); ?>
-                    <img src="<?php echo get_the_post_thumbnail_url($getPhotoField->ID, 'materialen-card'); ?>" alt="<?php the_title();?>">
+	                <?php if ($get_container_landing_page_status) : ?>
+                        <a href="<?php echo get_the_permalink($get_container_landing_page_id); ?>">
+                            <img src="<?php echo get_the_post_thumbnail_url($getPhotoField->ID, 'materialen-card'); ?>" alt="<?php the_title();?>">
+                        </a>
+	                <?php else : ?>
+                        <img src="<?php echo get_the_post_thumbnail_url($getPhotoField->ID, 'materialen-card'); ?>" alt="<?php the_title();?>">
+	                <?php endif; ?>
                     <div class="cat-label" style="background-color: <?php echo $categorie_color; ?> !important;"><?php echo $categorie_name; ?></div>
                 </figure>
-                <h4 class="item__single-title"><?php the_title();?></h4>
+
+	            <?php if ($get_container_landing_page_status) : ?>
+                    <a href="<?php echo get_the_permalink($get_container_landing_page_id); ?>">
+                        <h4 class="item__single-title"><?php the_title();?> </h4>
+                    </a>
+	            <?php else : ?>
+                    <h4 class="item__single-title"><?php the_title();?> </h4>
+	            <?php endif; ?>
+
                 <div class="item__single-desc">
-					<?php the_excerpt(); ?>
+		            <?php if ($get_container_landing_page_status) : ?>
+                        <a href="<?php echo get_the_permalink($get_container_landing_page_id); ?>">
+				            <?php the_excerpt(); ?>
+                        </a>
+		            <?php else : ?>
+			            <?php the_excerpt(); ?>
+		            <?php endif; ?>
                 </div>
+
                 <div class="item__single-footer">
 	                <?php  $getDate = get_field('date');
                     if( $getDate ): ?>
@@ -863,7 +911,7 @@ function data_fetch_hero(){
 		)
 	);
 
-	
+
 
     if( $the_query->have_posts() ) :
         echo '<div class="material__items search__items">';
@@ -1227,14 +1275,14 @@ function data_fetch_hero(){
 
 		<?php endwhile;
         wp_reset_postdata();
-        echo '</div>';     
+        echo '</div>';
     else:
         echo '<div class="material__items search__items noitemfound">';
         echo '<h3 class="materiaal-no-results">Geen resultaten gevonden</h3>';
         echo '</div>';
 	endif;
-   
-	
+
+
 
 	die();
 }

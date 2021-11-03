@@ -2,9 +2,7 @@
 
 // Members CPT Shortcode
 function itspublic_show_members( ) {
-
     ob_start();
-
     $args = array(
         'posts_per_page' => -1,
         'post_type' => 'member',
@@ -13,44 +11,31 @@ function itspublic_show_members( ) {
     $my_query = null;
     $my_query = new WP_Query($args);
     $countMember = 0;
-
     if( $my_query->have_posts() ): ?>
-
         <div class="itspublic-members <?php if (wp_count_posts('member')->publish > 8) { echo 'itspublic-members-slider'; } ?>">
-
         <?php if (wp_count_posts('member')->publish > 8) { echo '<div>'; } ?>
-
         <?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
-
             <?php $countMember++; ?>
-
             <div class="itspubic-single-member">
-
                 <?php
                     $get_member_designation = rwmb_meta( 'itspublic-member_designation' );
                     $get_member_email = rwmb_meta( 'itspublic-member_email' );
                     $get_member_linkedin = rwmb_meta( 'itspublic-member_linkedin' );
                 ?>
-
                 <figure class="member-img">
                     <img src="<?php echo get_the_post_thumbnail_url( get_the_ID(), 'home-team-thumb' ); ?>" alt="<?php the_title(); ?>">
                     <span class="team-full-photo-hidden"><?php echo get_the_post_thumbnail_url( get_the_ID(), 'full' ); ?></span>
                 </figure>
-
                 <h4 class="member-name"><?php the_title(); ?></h4>
-
                 <h6 class="member-designation">
                     <?php echo $get_member_designation; ?>
                 </h6>
-
                 <div class="member-info">
                     <p><?php echo get_excerpt(); ?></p>
                 </div>
-
                 <div class="member-info-full" style="display: none;">
 		            <?php the_content(); ?>
                 </div>
-
                 <div class="member-footer-info">
                     <div class="member-more-details">
                         <a href="#!">+ Meer detail</a>
@@ -70,9 +55,7 @@ function itspublic_show_members( ) {
                         </ul>
                     </div>
                 </div>
-
             </div>
-
         <?php
 
             if ($countMember%8 == 0) {
@@ -372,8 +355,8 @@ function itspublic_materialen_search_page() {
                     <!-- <div class="material__page-btn">
                     <button type="button" class="material-btn">Load more <i class="fas fa-chevron-down"></i></button>
                     </div> -->
-                    
-                   
+
+
                 <!-- Material Items end -->
 
 
@@ -393,7 +376,7 @@ add_shortcode('itspublic_materialen_search', 'itspublic_materialen_search_page')
 
 
 
-// Materialen Single Page 
+// Materialen Single Page
 function itspublic_materialen_single() {
 
     ob_start();
@@ -638,7 +621,7 @@ function itspublic_materialen_single() {
                         </div>
                 </div>
             </div>
-            
+
         </div>
     </section>
 
@@ -712,7 +695,7 @@ function itspublic_materialen_single() {
                                     </li>
                                     <?php } ?>
                                 </ul>
-                            
+
                             </div>
 
                         </div>
@@ -734,7 +717,7 @@ function itspublic_materialen_single() {
                                     </li>
                                     <?php } ?>
                                 </ul>
-                            </div>                          
+                            </div>
                        </div>
 
                     </div>
@@ -797,7 +780,7 @@ function itspublic_materialen_single() {
                 <a class="materialdetailbtn" href="<?php echo home_url( '/materialen' ); ?>">Klik hier om alle materialen te bekijken</a>
             </div>
 
-            
+
         </div>
     </section>
 
@@ -809,12 +792,12 @@ return $content;
 
 }
 
-add_shortcode('itspublic_materialen_single', 'itspublic_materialen_single'); 
+add_shortcode('itspublic_materialen_single', 'itspublic_materialen_single');
 
 
 
 
-// Hero Slider 
+// Hero Slider
 function itspublic_hero_slider() {
 
     ob_start(); ?>
@@ -1082,15 +1065,15 @@ function itspublic_hero_slider() {
         </div>
     </section>
 
-    
 
-    
+
+
 
 
 
     <?php $content = ob_get_clean();
     return $content;
-    
+
 }
-    
-add_shortcode('itspublic_hero_slider', 'itspublic_hero_slider');   
+
+add_shortcode('itspublic_hero_slider', 'itspublic_hero_slider');
