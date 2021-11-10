@@ -6,7 +6,7 @@ function itspublic_member_cpt() {
     $labels = array(
         'name' => _x( 'Members', 'Post Type General Name', 'itspublic' ),
         'singular_name' => _x( 'Member', 'Post Type Singular Name', 'itspublic' ),
-        'menu_name' => _x( 'Members', 'Admin Menu text', 'itspublic' ),
+        'menu_name' => _x( 'Team', 'Admin Menu text', 'itspublic' ),
         'name_admin_bar' => _x( 'Member', 'Add New on Toolbar', 'itspublic' ),
         'archives' => __( 'Member Archives', 'itspublic' ),
         'attributes' => __( 'Member Attributes', 'itspublic' ),
