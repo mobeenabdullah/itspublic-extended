@@ -315,6 +315,14 @@ body {
 .member-info {
   height: 110px;
 }
+.clp-title h1 {
+  word-break: break-word !important;
+  font-size: 36px;
+  line-height: 1.2 !important;
+  @media screen and (max-width: 575px) {
+    font-size: 30px !important;
+  }
+  }
 
 
 

@@ -39,7 +39,7 @@
 .materialen__single {
     background-position: center center;
     background-size: cover;
-    min-height: 480px;
+    min-height: 350px;
     display: flex;
     align-items: stretch;
 
@@ -59,13 +59,11 @@
             bottom: 20px;
             right: 0;
             width: 100%;
-            z-index: 99;
+            z-index: 2;
             
         }
     } 
-    
 
-    
 }
 
 // details
@@ -75,9 +73,10 @@
     .materialen__details-cover {
         display: flex;
         flex-wrap: nowrap;
+        justify-content: space-between;
 
         &--left {
-            width: 75%;
+            width: 68%;
         }
 
         &--right {
@@ -349,7 +348,7 @@
             &:nth-child(2) {
                 flex-grow: 1;
                 strong {
-                    font-weight: blod !important;
+                    font-weight: bold !important;
                 }
                     strong {
                         font-weight: bold !important;
