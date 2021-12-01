@@ -408,7 +408,7 @@ function itspublic_materialen_single() {
                         <div class="information__box-content">
                             <div class="information__box-cover">
                                 <div class="content-text">
-                                    <p class="info-title">Fotograaf: <?php echo get_field('maker', $getPhotoField->ID); ?></p>
+                                    <p class="info-title">Born: <?php echo get_field('maker', $getPhotoField->ID); ?></p>
                                     <div class="license-info">
                                         Rechten:
                                         <div class="licenses-list-wrapper">
@@ -835,7 +835,7 @@ function itspublic_hero_slider() {
                         <div class="information__box-content">
                             <div class="information__box-cover">
                                 <div class="content-text">
-                                    <p class="info-title">Fotograaf: <?php echo get_field('maker', $getPhotoField->ID); ?></p>
+                                    <p class="info-title">Bron: <?php echo get_field('maker', $getPhotoField->ID); ?></p>
                                     <div class="license-info">
                                         Rechten:
                                         <div class="licenses-list-wrapper">

@@ -153,7 +153,7 @@ function data_fetch(){
                     <div class="information-box-wrapper">
                         <div class="information__box-cover">
                             <div class="content-text">
-                                <p class="info-title">Fotograaf: <?php echo get_field('maker', $getPhotoField->ID); ?></p>
+                                <p class="info-title">Bron: <?php echo get_field('maker', $getPhotoField->ID); ?></p>
                                 <div class="license-info">
                                     Rechten:
                                     <div class="licenses-list-wrapper">
@@ -578,7 +578,7 @@ function data_fetch_all(){
                     <div class="information-box-wrapper">
                         <div class="information__box-cover">
                             <div class="content-text">
-                                <p class="info-title">Fotograaf: <?php echo get_field('maker', $getPhotoField->ID); ?></p>
+                                <p class="info-title">Bron: <?php echo get_field('maker', $getPhotoField->ID); ?></p>
                                 <div class="license-info">
                                     Rechten:
                                     <div class="licenses-list-wrapper">
@@ -991,7 +991,7 @@ function data_fetch_hero(){
                 <div class="information-box-wrapper">
                     <div class="information__box-cover">
                         <div class="content-text">
-                            <p class="info-title">Fotograaf: <?php echo get_field('maker', $getPhotoField->ID); ?></p>
+                            <p class="info-title">Bron: <?php echo get_field('maker', $getPhotoField->ID); ?></p>
                             <div class="license-info">
                                 Rechten:
                                 <div class="licenses-list-wrapper">
